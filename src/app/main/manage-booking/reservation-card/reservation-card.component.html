@@ -1,0 +1,57 @@
+<!-- <p class="border- w-full">reservation-card works!</p> -->
+<div class="mx-24 h-96 rounded-2xl">
+    <div
+        class="h-full w-full rounded-2xl bg-[url('../assets/manage-booking/reservation-card.png')] bg-cover bg-center bg-no-repeat"
+    >
+        <div class="flex h-full flex-col justify-center gap-5 pl-10">
+            <p class="text-xl font-semibold text-[#2669a0]">Retrive PNR</p>
+            <form
+                #reservationForm="ngForm"
+                (ngSubmit)="onFindReservation(reservationForm)"
+                class="flex w-2/5 flex-col gap-7"
+            >
+                <div>
+                    <!-- <p-inputnumber
+                        class="!placeholder:text-sm !h-10 !w-full"
+                        id="reservation"
+                        name="reservation"
+                        placeholder="Reservation Number"
+                        [(ngModel)]="user.reservation"
+                        #reservation="ngModel"
+                        required
+                    /> -->
+                    <input
+                        class="!h-10 !w-full rounded-md border-[#0064b6] p-3 placeholder:text-sm"
+                        pInputText
+                        id="reservation"
+                        name="reservation"
+                        placeholder="Reservation Number"
+                        [(ngModel)]="user.reservation"
+                        #reservation="ngModel"
+                        required
+                    />
+                </div>
+                <input
+                    class="!h-10 !w-full border-[#0064b6] placeholder:text-sm"
+                    id="name"
+                    pInputText
+                    name="name"
+                    placeholder="First/last Name"
+                    [(ngModel)]="user.name"
+                    #name="ngModel"
+                    required
+                />
+                <div>
+                    <button
+                        pButton
+                        type="submit"
+                        label="Find Reservation"
+                        class="rounded-3xl border-none bg-[#0064b6] !px-4 !text-sm hover:bg-[#2b71aa]"
+                    >
+                        <span class="pi pi-search !text-md"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

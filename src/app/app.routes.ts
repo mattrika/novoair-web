@@ -30,6 +30,15 @@ const flattenedRoutes: Route[] = [
             ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
+    {
+        path: 'manage-booking',
+        loadComponent: () =>
+            import('./pages/manage-booking/manage-booking.component').then(
+                (m) => m.ManageBookingComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+
 ]
 groupedRoutes.forEach((routeGroup) => {
     Object.values(routeGroup).forEach((route) => flattenedRoutes.push(route))

@@ -9,6 +9,8 @@
     @tailwind utilities;
 }
 
+@import 'primeicons/primeicons.css';
+
 html,
 body {
     @apply h-full;
