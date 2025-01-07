@@ -1,8 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core'
 import { RouterModule } from '@angular/router'
 import { FooterDefaultComponent } from '@main/footers/footer-default/footer-default.component'
-import { HeaderOneComponent } from '@main/headers/header-one/header-one.component'
-import { FooterDefaultComponent } from "../../footers/footer-default/footer-default.component";
 import { HeaderDefaultComponent } from "../../headers/header-default/header-default.component";
 
 @Component({

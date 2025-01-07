@@ -25,7 +25,7 @@ const flattenedRoutes: Route[] = [
     {
         path: '',
         loadComponent: () =>
-            import('./pages/dashboard-home/dashboard-home.component').then(
+            import('@pages/dashboard-home/dashboard-home.component').then(
                 (m) => m.DashboardHomeComponent,
             ),
         resolve: { layout: setLayout(PageLayout.Default) },

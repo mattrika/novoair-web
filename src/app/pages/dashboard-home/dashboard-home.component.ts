@@ -6,16 +6,17 @@ import { HeroSectionComponent } from "../../main/home/components/hero-section/he
 import { OngoingOffersCardComponent } from "../../main/home/components/ongoing-offers-card/ongoing-offers-card.component";
 import { TravelGuidelineComponent } from "../../main/home/components/travel-guideline/travel-guideline.component";
 
-@Component({
-  selector: 'app-dashboard-home',
-  imports: [HeroSectionComponent, DestinationCardComponent, OngoingOffersCardComponent, FareDealsComponent, TravelGuidelineComponent, GetOurAppComponent],
-  templateUrl: './dashboard-home.component.html',
-  styleUrl: './dashboard-home.component.scss',
-import { Component } from '@angular/core'
 
 @Component({
     selector: 'app-dashboard-home',
-    imports: [],
+    imports: [
+        HeroSectionComponent,
+        DestinationCardComponent,
+        OngoingOffersCardComponent,
+        FareDealsComponent,
+        TravelGuidelineComponent,
+        GetOurAppComponent,
+    ],
     templateUrl: './dashboard-home.component.html',
     styleUrl: './dashboard-home.component.scss',
 })
