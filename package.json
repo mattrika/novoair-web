@@ -34,6 +34,7 @@
         "@angular/platform-browser-dynamic": "^19.0.5",
         "@angular/router": "^19.0.5",
         "@auth0/angular-jwt": "^5.2.0",
+        "@ng-icons/core": "^30.2.0",
         "@ng-web-apis/common": "^4.11.1",
         "@ngneat/dialog": "^5.1.2",
         "@primeng/themes": "^19.0.2",
@@ -41,6 +42,7 @@
         "es-toolkit": "^1.31.0",
         "ng-primitives": "^0.17.0",
         "ngx-sonner": "^3.0.0",
+        "primeicons": "^7.0.0",
         "primeng": "^19.0.2",
         "radash": "^12.1.0",
         "rxjs": "~7.8.1",
@@ -60,6 +62,7 @@
         "@types/jasmine": "~5.1.5",
         "@types/node": "^22.10.5",
         "autoprefixer": "^10.4.20",
+        "biome": "^0.3.3",
         "cypress": "^13.17.0",
         "eslint": "^9.17.0",
         "eslint-config-prettier": "^9.1.0",
@@ -88,8 +91,12 @@
     },
     "lint-staged": {
         "src/**/*.{html,xml}": "prettier --write",
-        "src/**/*.{ts,js,scss,css,less}": ["biome check --fix"],
-        "cypress/**/*.{ts,js}": ["biome format --fix"],
+        "src/**/*.{ts,js,scss,css,less}": [
+            "biome check --fix"
+        ],
+        "cypress/**/*.{ts,js}": [
+            "biome format --fix"
+        ],
         "*.json": "biome check --fix"
     },
     "simple-git-hooks": {

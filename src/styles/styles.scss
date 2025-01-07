@@ -1,4 +1,5 @@
 @layer tailwind-base, primeng, tailwind-utilities;
+@import 'primeicons/primeicons.css';
 
 @layer tailwind-base {
     @tailwind base;
@@ -13,4 +14,10 @@ html,
 body {
     @apply h-full;
     font-family: 'Noto Sans', sans-serif;
+}
+
+.btn-primary {
+    color: rgb(255 255 255);
+    background-color: #1a6182; /* Fallback */
+    background-image: linear-gradient(to right, #155572, #1a82ac);
 }

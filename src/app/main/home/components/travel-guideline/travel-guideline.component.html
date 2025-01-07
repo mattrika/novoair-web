@@ -1,0 +1,19 @@
+<div class="mx-4 mt-24 md:mx-16">
+    <h1 class="text-center text-3xl font-semibold text-blue-700">
+        Travel <span class="text-3xl font-bold text-blue-800">Guideline</span>
+    </h1>
+
+    <div class="mt-24 grid gap-6 md:grid-cols-3">
+        @for (guideline of guidelines; track guideline.title) {
+            <div
+                class="flex cursor-pointer items-center justify-between gap-6 rounded-3xl p-4 shadow-[0_0_20px_rgba(0,0,0,0.1)] hover:shadow-2xl"
+            >
+                <img [src]="guideline.image" alt="Background Image" />
+                <div>
+                    <h1 class="text-3xl font-semibold text-blue-900">{{ guideline.title }}</h1>
+                    <p class="mt-4 text-gray-500">{{ guideline.description }}</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>

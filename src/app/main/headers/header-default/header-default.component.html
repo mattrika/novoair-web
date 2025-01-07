@@ -1,0 +1,96 @@
+<header class="w-full bg-white px-2 py-4 md:px-16">
+    <div class="mx-auto flex items-center justify-between">
+        <!-- Logo -->
+        <a>
+            <img src="assets/logo/logo.png" alt="MyBrand Logo" class="h-10 w-48" />
+        </a>
+
+        <!-- Mobile Menu Button (Hidden on larger screens) -->
+        <div class="md:hidden">
+            <button
+                id="menu-toggle"
+                class="text-gray-800 transition-colors duration-300 hover:text-primary focus:outline-none"
+                (click)="toggleMobileMenu()"
+            >
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"
+                    />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Desktop Navigation (Hidden on smaller screens) -->
+        <nav class="hidden md:flex">
+            <ul class="flex space-x-8">
+                <li>
+                    <a href="#" class="transition-colors duration-300 hover:text-primary">Home</a>
+                </li>
+                <li>
+                    <a href="#" class="transition-colors duration-300 hover:text-primary">About</a>
+                </li>
+                <li class="group relative">
+                    <a href="#" class="transition-colors duration-300 hover:text-primary"
+                        >Services</a
+                    >
+                    <!-- Dropdown Menu -->
+                    <ul
+                        class="absolute left-0 mt-1 hidden w-48 rounded-md bg-white py-2 shadow-md transition-all duration-300 group-hover:block"
+                    >
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Service 1</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Service 2</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Service 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="transition-colors duration-300 hover:text-primary"
+                        >Contact</a
+                    >
+                </li>
+                <li>
+                    <a>
+                        <img src="assets/logo/ff.png" alt="MyBrand Logo" class="h-8 w-24" />
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <nav
+        class="transition-height hidden w-full bg-gray-50 duration-300 ease-in-out md:hidden"
+        [ngClass]="{ hidden: !isMobileMenuOpen }"
+        [style.height]="isMobileMenuOpen ? mobileMenuHeight + 'px' : '0'"
+    >
+        <ul class="bg-white px-4 py-2">
+            <li><a href="#" class="block py-2 hover:text-primary">Home</a></li>
+            <li><a href="#" class="block py-2 hover:text-primary">About</a></li>
+            <li>
+                <a class="block py-2 hover:text-primary" (click)="toggleServicesDropdown()"
+                    >Services</a
+                >
+                <!-- Mobile Dropdown -->
+                <ul
+                    id="services-dropdown"
+                    class="hidden pl-4"
+                    [ngClass]="{ hidden: !isServicesDropdownOpen }"
+                >
+                    <li><a href="#" class="block py-2 hover:text-primary">Service 1</a></li>
+                    <li><a href="#" class="block py-2 hover:text-primary">Service 2</a></li>
+                    <li><a href="#" class="block py-2 hover:text-primary">Service 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="block py-2 hover:text-primary">Contact</a></li>
+            <li>
+                <a>
+                    <img src="assets/logo/ff.png" alt="MyBrand Logo" class="h-8 w-24" />
+                </a>
+            </li>
+        </ul>
+
+        <div class="mobile-menu"></div>
+    </nav>
+</header>
