@@ -49,9 +49,13 @@ const flattenedRoutes: Route[] = [
     {
         path: 'our-destination',
         loadComponent: () =>
-            import('./pages/destination/destination.component').then(
-                (m) => m.DestinationComponent,
-            ),
+            import('./pages/destination/destination.component').then((m) => m.DestinationComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'co-brandeed-prepaid-card',
+        loadComponent: () =>
+            import('./pages/co-brandeed-prepaid-card/co-brandeed-prepaid-card.component').then((m) => m.CoBrandeedPrepaidCardComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
 ]
