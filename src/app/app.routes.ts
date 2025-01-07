@@ -38,7 +38,14 @@ const flattenedRoutes: Route[] = [
             ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
-
+    {
+        path: 'smiles-frequent-flyer',
+        loadComponent: () =>
+            import('./pages/smiles-frequent-flyer/smiles-frequent-flyer.component').then(
+                (m) => m.SmilesFrequentFlyerComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
 ]
 groupedRoutes.forEach((routeGroup) => {
     Object.values(routeGroup).forEach((route) => flattenedRoutes.push(route))
