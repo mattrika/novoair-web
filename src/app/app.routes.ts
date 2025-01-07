@@ -23,7 +23,7 @@ const groupedRoutes: GroupedRoutes = [
 
 const flattenedRoutes: Route[] = [
     {
-        path: 'dashboard-home',
+        path: '',
         loadComponent: () =>
             import('./pages/dashboard-home/dashboard-home.component').then(
                 (m) => m.DashboardHomeComponent,
