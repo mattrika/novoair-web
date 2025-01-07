@@ -10,8 +10,13 @@ import { TravelGuidelineComponent } from "../../main/home/components/travel-guid
   selector: 'app-dashboard-home',
   imports: [HeroSectionComponent, DestinationCardComponent, OngoingOffersCardComponent, FareDealsComponent, TravelGuidelineComponent, GetOurAppComponent],
   templateUrl: './dashboard-home.component.html',
-  styleUrl: './dashboard-home.component.scss'
-})
-export class DashboardHomeComponent {
+  styleUrl: './dashboard-home.component.scss',
+import { Component } from '@angular/core'
 
-}
+@Component({
+    selector: 'app-dashboard-home',
+    imports: [],
+    templateUrl: './dashboard-home.component.html',
+    styleUrl: './dashboard-home.component.scss',
+})
+export class DashboardHomeComponent {}
