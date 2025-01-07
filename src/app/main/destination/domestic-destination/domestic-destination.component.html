@@ -1,21 +1,16 @@
 <div>
-    <h1 class="text-center text-4xl font-medium text-[#0070cb]">
-        Domestic <span class="text-4xl font-semibold text-[#0169bf]">Destination</span>
+    <h1 class="mb-24 mt-14 text-center text-2xl font-medium text-[#0070cb] sm:text-3xl">
+        Domestic <span class="text-2xl font-semibold text-[#0169bf] sm:text-3xl">Destination</span>
     </h1>
-    <div class="">
-        <div class="flex h-96 justify-between gap-5">
-            <div
-                class="h-full w-3/5 border border-red-500 bg-[url('../assets/destination/songshodBhobon.png')] bg-cover bg-no-repeat"
-            >
-                <!-- <img
-                    src="../../../../assets/destination/songshodBhobon.png"
-                    alt=""
-                    class="h-full w-full bg-cover bg-left"
-                /> -->
 
-                <div class="flex h-full w-5/6 flex-col justify-end p-5">
-                    <h1 class="text-white">Dhaka</h1>
-                    <p class="text-white">
+    <div class="pb-6">
+        <div class="flex flex-col gap-3 md:mb-3 md:h-96 md:flex-row md:justify-between md:gap-3">
+            <div
+                class="h-64 w-full rounded-md bg-[url('../assets/destination/songshodBhobon.png')] bg-cover bg-no-repeat shadow-lg md:h-full md:w-3/5"
+            >
+                <div class="flex h-full w-full flex-col justify-end p-4 sm:w-5/6">
+                    <h1 class="text-lg font-semibold text-[#00BFFF] sm:text-2xl">Dhaka</h1>
+                    <p class="mt-2 text-sm font-normal text-white">
                         Dhaka, is the capital and largest city of Bangladesh. With its colorful
                         history and rich cultural traditions, Dhaka is known the world over as the
                         city of mosques and muslin. <span class="text-[#07b1fe]">More</span>
@@ -23,16 +18,11 @@
                 </div>
             </div>
             <div
-                class="h-full w-2/5 border border-black bg-[url('../assets/destination/chattragram.png')] bg-cover bg-no-repeat"
+                class="h-64 w-full rounded-md bg-[url('../assets/destination/chattragram.png')] bg-cover bg-center bg-no-repeat shadow-lg md:h-full md:w-2/5"
             >
-                <!-- <img
-                    src="../../../../assets/destination/chattragram.png"
-                    alt=""
-                    class="h-full bg-cover bg-center"
-                /> -->
-                <div class="flex h-full flex-col justify-end p-5">
-                    <h1 class="text-white">Chattogram</h1>
-                    <p class="text-white">
+                <div class="flex h-full flex-col justify-end p-4">
+                    <h1 class="text-lg font-semibold text-[#00BFFF] sm:text-2xl">Chattogram</h1>
+                    <p class="mt-2 text-sm font-normal text-white">
                         Chattogram is the biggest seaport and second largest town in Bangladesh
                         situated by the Bay of Bengal. It is 264 km away east of Dhaka, famous for
                         hill areas. <span class="text-[#07b1fe]">More</span>
@@ -40,13 +30,54 @@
                 </div>
             </div>
         </div>
-        <div class="flex h-[300px] justify-between gap-5">
-            <div class="h-full w-1/3 border border-red-500"></div>
-            <div class="h-full w-1/3 border border-black"></div>
-            <div class="h-full w-1/3 border border-black"></div>
+
+        <div class="grid grid-cols-1 gap-3 md:mb-6 md:grid-cols-3 md:gap-3">
+            <div
+                class="min-h-64 w-full rounded-md bg-[url('../assets/destination/jashore.png')] bg-cover bg-left-bottom shadow-lg"
+            >
+                <div class="flex h-full flex-col justify-end p-4">
+                    <h1 class="text-lg font-semibold text-[#00BFFF] sm:text-2xl">Jashore</h1>
+                    <p class="mt-2 text-sm font-normal text-white">
+                        Jashore is a district in the southwestern region of Bangladesh. Apart from
+                        some attractive colonial architecture, most notably the huge Court House
+                        building, there is little to see
+                        <span class="text-[#07b1fe]">More</span>
+                    </p>
+                </div>
+            </div>
+            <div
+                class="min-h-64 w-full rounded-md bg-[url('../assets/destination/coxsbazar.png')] bg-cover bg-center shadow-lg"
+            >
+                <div class="flex h-full flex-col justify-end p-4">
+                    <h1 class="text-lg font-semibold text-[#00BFFF] sm:text-2xl">Cox's Bazar</h1>
+                    <p class="mt-2 text-sm font-normal text-white">
+                        Cox's Bazar is one of the most attractive tourist spots & the longest sea
+                        beach in the world (approx. 120 km long). Miles of golden sands, towering
+                        cliffs, surfing waves,
+                        <span class="text-[#07b1fe]">More</span>
+                    </p>
+                </div>
+            </div>
+            <div
+                class="min-h-64 w-full rounded-md bg-[url('../assets/destination/sylhet.png')] bg-cover bg-center shadow-lg"
+            >
+                <div class="flex h-full flex-col justify-end p-4">
+                    <h1 class="text-lg font-semibold text-[#00BFFF] sm:text-2xl">Sylhet</h1>
+                    <p class="mt-2 text-sm font-normal text-white">
+                        Sylhet is the land of Shrine's, natural Hills, forests, beautiful tree
+                        plantations and lots of Haors. It is an old city with full of natural
+                        beauties. A large number of tourists come every year to visit Sylhet.
+                        <span class="text-[#07b1fe]">More</span>
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="flex items-center justify-center">
-            <button class="border-2 px-4 py-2">View more</button>
+
+        <div class="flex items-center justify-center pt-12">
+            <p-button
+                styleClass="bg-white text-lg font-medium text-[#595959] border-2 border-[#07b1fe] rounded-3xl px-5 py-2"
+                label="View more"
+            />
         </div>
     </div>
 </div>
