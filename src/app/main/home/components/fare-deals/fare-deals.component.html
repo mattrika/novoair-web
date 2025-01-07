@@ -1,0 +1,17 @@
+<div class="mx-4 mt-24 md:mx-16">
+    <h1 class="text-center text-3xl font-semibold text-blue-700">
+        Fare Deals From <span class="text-3xl font-bold text-blue-800">Dhaka</span>
+    </h1>
+    <div class="mt-24 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        @for (card of cards; track card.title) {
+            <div class="flex rounded-3xl bg-stone-100">
+                <img [src]="card.image" alt="Background Image" />
+                <div class="ml-4 mt-4">
+                    <h1 class="text-4xl font-semibold text-gray-600">{{ card.title }}</h1>
+                    <p class="mt-6 text-gray-500">Starting from</p>
+                    <h1 class="text-2xl font-semibold text-blue-900">{{ card.price }}</h1>
+                </div>
+            </div>
+        }
+    </div>
+</div>
