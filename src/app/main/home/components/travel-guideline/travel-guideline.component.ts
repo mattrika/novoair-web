@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-travel-guideline',
-  imports: [],
-  templateUrl: './travel-guideline.component.html',
-  styleUrl: './travel-guideline.component.scss'
+    selector: 'app-travel-guideline',
+    imports: [],
+    templateUrl: './travel-guideline.component.html',
+    styleUrl: './travel-guideline.component.scss',
 })
 export class TravelGuidelineComponent {
     guidelines = [
