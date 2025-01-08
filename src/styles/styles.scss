@@ -21,3 +21,10 @@ body {
     background-color: #1a6182; /* Fallback */
     background-image: linear-gradient(to right, #155572, #1a82ac);
 }
+
+.title {
+    color: transparent;
+    text-shadow:
+        4px 4px 7px rgba(255, 255, 255, 0.5),
+        0 0 #00798f;
+}

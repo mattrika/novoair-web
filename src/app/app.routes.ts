@@ -30,6 +30,12 @@ const flattenedRoutes: Route[] = [
             ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
+    {
+        path: 'baggage',
+        loadComponent: () =>
+            import('@pages/baggage/baggage.component').then((m) => m.BaggageComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
 ]
 groupedRoutes.forEach((routeGroup) => {
     Object.values(routeGroup).forEach((route) => flattenedRoutes.push(route))
