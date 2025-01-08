@@ -3,9 +3,10 @@
 >
     FAQ'S
 </h1>
-
-<div class="card justify-content-center flex rounded-xl border border-[#d9d9d9]">
-    <p-accordion value="0">
+<div
+    class="card justify-content-center m-0 flex max-w-full rounded-3xl border-[0.5px] shadow-md md:p-4"
+>
+    <p-accordion value="0" class="max-w-full">
         <p-accordion-panel value="0">
             <p-accordion-header>
                 <ng-template #toggleicon let-active="active">
@@ -16,8 +17,8 @@
                     }
                 </ng-template>
                 <span class="flex w-full items-center gap-2">
-                    <span class="whitespace-nowrap font-bold"
-                        >Introducing NOVOAIR Rewards Programme
+                    <span class="text-programme whitespace-nowrap font-bold">
+                        Introducing NOVOAIR Rewards
                     </span>
                 </span>
             </p-accordion-header>
@@ -161,7 +162,7 @@
                 </p>
             </p-accordion-content>
         </p-accordion-panel>
-        <p-accordion-panel value="6">
+        <p-accordion-panel value="6" class="!border-b-0">
             <p-accordion-header>
                 <ng-template #toggleicon let-active="active">
                     @if (active) {
