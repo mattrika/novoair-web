@@ -96,7 +96,7 @@
         "cypress/**/*.{ts,js}": [
             "biome format --fix"
         ],
-        "*.json": "biome check ./**/*.json --fix"
+        "./**/*.json": "biome check --fix"
     },
     "simple-git-hooks": {
         "pre-commit": "pnpm lint",
