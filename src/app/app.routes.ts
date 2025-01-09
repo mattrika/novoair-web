@@ -45,7 +45,9 @@ const flattenedRoutes: Route[] = [
     {
         path: 'current-offers',
         loadComponent: () =>
-            import('@pages/current-offers/current-offers.component').then((m) => m.CurrentOffersComponent),
+            import('@pages/current-offers/current-offers.component').then(
+                (m) => m.CurrentOffersComponent,
+            ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
 ]
