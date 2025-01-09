@@ -23,9 +23,9 @@ const groupedRoutes: GroupedRoutes = [
 
 const flattenedRoutes: Route[] = [
     {
-        path: 'dashboard-home',
+        path: '',
         loadComponent: () =>
-            import('./pages/dashboard-home/dashboard-home/dashboard-home.component').then(
+            import('@pages/dashboard-home/dashboard-home.component').then(
                 (m) => m.DashboardHomeComponent,
             ),
         resolve: { layout: setLayout(PageLayout.Default) },
@@ -55,7 +55,15 @@ const flattenedRoutes: Route[] = [
     {
         path: 'co-brandeed-prepaid-card',
         loadComponent: () =>
-            import('./pages/co-brandeed-prepaid-card/co-brandeed-prepaid-card.component').then((m) => m.CoBrandeedPrepaidCardComponent),
+            import('./pages/co-brandeed-prepaid-card/co-brandeed-prepaid-card.component').then(
+                (m) => m.CoBrandeedPrepaidCardComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'baggage',
+        loadComponent: () =>
+            import('@pages/baggage/baggage.component').then((m) => m.BaggageComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
 ]
