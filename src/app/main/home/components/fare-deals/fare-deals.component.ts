@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-fare-deals',
-  imports: [],
-  templateUrl: './fare-deals.component.html',
-  styleUrl: './fare-deals.component.scss'
+    selector: 'app-fare-deals',
+    imports: [],
+    templateUrl: './fare-deals.component.html',
+    styleUrl: './fare-deals.component.scss',
 })
 export class FareDealsComponent {
     cards = [

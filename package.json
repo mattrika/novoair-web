@@ -19,7 +19,7 @@
         "format:json": "biome check *.json --fix",
         "format:html": "prettier --write 'src/**/*.{html,xml}'",
         "format:css": "prettier --write 'src/**/*.{scss,css,less}'",
-        "format": "pnpm format:html && pnpm format:css && pnpm format:json && pnpm format:ts",
+        "format": "pnpm format:html && pnpm format:css && pnpm format:ts",
         "ng-update": "ng update @angular/core @angular/cli @angular/cdk @schematics/angular primeng @primeng/themes --allow-dirty",
         "make-env-file": "tsc src/environments/make-env-file.ts && node src/environments/make-env-file.js && rm src/environments/make-env-file.js"
     },
@@ -62,7 +62,6 @@
         "@types/jasmine": "~5.1.5",
         "@types/node": "^22.10.5",
         "autoprefixer": "^10.4.20",
-        "biome": "^0.3.3",
         "cypress": "^13.17.0",
         "eslint": "^9.17.0",
         "eslint-config-prettier": "^9.1.0",
