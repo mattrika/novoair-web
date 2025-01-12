@@ -66,6 +66,20 @@ const flattenedRoutes: Route[] = [
             import('@pages/baggage/baggage.component').then((m) => m.BaggageComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
+    {
+        path: 'book-flight',
+        loadComponent: () =>
+            import('@pages/book-flight/book-flight.component').then((m) => m.BookFlightComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'current-offers',
+        loadComponent: () =>
+            import('@pages/current-offers/current-offers.component').then(
+                (m) => m.CurrentOffersComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
 ]
 groupedRoutes.forEach((routeGroup) => {
     Object.values(routeGroup).forEach((route) => flattenedRoutes.push(route))
