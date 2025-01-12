@@ -31,6 +31,36 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
+        path: 'manage-booking',
+        loadComponent: () =>
+            import('./pages/manage-booking/manage-booking.component').then(
+                (m) => m.ManageBookingComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'smiles-frequent-flyer',
+        loadComponent: () =>
+            import('./pages/smiles-frequent-flyer/smiles-frequent-flyer.component').then(
+                (m) => m.SmilesFrequentFlyerComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'our-destination',
+        loadComponent: () =>
+            import('./pages/destination/destination.component').then((m) => m.DestinationComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'co-brandeed-prepaid-card',
+        loadComponent: () =>
+            import('./pages/co-brandeed-prepaid-card/co-brandeed-prepaid-card.component').then(
+                (m) => m.CoBrandeedPrepaidCardComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
         path: 'baggage',
         loadComponent: () =>
             import('@pages/baggage/baggage.component').then((m) => m.BaggageComponent),
