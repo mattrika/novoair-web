@@ -91,5 +91,4 @@ export const PrimeModules = [
     Tooltip,
     Tree,
     TreeSelect,
-
 ]

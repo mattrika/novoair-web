@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-bank-partners-card',
-  imports: [],
-  templateUrl: './bank-partners-card.component.html',
-  styleUrl: './bank-partners-card.component.scss'
+    selector: 'app-bank-partners-card',
+    imports: [],
+    templateUrl: './bank-partners-card.component.html',
+    styleUrl: './bank-partners-card.component.scss',
 })
 export class BankPartnersCardComponent {
     bankPartners = [
