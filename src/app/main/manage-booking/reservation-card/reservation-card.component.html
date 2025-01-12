@@ -1,0 +1,49 @@
+<div class="relative mx-4 mt-24 md:mx-16">
+    <div class="rounded-2xl">
+        <div
+            class="h-[500px] w-full rounded-2xl bg-[url('../assets/images/reservation-card.png')] bg-cover bg-center bg-no-repeat"
+        >
+            <div class="flex h-full flex-col justify-center gap-8 p-3 md:pl-10">
+                <p class="text-4xl font-semibold text-[#2669a0]">Retrive PNR</p>
+                <form
+                    #reservationForm="ngForm"
+                    (ngSubmit)="onFindReservation(reservationForm)"
+                    class="flex w-full flex-col gap-7 md:w-[490px]"
+                >
+                    <div>
+                        <input
+                            class="placeholder:text-md !h-12 !w-full rounded-md border-none p-3"
+                            pInputText
+                            id="reservation"
+                            name="reservation"
+                            placeholder="Reservation Number"
+                            [(ngModel)]="user.reservation"
+                            #reservation="ngModel"
+                            required
+                        />
+                    </div>
+                    <input
+                        class="placeholder:text-md !h-12 !w-full border-none"
+                        id="name"
+                        pInputText
+                        name="name"
+                        placeholder="First/last Name"
+                        [(ngModel)]="user.name"
+                        #name="ngModel"
+                        required
+                    />
+                    <div>
+                        <button
+                            pButton
+                            type="submit"
+                            label="Find Reservation"
+                            class="!text-md rounded-3xl border-none bg-[#0064b6] !px-6 hover:bg-[#2b71aa]"
+                        >
+                            <span class="pi pi-search !text-md mt-[2px]"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
