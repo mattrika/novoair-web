@@ -144,7 +144,8 @@ const flattenedRoutes: Route[] = [
     },
     {
         path: 'feedback',
-        loadComponent: () => import('@pages/feedback/feedback.component').then((m) => m.FeedbackComponent),
+        loadComponent: () =>
+            import('@pages/feedback/feedback.component').then((m) => m.FeedbackComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
@@ -161,7 +162,9 @@ const flattenedRoutes: Route[] = [
     {
         path: 'tourist-info',
         loadComponent: () =>
-            import('@pages/tourist-info/tourist-info.component').then((m) => m.TouristInfoComponent),
+            import('@pages/tourist-info/tourist-info.component').then(
+                (m) => m.TouristInfoComponent,
+            ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {

@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-holiday-coxs',
-  imports: [],
-  templateUrl: './holiday-coxs.component.html',
-  styleUrl: './holiday-coxs.component.scss'
+    selector: 'app-holiday-coxs',
+    imports: [],
+    templateUrl: './holiday-coxs.component.html',
+    styleUrl: './holiday-coxs.component.scss',
 })
-export class HolidayCoxsComponent {
-
-}
+export class HolidayCoxsComponent {}

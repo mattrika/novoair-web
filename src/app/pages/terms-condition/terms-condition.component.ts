@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-terms-condition',
-  imports: [],
-  templateUrl: './terms-condition.component.html',
-  styleUrl: './terms-condition.component.scss'
+    selector: 'app-terms-condition',
+    imports: [],
+    templateUrl: './terms-condition.component.html',
+    styleUrl: './terms-condition.component.scss',
 })
-export class TermsConditionComponent {
-
-}
+export class TermsConditionComponent {}
