@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-offer-gp',
-  imports: [],
-  templateUrl: './offer-gp.component.html',
-  styleUrl: './offer-gp.component.scss'
+    selector: 'app-offer-gp',
+    imports: [],
+    templateUrl: './offer-gp.component.html',
+    styleUrl: './offer-gp.component.scss',
 })
-export class OfferGpComponent {
-
-}
+export class OfferGpComponent {}

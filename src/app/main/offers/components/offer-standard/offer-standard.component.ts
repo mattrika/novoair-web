@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-offer-standard',
-  imports: [],
-  templateUrl: './offer-standard.component.html',
-  styleUrl: './offer-standard.component.scss'
+    selector: 'app-offer-standard',
+    imports: [],
+    templateUrl: './offer-standard.component.html',
+    styleUrl: './offer-standard.component.scss',
 })
-export class OfferStandardComponent {
-
-}
+export class OfferStandardComponent {}

@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 import { RouterModule } from '@angular/router'
 
 @Component({
-  selector: 'app-offer-card',
-  imports: [RouterModule],
-  templateUrl: './offer-card.component.html',
-  styleUrl: './offer-card.component.scss'
+    selector: 'app-offer-card',
+    imports: [RouterModule],
+    templateUrl: './offer-card.component.html',
+    styleUrl: './offer-card.component.scss',
 })
 export class OfferCardComponent {
     webOffers = [
