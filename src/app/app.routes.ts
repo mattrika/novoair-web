@@ -67,6 +67,68 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
+        path: 'offers',
+        loadComponent: () =>
+            import('@pages/offers/offers.component').then((m) => m.OffersComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'offers/web',
+        loadComponent: () =>
+            import('@main/offers/components/offer-web/offer-web.component').then(
+                (m) => m.OfferWebComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'offers/standard-chartered',
+        loadComponent: () =>
+            import('@main/offers/components/offer-standard/offer-standard.component').then(
+                (m) => m.OfferStandardComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'offers/brac',
+        loadComponent: () =>
+            import('@main/offers/components/offer-brac/offer-brac.component').then(
+                (m) => m.OfferBracComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'offers/ebl',
+        loadComponent: () =>
+            import('@main/offers/components/offer-ebl/offer-ebl.component').then(
+                (m) => m.OfferEblComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'offers/city',
+        loadComponent: () =>
+            import('@main/offers/components/offer-city/offer-city.component').then(
+                (m) => m.OfferCityComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'offers/ucb',
+        loadComponent: () =>
+            import('@main/offers/components/offer-ucb/offer-ucb.component').then(
+                (m) => m.OfferUcbComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'offers/gp-star',
+        loadComponent: () =>
+            import('@main/offers/components/offer-gp/offer-gp.component').then(
+                (m) => m.OfferGpComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
         path: 'book-flight',
         loadComponent: () =>
             import('@pages/book-flight/book-flight.component').then((m) => m.BookFlightComponent),
@@ -164,6 +226,14 @@ const flattenedRoutes: Route[] = [
         loadComponent: () =>
             import('@pages/tourist-info/tourist-info.component').then(
                 (m) => m.TouristInfoComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'privacy-policy',
+        loadComponent: () =>
+            import('@pages/privacy-policy/privacy-policy.component').then(
+                (m) => m.PrivacyPolicyComponent,
             ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
