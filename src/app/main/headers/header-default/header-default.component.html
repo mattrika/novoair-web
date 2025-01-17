@@ -1,5 +1,5 @@
 <header class="w-full bg-white px-2 py-4 md:px-16">
-    <div class="mx-auto flex items-center justify-between">
+    <div class="container mx-auto flex items-center justify-between">
         <!-- Logo -->
         <a>
             <img src="assets/logo/logo.png" alt="MyBrand Logo" class="h-10 w-48" />
@@ -26,8 +26,16 @@
         <!-- Desktop Navigation (Hidden on smaller screens) -->
         <nav class="hidden md:flex">
             <ul class="flex space-x-8">
-                <li>
+                <li class="group relative">
                     <a href="#" class="transition-colors duration-300 hover:text-primary">Book</a>
+                    <!-- Dropdown Menu -->
+                    <ul
+                        class="absolute left-0 mt-1 hidden w-48 rounded-md bg-white py-2 shadow-md transition-all duration-300 group-hover:block"
+                    >
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Service 1</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Service 2</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Service 3</a></li>
+                    </ul>
                 </li>
                 <li>
                     <a href="#" class="transition-colors duration-300 hover:text-primary">Manage</a>

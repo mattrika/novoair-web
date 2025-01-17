@@ -151,14 +151,6 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'holiday-packages',
-        loadComponent: () =>
-            import('@pages/holiday-packages/holiday-packages.component').then(
-                (m) => m.HolidayPackagesComponent,
-            ),
-        resolve: { layout: setLayout(PageLayout.Default) },
-    },
-    {
         path: 'holiday-packages/coxs',
         loadComponent: () =>
             import('@pages/holiday-coxs/holiday-coxs.component').then(
@@ -208,6 +200,12 @@ const flattenedRoutes: Route[] = [
         path: 'feedback',
         loadComponent: () =>
             import('@pages/feedback/feedback.component').then((m) => m.FeedbackComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'fleet',
+        loadComponent: () =>
+            import('@pages/fleet/fleet.component').then((m) => m.FleetComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
