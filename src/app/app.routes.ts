@@ -204,8 +204,7 @@ const flattenedRoutes: Route[] = [
     },
     {
         path: 'fleet',
-        loadComponent: () =>
-            import('@pages/fleet/fleet.component').then((m) => m.FleetComponent),
+        loadComponent: () => import('@pages/fleet/fleet.component').then((m) => m.FleetComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {

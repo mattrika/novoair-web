@@ -15,3 +15,16 @@
         }
     }
 }
+
+@media print {
+    p-accordion-panel {
+        display: block !important;
+    }
+
+    p-accordion-content {
+        display: block !important;
+        visibility: visible !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+}
