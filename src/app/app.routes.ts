@@ -53,7 +53,7 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'co-brandeed-prepaid-card',
+        path: 'co-branded-prepaid-card',
         loadComponent: () =>
             import('./pages/co-brandeed-prepaid-card/co-brandeed-prepaid-card.component').then(
                 (m) => m.CoBrandeedPrepaidCardComponent,
@@ -64,6 +64,12 @@ const flattenedRoutes: Route[] = [
         path: 'baggage',
         loadComponent: () =>
             import('@pages/baggage/baggage.component').then((m) => m.BaggageComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'shuttle',
+        loadComponent: () =>
+            import('@pages/shuttle/shuttle.component').then((m) => m.ShuttleComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {

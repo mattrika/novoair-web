@@ -1,7 +1,7 @@
-<header class="w-full bg-white px-2 py-4 md:px-16">
-    <div class="container mx-auto flex items-center justify-between">
+<header class="w-full bg-white py-4">
+    <div class="container flex items-center justify-between px-4 md:px-0">
         <!-- Logo -->
-        <a>
+        <a href="">
             <img src="assets/logo/logo.png" alt="MyBrand Logo" class="h-10 w-48" />
         </a>
 
@@ -27,36 +27,334 @@
         <nav class="hidden md:flex">
             <ul class="flex space-x-8">
                 <li class="group relative">
-                    <a href="#" class="transition-colors duration-300 hover:text-primary">Book</a>
+                    <a
+                        class="cursor-pointer font-semibold text-sky-700 transition-colors duration-300 hover:text-primary"
+                        >Book</a
+                    >
                     <!-- Dropdown Menu -->
                     <ul
-                        class="absolute left-0 mt-1 hidden w-48 rounded-md bg-white py-2 shadow-md transition-all duration-300 group-hover:block"
+                        class="absolute mt-1 hidden w-[700px] rounded-md bg-white py-2 shadow-md transition-all duration-300 group-hover:block md:-left-96 lg:-left-[700px] lg:w-[1100px]"
                     >
-                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Service 1</a></li>
-                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Service 2</a></li>
-                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Service 3</a></li>
+                        <div class="flex gap-4 p-4">
+                            <div class="grid grid-cols-2 lg:grid-cols-3">
+                                <li>
+                                    <a
+                                        href="https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx"
+                                        class="flex items-center gap-2 rounded px-4 py-2 font-semibold text-sky-700 hover:bg-gray-100"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            width="52"
+                                            height="64"
+                                            fill="#0369a1"
+                                        >
+                                            <g transform="rotate(45, 12, 12)">
+                                                <path
+                                                    d="M21 16v-2l-8-5V3.5a1.5 1.5 0 1 0-3 0V9L2 14v2l8-2.5v3l-2 1.5v1l3-.5 3 .5v-1l-2-1.5v-3L21 16Z"
+                                                />
+                                            </g>
+                                        </svg>
+                                        <span>Book Flights</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="/holiday-packages"
+                                        class="flex items-center justify-center gap-2 rounded px-4 py-2 font-semibold text-sky-700 hover:bg-gray-100"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            width="48"
+                                            height="56"
+                                            fill="currentColor"
+                                        >
+                                            <path
+                                                d="M21.5 7.5l-9-4.5a1 1 0 0 0-.9 0l-9 4.5a1 1 0 0 0 0 1.8l9 4.5a1 1 0 0 0 .9 0l9-4.5a1 1 0 0 0 0-1.8ZM12 4.67 18.7 8 12 11.33 5.3 8ZM3.5 10.5v7a1 1 0 0 0 .55.89l7 3.5a1 1 0 0 0 .9 0l7-3.5a1 1 0 0 0 .55-.89v-7l-1.5.75v6.3L12 20.33 5 17.55v-6.3ZM8 11v6l4 2 4-2v-6l-4 2Z"
+                                            />
+                                        </svg>
+                                        <span>Holiday Packages</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="/our-destination"
+                                        class="flex items-center justify-center gap-2 rounded px-4 py-3 font-semibold text-sky-700 hover:bg-gray-100"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="48"
+                                            height="48"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        >
+                                            <!-- Circle representing the destination -->
+                                            <circle cx="12" cy="10" r="3" fill="currentColor" />
+                                            <!-- Pin base -->
+                                            <path
+                                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                                            />
+                                        </svg>
+
+                                        <span>Destinations</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="#"
+                                        class="flex items-center justify-center gap-2 rounded px-4 py-3 font-semibold text-sky-700 hover:bg-gray-100"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="48"
+                                            height="48"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        >
+                                            <!-- Bus body -->
+                                            <rect
+                                                x="3"
+                                                y="8"
+                                                width="18"
+                                                height="10"
+                                                rx="2"
+                                                ry="2"
+                                                fill="none"
+                                                stroke="currentColor"
+                                            />
+                                            <!-- Windows -->
+                                            <rect
+                                                x="6"
+                                                y="10"
+                                                width="4"
+                                                height="4"
+                                                fill="currentColor"
+                                            />
+                                            <rect
+                                                x="14"
+                                                y="10"
+                                                width="4"
+                                                height="4"
+                                                fill="currentColor"
+                                            />
+                                            <!-- Wheels -->
+                                            <circle cx="7" cy="18" r="2" fill="currentColor" />
+                                            <circle cx="17" cy="18" r="2" fill="currentColor" />
+                                            <!-- Door -->
+                                            <line
+                                                x1="10"
+                                                y1="8"
+                                                x2="10"
+                                                y2="18"
+                                                stroke="currentColor"
+                                            />
+                                        </svg>
+                                        <span>Shuttle Service</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="/offers"
+                                        class="flex items-center gap-2 rounded px-4 py-3 font-semibold text-sky-700 hover:bg-gray-100"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="48"
+                                            height="48"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        >
+                                            <!-- Tag body -->
+                                            <path
+                                                d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+                                            />
+                                            <!-- Tag line -->
+                                            <line x1="7" y1="7" x2="7.01" y2="7" />
+                                        </svg>
+                                        <span>Current Offers</span>
+                                    </a>
+                                </li>
+                            </div>
+                            <!-- src/app/dynamic-list/dynamic-list.component.html -->
+                            <div
+                                class="space-y-2 rounded-lg border-2 border-gray-200 bg-gray-50 p-4 text-sm text-gray-700"
+                            >
+                                @for (item of listItemsBooks; track item.text) {
+                                    <li class="rounded-lg text-sky-700 hover:text-sky-600">
+                                        <a class="flex items-center gap-2" [href]="item.link">
+                                            <i [class]="item.icon" style="font-size: 1rem"></i>
+                                            <span>{{ item.text }}</span>
+                                        </a>
+                                    </li>
+                                }
+                            </div>
+                        </div>
                     </ul>
                 </li>
-                <li>
-                    <a href="#" class="transition-colors duration-300 hover:text-primary">Manage</a>
-                </li>
+
+                <!-- manage -->
+
                 <li class="group relative">
-                    <a href="#" class="transition-colors duration-300 hover:text-primary"
+                    <a
+                        class="cursor-pointer font-semibold text-sky-700 transition-colors duration-300 hover:text-primary"
+                        >Manage</a
+                    >
+                    <!-- Dropdown Menu -->
+                    <ul
+                        class="absolute mt-1 hidden w-[700px] rounded-md bg-white py-2 shadow-md transition-all duration-300 group-hover:block md:-left-96 lg:-left-[850px] lg:w-[1180px]"
+                    >
+                        <div class="flex gap-4 p-4">
+                            <div class="grid justify-around text-sm md:grid-cols-2 lg:grid-cols-3">
+                                <!-- Destinations Section -->
+
+                                <div>
+                                    <div class="mb-6 flex items-center gap-2 text-sky-700">
+                                        <i class="pi pi-map-marker" style="font-size: 1.5rem"></i>
+                                        <h1 class="text-xl font-semibold">Destinations</h1>
+                                    </div>
+                                    @for (destination of destinations; track destination.type) {
+                                        <ul class="my-6">
+                                            <h1 class="mb-4 font-bold text-gray-600">
+                                                {{ destination.type }}
+                                            </h1>
+                                            @for (item of destination.items; track item) {
+                                                <li class="text-sky-700 hover:text-sky-600">
+                                                    <a [href]="item.link">{{ item.name }}</a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+                                </div>
+
+                                <!-- Tourist Information Section -->
+                                <div>
+                                    <div class="mb-6 flex items-center gap-2 text-sky-700">
+                                        <i class="pi pi-car" style="font-size: 1.5rem"></i>
+                                        <h1 class="text-xl font-semibold">Tourist Information</h1>
+                                    </div>
+                                    @for (info of touristInfo; track info.title) {
+                                        <ul class="my-6">
+                                            <h1 class="mb-4 font-bold text-gray-600">
+                                                {{ info.title }}
+                                            </h1>
+                                            @for (item of info.items; track item) {
+                                                <li class="text-sky-700 hover:text-sky-600">
+                                                    <a [href]="item.link">{{ item.name }}</a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+                                </div>
+
+                                <!-- Other Information Section -->
+                                <div>
+                                    <div class="mb-6 flex items-center gap-2 text-sky-700">
+                                        <i class="pi pi-th-large" style="font-size: 1.5rem"></i>
+                                        <h1 class="text-xl font-semibold">Other Information</h1>
+                                    </div>
+                                    @for (info of otherInfo; track info.title) {
+                                        <ul class="my-6">
+                                            <h1 class="mb-4 font-bold text-gray-600">
+                                                {{ info.title }}
+                                            </h1>
+                                            @for (item of info.items; track item) {
+                                                <li class="text-sky-700 hover:text-sky-600">
+                                                    <a [href]="item.link">{{ item.name }}</a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+                                </div>
+                            </div>
+                            <div
+                                class="h-full space-y-2 rounded-lg border-2 border-gray-200 bg-gray-50 p-4 text-sm text-gray-700"
+                            >
+                                @for (item of listItemsManage; track item.text) {
+                                    <li class="rounded-lg text-sky-700 hover:text-sky-600">
+                                        <a class="flex items-center gap-2" [href]="item.link">
+                                            <i [class]="item.icon" style="font-size: 1rem"></i>
+                                            <span>{{ item.text }}</span>
+                                        </a>
+                                    </li>
+                                }
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+
+                <li class="group relative">
+                    <a
+                        class="cursor-pointer font-semibold text-sky-700 transition-colors duration-300 hover:text-primary"
                         >Explore</a
                     >
                     <!-- Dropdown Menu -->
                     <ul
-                        class="absolute left-0 mt-1 hidden w-48 rounded-md bg-white py-2 shadow-md transition-all duration-300 group-hover:block"
+                        class="absolute mt-1 hidden w-[700px] rounded-md bg-white py-2 shadow-md transition-all duration-300 group-hover:block md:-left-96 lg:-left-[900px] lg:w-[1100px]"
                     >
-                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Service 1</a></li>
-                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Service 2</a></li>
-                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Service 3</a></li>
+                        <div class="flex gap-4 p-4">
+                            <div class="grid justify-around text-sm md:grid-cols-2 lg:grid-cols-4">
+                                @for (item of gridItems; track item.title) {
+                                    <a
+                                        [href]="item.link"
+                                        class="justify-items-center p-4 text-sky-700 hover:bg-gray-50 hover:text-sky-600"
+                                    >
+                                        <i [class]="item.icon" style="font-size: 2rem"></i>
+                                        <h1 class="text-lg font-semibold">{{ item.title }}</h1>
+                                    </a>
+                                }
+                            </div>
+                            <div
+                                class="h-full space-y-2 rounded-lg border-2 border-gray-200 bg-gray-50 p-4 text-sm text-gray-700"
+                            >
+                                @for (item of listItemsExplore; track item.text) {
+                                    <li class="rounded-lg text-sky-700 hover:text-sky-600">
+                                        <a class="flex items-center gap-2" [href]="item.link">
+                                            <i [class]="item.icon" style="font-size: 1rem"></i>
+                                            <span>{{ item.text }}</span>
+                                        </a>
+                                    </li>
+                                }
+                            </div>
+                        </div>
                     </ul>
                 </li>
-                <li>
-                    <a>
-                        <img src="assets/logo/ff.png" alt="MyBrand Logo" class="h-8 w-24" />
-                    </a>
+                <li class="group relative">
+                    <a href="#" class="transition-colors duration-500 hover:text-primary"
+                        ><img src="assets/logo/ff.png" alt="MyBrand Logo" class="h-8 w-24"
+                    /></a>
+                    <!-- Dropdown Menu -->
+                    <ul
+                        class="absolute -left-48 mt-1 hidden w-80 rounded-md bg-white py-2 shadow-md transition-all duration-300 group-hover:block"
+                    >
+                        <li class="flex gap-4 p-4">
+                            <a
+                                href="/co-branded-prepaid-card"
+                                class="block px-4 py-2 hover:bg-gray-100"
+                                ><img class="h-8 w-32" src="assets/logo/smc.png" alt="MyBrand Logo"
+                            /></a>
+                            <a
+                                href="/smiles-frequent-flyer"
+                                class="block px-4 py-2 hover:bg-gray-100"
+                                ><img
+                                    class="h-8 w-32"
+                                    src="assets/logo/smc1.png"
+                                    alt="MyBrand Logo"
+                            /></a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>
@@ -64,33 +362,342 @@
 
     <!-- Mobile Menu (Hidden by default) -->
     <nav
-        class="transition-height hidden w-full bg-gray-50 duration-300 ease-in-out md:hidden"
+        class="transition-height hidden bg-gray-50 duration-300 ease-in-out md:hidden"
         [ngClass]="{ hidden: !isMobileMenuOpen }"
         [style.height]="isMobileMenuOpen ? mobileMenuHeight + 'px' : '0'"
     >
-        <ul class="bg-white px-4 py-2">
-            <li><a href="#" class="block py-2 hover:text-primary">Home</a></li>
-            <li><a href="#" class="block py-2 hover:text-primary">About</a></li>
+        <ul class="h-screen overflow-y-scroll bg-white p-4">
             <li>
-                <a class="block py-2 hover:text-primary" (click)="toggleServicesDropdown()"
-                    >Services</a
+                <a
+                    class="block py-2 font-bold hover:text-primary"
+                    (click)="toggleDropdown('bookDropdown')"
+                    >Book</a
                 >
                 <!-- Mobile Dropdown -->
                 <ul
                     id="services-dropdown"
                     class="hidden pl-4"
-                    [ngClass]="{ hidden: !isServicesDropdownOpen }"
+                    [ngClass]="{ hidden: !dropdownStates['bookDropdown'] }"
                 >
-                    <li><a href="#" class="block py-2 hover:text-primary">Service 1</a></li>
-                    <li><a href="#" class="block py-2 hover:text-primary">Service 2</a></li>
-                    <li><a href="#" class="block py-2 hover:text-primary">Service 3</a></li>
+                    <div class="gap-4 p-4">
+                        <div class="grid grid-cols-2">
+                            <li>
+                                <a
+                                    href="https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx"
+                                    class="justify-content-center flex gap-2 rounded p-2 font-semibold text-sky-700 hover:bg-gray-100"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        width="52"
+                                        height="64"
+                                        fill="#0369a1"
+                                    >
+                                        <g transform="rotate(45, 12, 12)">
+                                            <path
+                                                d="M21 16v-2l-8-5V3.5a1.5 1.5 0 1 0-3 0V9L2 14v2l8-2.5v3l-2 1.5v1l3-.5 3 .5v-1l-2-1.5v-3L21 16Z"
+                                            />
+                                        </g>
+                                    </svg>
+                                    <span>Book Flights</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/holiday-packages"
+                                    class="flex items-center justify-center gap-2 rounded p-2 font-semibold text-sky-700 hover:bg-gray-100"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        width="48"
+                                        height="56"
+                                        fill="currentColor"
+                                    >
+                                        <path
+                                            d="M21.5 7.5l-9-4.5a1 1 0 0 0-.9 0l-9 4.5a1 1 0 0 0 0 1.8l9 4.5a1 1 0 0 0 .9 0l9-4.5a1 1 0 0 0 0-1.8ZM12 4.67 18.7 8 12 11.33 5.3 8ZM3.5 10.5v7a1 1 0 0 0 .55.89l7 3.5a1 1 0 0 0 .9 0l7-3.5a1 1 0 0 0 .55-.89v-7l-1.5.75v6.3L12 20.33 5 17.55v-6.3ZM8 11v6l4 2 4-2v-6l-4 2Z"
+                                        />
+                                    </svg>
+                                    <span>Holiday Packages</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/our-destination"
+                                    class="flex items-center justify-center gap-2 rounded p-2 font-semibold text-sky-700 hover:bg-gray-100"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="48"
+                                        height="48"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <!-- Circle representing the destination -->
+                                        <circle cx="12" cy="10" r="3" fill="currentColor" />
+                                        <!-- Pin base -->
+                                        <path
+                                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                                        />
+                                    </svg>
+
+                                    <span>Destinations</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#"
+                                    class="flex items-center justify-center gap-2 rounded p-2 font-semibold text-sky-700 hover:bg-gray-100"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="48"
+                                        height="48"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <!-- Bus body -->
+                                        <rect
+                                            x="3"
+                                            y="8"
+                                            width="18"
+                                            height="10"
+                                            rx="2"
+                                            ry="2"
+                                            fill="none"
+                                            stroke="currentColor"
+                                        />
+                                        <!-- Windows -->
+                                        <rect
+                                            x="6"
+                                            y="10"
+                                            width="4"
+                                            height="4"
+                                            fill="currentColor"
+                                        />
+                                        <rect
+                                            x="14"
+                                            y="10"
+                                            width="4"
+                                            height="4"
+                                            fill="currentColor"
+                                        />
+                                        <!-- Wheels -->
+                                        <circle cx="7" cy="18" r="2" fill="currentColor" />
+                                        <circle cx="17" cy="18" r="2" fill="currentColor" />
+                                        <!-- Door -->
+                                        <line
+                                            x1="10"
+                                            y1="8"
+                                            x2="10"
+                                            y2="18"
+                                            stroke="currentColor"
+                                        />
+                                    </svg>
+                                    <span>Shuttle Service</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/offers"
+                                    class="flex items-center gap-2 rounded p-2 font-semibold text-sky-700 hover:bg-gray-100"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="48"
+                                        height="48"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+                                        <!-- Tag body -->
+                                        <path
+                                            d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"
+                                        />
+                                        <!-- Tag line -->
+                                        <line x1="7" y1="7" x2="7.01" y2="7" />
+                                    </svg>
+                                    <span>Current Offers</span>
+                                </a>
+                            </li>
+                        </div>
+                        <!-- src/app/dynamic-list/dynamic-list.component.html -->
+                        <div
+                            class="mt-6 space-y-2 rounded-lg border-2 border-gray-200 bg-gray-50 p-4 text-sm text-gray-700"
+                        >
+                            @for (item of listItemsBooks; track item.text) {
+                                <li class="rounded-lg text-sky-700 hover:text-sky-600">
+                                    <a class="flex items-center gap-2" [href]="item.link">
+                                        <i [class]="item.icon" style="font-size: 1rem"></i>
+                                        <span>{{ item.text }}</span>
+                                    </a>
+                                </li>
+                            }
+                        </div>
+                    </div>
                 </ul>
             </li>
-            <li><a href="#" class="block py-2 hover:text-primary">Contact</a></li>
             <li>
-                <a>
-                    <img src="assets/logo/ff.png" alt="MyBrand Logo" class="h-8 w-24" />
-                </a>
+                <a
+                    class="block py-2 font-bold hover:text-primary"
+                    (click)="toggleDropdown('manageDropdown')"
+                    >Manage</a
+                >
+                <!-- Mobile Dropdown -->
+                <ul
+                    id="services-dropdown"
+                    class="hidden pl-4"
+                    [ngClass]="{ hidden: !dropdownStates['manageDropdown'] }"
+                >
+                    <div class="h-screen gap-4 overflow-scroll p-4">
+                        <div class="grid grid-cols-2 justify-around text-sm">
+                            <!-- Destinations Section -->
+
+                            <div>
+                                <div class="mb-6 flex items-center gap-2 text-sky-700">
+                                    <i class="pi pi-map-marker" style="font-size: 1rem"></i>
+                                    <h1 class="text-lg font-semibold">Destinations</h1>
+                                </div>
+                                @for (destination of destinations; track destination.type) {
+                                    <ul class="my-6">
+                                        <h1 class="mb-4 font-bold text-gray-600">
+                                            {{ destination.type }}
+                                        </h1>
+                                        @for (item of destination.items; track item) {
+                                            <li class="text-sky-700 hover:text-sky-600">
+                                                <a [href]="item.link">{{ item.name }}</a>
+                                            </li>
+                                        }
+                                    </ul>
+                                }
+                            </div>
+
+                            <!-- Tourist Information Section -->
+                            <div>
+                                <div class="mb-6 flex items-center gap-2 text-sky-700">
+                                    <i class="pi pi-car" style="font-size: 1rem"></i>
+                                    <h1 class="text-lg font-semibold">Tourist Information</h1>
+                                </div>
+                                @for (info of touristInfo; track info.title) {
+                                    <ul class="my-6">
+                                        <h1 class="mb-4 font-bold text-gray-600">
+                                            {{ info.title }}
+                                        </h1>
+                                        @for (item of info.items; track item) {
+                                            <li class="text-sky-700 hover:text-sky-600">
+                                                <a [href]="item.link">{{ item.name }}</a>
+                                            </li>
+                                        }
+                                    </ul>
+                                }
+                            </div>
+
+                            <!-- Other Information Section -->
+                            <div>
+                                <div class="mb-6 flex items-center gap-2 text-sky-700">
+                                    <i class="pi pi-th-large" style="font-size: 1rem"></i>
+                                    <h1 class="text-lg font-semibold">Other Information</h1>
+                                </div>
+                                @for (info of otherInfo; track info.title) {
+                                    <ul class="my-6">
+                                        <h1 class="mb-4 font-bold text-gray-600">
+                                            {{ info.title }}
+                                        </h1>
+                                        @for (item of info.items; track item) {
+                                            <li class="text-sky-700 hover:text-sky-600">
+                                                <a [href]="item.link">{{ item.name }}</a>
+                                            </li>
+                                        }
+                                    </ul>
+                                }
+                            </div>
+                        </div>
+                        <div
+                            class="mb-12 h-44 space-y-2 rounded-lg border-2 border-gray-200 bg-gray-50 p-4 text-sm text-gray-700"
+                        >
+                            @for (item of listItemsManage; track item.text) {
+                                <li class="rounded-lg text-sky-700 hover:text-sky-600">
+                                    <a class="flex items-center gap-2" [href]="item.link">
+                                        <i [class]="item.icon" style="font-size: 1rem"></i>
+                                        <span>{{ item.text }}</span>
+                                    </a>
+                                </li>
+                            }
+                        </div>
+                    </div>
+                </ul>
+            </li>
+
+            <li>
+                <a
+                    class="block py-2 font-bold hover:text-primary"
+                    (click)="toggleDropdown('exploreDropdown')"
+                    >Explore</a
+                >
+                <!-- Mobile Dropdown -->
+                <ul
+                    id="contact-dropdown"
+                    class="hidden pl-4"
+                    [ngClass]="{ hidden: !dropdownStates['exploreDropdown'] }"
+                >
+                    <div class="gap-4 p-2">
+                        <div class="my-2 grid grid-cols-2 text-sm">
+                            @for (item of gridItems; track item.title) {
+                                <a
+                                    [href]="item.link"
+                                    class="justify-items-center p-2 text-sky-700 hover:bg-gray-50 hover:text-sky-600"
+                                >
+                                    <i [class]="item.icon" style="font-size: 1rem"></i>
+                                    <h1 class="font-semibold">{{ item.title }}</h1>
+                                </a>
+                            }
+                        </div>
+                        <div
+                            class="h-full space-y-2 rounded-lg border-2 border-gray-200 bg-gray-50 p-4 text-sm text-gray-700"
+                        >
+                            @for (item of listItemsExplore; track item.text) {
+                                <li class="rounded-lg text-sky-700 hover:text-sky-600">
+                                    <a class="flex items-center gap-2" [href]="item.link">
+                                        <i [class]="item.icon" style="font-size: 1rem"></i>
+                                        <span>{{ item.text }}</span>
+                                    </a>
+                                </li>
+                            }
+                        </div>
+                    </div>
+                </ul>
+            </li>
+
+            <li>
+                <a class="block py-2 hover:text-primary" (click)="toggleDropdown('smileDropdown')">
+                    <img src="assets/logo/ff.png" alt="MyBrand Logo" class="h-8 w-24"
+                /></a>
+                <!-- Mobile Dropdown -->
+                <ul
+                    id="contact-dropdown"
+                    class="hidden pl-4"
+                    [ngClass]="{ hidden: !dropdownStates['smileDropdown'] }"
+                >
+                    <li class="flex gap-1 p-1">
+                        <a href="/co-branded-prepaid-card" class="block px-4 py-2 hover:bg-gray-100"
+                            ><img class="h-8 w-32" src="assets/logo/smc.png" alt="MyBrand Logo"
+                        /></a>
+                        <a href="/smiles-frequent-flyer" class="block px-4 py-2 hover:bg-gray-100"
+                            ><img class="h-8 w-32" src="assets/logo/smc1.png" alt="MyBrand Logo"
+                        /></a>
+                    </li>
+                </ul>
             </li>
         </ul>
 
