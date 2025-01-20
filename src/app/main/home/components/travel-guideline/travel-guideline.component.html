@@ -1,7 +1,5 @@
-<div class="mx-4 mt-24 md:mx-16">
-    <h1 class="text-center text-3xl font-semibold text-blue-700">
-        Travel <span class="text-3xl font-bold text-blue-800">Guideline</span>
-    </h1>
+<div class="container mt-24">
+    <h1 class="sub-title">Travel <span class="sub-title2">Guideline</span></h1>
 
     <div class="mt-24 grid gap-6 md:grid-cols-3">
         @for (guideline of guidelines; track guideline.title) {
@@ -10,8 +8,8 @@
             >
                 <img [src]="guideline.image" alt="Background Image" />
                 <div>
-                    <h1 class="text-3xl font-semibold text-blue-900">{{ guideline.title }}</h1>
-                    <p class="mt-4 text-gray-500">{{ guideline.description }}</p>
+                    <h1 class="text-xl font-bold text-blue-900">{{ guideline.title }}</h1>
+                    <p class="mt-4 text-sm text-gray-500">{{ guideline.description }}</p>
                 </div>
             </div>
         }

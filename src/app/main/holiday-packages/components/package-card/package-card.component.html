@@ -1,0 +1,22 @@
+<div class="container relative mt-24 md:mt-24">
+    <div class="grid gap-6 md:grid-cols-3">
+        @for (package of holidayPackages; track package.title) {
+            <div
+                [routerLink]="package.route"
+                class="cursor-pointer rounded-3xl bg-stone-50 shadow-sm hover:shadow-md"
+            >
+                <img
+                    class="rounded-tl-3xl rounded-tr-3xl"
+                    [src]="package.imageUrl"
+                    [alt]="package.title"
+                />
+                <h1
+                    [routerLink]="package.route"
+                    class="p-4 text-2xl font-bold text-gray-700 hover:text-blue-700"
+                >
+                    {{ package.title }}
+                </h1>
+            </div>
+        }
+    </div>
+</div>

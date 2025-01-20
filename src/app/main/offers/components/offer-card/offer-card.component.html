@@ -1,0 +1,38 @@
+<div class="container relative mb-8 mt-24 md:mt-0">
+    <h1 class="sub-title my-12">Web <span class="sub-title2 text-3xl">& App Offers</span></h1>
+    <div class="grid gap-6 md:grid-cols-3">
+        @for (package of webOffers; track package.title) {
+            <div class="rounded-3xl bg-stone-50 shadow-sm hover:shadow-md">
+                <img
+                    class="rounded-tl-3xl rounded-tr-3xl"
+                    [src]="package.imageUrl"
+                    [alt]="package.title"
+                />
+                <h1
+                    [routerLink]="package.route"
+                    class="cursor-pointer p-2 font-bold text-gray-700 hover:text-blue-700"
+                >
+                    {{ package.title }}
+                </h1>
+            </div>
+        }
+    </div>
+    <h1 class="sub-title my-12">Counter<span class="sub-title2">Offers</span></h1>
+    <div class="grid gap-4 md:grid-cols-4">
+        @for (package of counterOffers; track package.title) {
+            <div class="rounded-3xl bg-stone-50 shadow-sm hover:shadow-md">
+                <img
+                    class="rounded-tl-3xl rounded-tr-3xl"
+                    [src]="package.imageUrl"
+                    [alt]="package.title"
+                />
+                <h1
+                    [routerLink]="package.route"
+                    class="cursor-pointer p-2 font-bold text-gray-700 hover:text-blue-700"
+                >
+                    {{ package.title }}
+                </h1>
+            </div>
+        }
+    </div>
+</div>

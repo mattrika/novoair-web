@@ -3,7 +3,13 @@
 module.exports = {
     content: ['./src/**/*.{html,ts,css,scss,sass,less,styl}'],
     theme: {
-        extend: {},
+        extend: {
+            screens: {
+                '2xl': '1800px', // Existing 3xl breakpoint
+                '3xl': '2560px',
+
+            },
+        },
     },
     variants: {
         extend: {},

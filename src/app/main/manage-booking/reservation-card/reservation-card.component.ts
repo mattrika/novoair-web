@@ -16,6 +16,7 @@ export class ReservationCardComponent {
         name: '',
     }
     onFindReservation(form: any) {
-        console.log(form.value)
+        this.user.reservation = form.value.reservation
+        this.user.name = form.value.name
     }
 }
