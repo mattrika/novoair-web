@@ -248,6 +248,16 @@ const flattenedRoutes: Route[] = [
             ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
+    {
+        path: 'pets-animals',
+        loadComponent: () =>
+            import('@pages/pets-animals/pets-animals.component').then(
+                (m) => m.PetsAnimalsComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+
+
 ]
 groupedRoutes.forEach((routeGroup) => {
     Object.values(routeGroup).forEach((route) => flattenedRoutes.push(route))
