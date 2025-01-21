@@ -320,6 +320,14 @@ const flattenedRoutes: Route[] = [
             ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
+    {
+        path: 'medical-clearance',
+        loadComponent: () =>
+            import('@pages/requirement-medical-clearance/requirement-medical-clearance.component').then(
+                (m) => m.RequirementMedicalClearanceComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
 ]
 groupedRoutes.forEach((routeGroup) => {
     Object.values(routeGroup).forEach((route) => flattenedRoutes.push(route))

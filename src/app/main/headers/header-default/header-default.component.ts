@@ -154,7 +154,7 @@ export class HeaderDefaultComponent {
                     link: '/incapacitated-passengers',
                 },
                 { name: 'Expectant Mothers', link: '/expectant-mothers' },
-                { name: 'Medical Clearance', link: 'https://example.com/medical-clearance' },
+                { name: 'Medical Clearance', link: '/medical-clearance' },
                 { name: 'Cancellation & Refund', link: 'https://example.com/cancellation-refund' },
                 { name: 'Special Assistance', link: 'https://example.com/special-assistance' },
             ],
