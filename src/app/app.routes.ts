@@ -323,9 +323,25 @@ const flattenedRoutes: Route[] = [
     {
         path: 'medical-clearance',
         loadComponent: () =>
-            import('@pages/requirement-medical-clearance/requirement-medical-clearance.component').then(
-                (m) => m.RequirementMedicalClearanceComponent,
-            ),
+            import(
+                '@pages/requirement-medical-clearance/requirement-medical-clearance.component'
+            ).then((m) => m.RequirementMedicalClearanceComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'cancellation-refund',
+        loadComponent: () =>
+            import(
+                '@pages/cancellation-refund/cancellation-refund.component'
+            ).then((m) => m.CancellationRefundComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'special-assistance',
+        loadComponent: () =>
+            import(
+                '@pages/special-assistance/special-assistance.component'
+            ).then((m) => m.SpecialAssistanceComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
 ]
