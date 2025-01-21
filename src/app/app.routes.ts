@@ -256,8 +256,14 @@ const flattenedRoutes: Route[] = [
             ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
-
-
+    {
+        path: 'sports-gears',
+        loadComponent: () =>
+            import('@pages/sports-gears/sports-gears.component').then(
+                (m) => m.SportsGearsComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
 ]
 groupedRoutes.forEach((routeGroup) => {
     Object.values(routeGroup).forEach((route) => flattenedRoutes.push(route))

@@ -126,7 +126,7 @@ export class HeaderDefaultComponent {
             items: [
                 { name: 'Baggage Size & Weight', link: '/baggage' },
                 { name: 'Pets/Animals', link: '/pets-animals' },
-                { name: 'Sports Gears', link: 'https://example.com/sports-gears' },
+                { name: 'Sports Gears', link: '/sports-gears' },
                 {
                     name: 'Fire Arms & Ammunition',
                     link: 'https://example.com/fire-arms-ammunition',
