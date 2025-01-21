@@ -129,7 +129,7 @@ export class HeaderDefaultComponent {
                 { name: 'Sports Gears', link: '/sports-gears' },
                 {
                     name: 'Fire Arms & Ammunition',
-                    link: 'https://example.com/fire-arms-ammunition',
+                    link: '/fire-arms-ammunition',
                 },
                 { name: 'Other Baggages', link: 'https://example.com/other-baggages' },
             ],

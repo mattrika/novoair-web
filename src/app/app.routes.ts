@@ -264,6 +264,14 @@ const flattenedRoutes: Route[] = [
             ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
+    {
+        path: 'fire-arms-ammunition',
+        loadComponent: () =>
+            import('@pages/arms-ammunition/arms-ammunition.component').then(
+                (m) => m.ArmsAmmunitionComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
 ]
 groupedRoutes.forEach((routeGroup) => {
     Object.values(routeGroup).forEach((route) => flattenedRoutes.push(route))
