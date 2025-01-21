@@ -153,7 +153,7 @@ export class HeaderDefaultComponent {
                     name: 'Incapacitated Passengers',
                     link: '/incapacitated-passengers',
                 },
-                { name: 'Expectant Mothers', link: 'https://example.com/expectant-mothers' },
+                { name: 'Expectant Mothers', link: '/expectant-mothers' },
                 { name: 'Medical Clearance', link: 'https://example.com/medical-clearance' },
                 { name: 'Cancellation & Refund', link: 'https://example.com/cancellation-refund' },
                 { name: 'Special Assistance', link: 'https://example.com/special-assistance' },

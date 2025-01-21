@@ -312,6 +312,14 @@ const flattenedRoutes: Route[] = [
             ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
+    {
+        path: 'expectant-mothers',
+        loadComponent: () =>
+            import('@pages/expectant-mother/expectant-mother.component').then(
+                (m) => m.ExpectantMotherComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
 ]
 groupedRoutes.forEach((routeGroup) => {
     Object.values(routeGroup).forEach((route) => flattenedRoutes.push(route))
