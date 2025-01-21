@@ -131,7 +131,7 @@ export class HeaderDefaultComponent {
                     name: 'Fire Arms & Ammunition',
                     link: '/fire-arms-ammunition',
                 },
-                { name: 'Other Baggages', link: 'https://example.com/other-baggages' },
+                { name: 'Other Baggages', link: '/other-baggages' },
             ],
         },
         {

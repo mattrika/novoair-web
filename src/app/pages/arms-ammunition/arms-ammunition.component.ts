@@ -1,13 +1,11 @@
-import { Component } from '@angular/core';
-import { NovoneelNovoairComponent } from "../../main/novoneel-novoair/novoneel-novoair.component";
-import { ArmsAmmunationContentComponent } from "../../main/arms-ammunition/arms-ammunation-content/arms-ammunation-content.component";
+import { Component } from '@angular/core'
+import { ArmsAmmunationContentComponent } from '../../main/arms-ammunition/arms-ammunation-content/arms-ammunation-content.component'
+import { NovoneelNovoairComponent } from '../../main/novoneel-novoair/novoneel-novoair.component'
 
 @Component({
-  selector: 'app-arms-ammunition',
-  imports: [NovoneelNovoairComponent, ArmsAmmunationContentComponent],
-  templateUrl: './arms-ammunition.component.html',
-  styleUrl: './arms-ammunition.component.scss'
+    selector: 'app-arms-ammunition',
+    imports: [NovoneelNovoairComponent, ArmsAmmunationContentComponent],
+    templateUrl: './arms-ammunition.component.html',
+    styleUrl: './arms-ammunition.component.scss',
 })
-export class ArmsAmmunitionComponent {
-
-}
+export class ArmsAmmunitionComponent {}
