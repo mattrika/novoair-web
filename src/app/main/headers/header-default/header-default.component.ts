@@ -143,7 +143,7 @@ export class HeaderDefaultComponent {
                 },
                 {
                     name: 'Travel Documents (Domestic)',
-                    link: 'https://example.com/travel-documents-domestic',
+                    link: '/domestic-travel-documents',
                 },
                 {
                     name: 'Transportation of Infants',

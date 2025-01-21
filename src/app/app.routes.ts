@@ -288,6 +288,14 @@ const flattenedRoutes: Route[] = [
             ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
+    {
+        path: 'domestic-travel-documents',
+        loadComponent: () =>
+            import('@pages/domestic-travel-documents/domestic-travel-documents.component').then(
+                (m) => m.DomesticTravelDocumentsComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
 ]
 groupedRoutes.forEach((routeGroup) => {
     Object.values(routeGroup).forEach((route) => flattenedRoutes.push(route))
