@@ -147,7 +147,7 @@ export class HeaderDefaultComponent {
                 },
                 {
                     name: 'Transportation of Infants',
-                    link: 'https://example.com/transportation-infants',
+                    link: '/transportation-infants',
                 },
                 {
                     name: 'Incapacitated Passengers',

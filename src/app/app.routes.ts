@@ -296,6 +296,14 @@ const flattenedRoutes: Route[] = [
             ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
+    {
+        path: 'transportation-infants',
+        loadComponent: () =>
+            import('@pages/transportation-of-infants/transportation-of-infants.component').then(
+                (m) => m.TransportationOfInfantsComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
 ]
 groupedRoutes.forEach((routeGroup) => {
     Object.values(routeGroup).forEach((route) => flattenedRoutes.push(route))
