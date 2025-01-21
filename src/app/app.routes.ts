@@ -280,6 +280,14 @@ const flattenedRoutes: Route[] = [
             ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
+    {
+        path: 'unaccompanied-minor',
+        loadComponent: () =>
+            import('@pages/unaccompanied-minor/unaccompanied-minor.component').then(
+                (m) => m.UnaccompaniedMinorComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
 ]
 groupedRoutes.forEach((routeGroup) => {
     Object.values(routeGroup).forEach((route) => flattenedRoutes.push(route))
