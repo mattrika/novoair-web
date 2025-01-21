@@ -151,7 +151,7 @@ export class HeaderDefaultComponent {
                 },
                 {
                     name: 'Incapacitated Passengers',
-                    link: 'https://example.com/incapacitated-passengers',
+                    link: '/incapacitated-passengers',
                 },
                 { name: 'Expectant Mothers', link: 'https://example.com/expectant-mothers' },
                 { name: 'Medical Clearance', link: 'https://example.com/medical-clearance' },
