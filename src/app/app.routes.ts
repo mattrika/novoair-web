@@ -347,9 +347,7 @@ const flattenedRoutes: Route[] = [
     {
         path: 'coxs-bazar',
         loadComponent: () =>
-            import('@pages/coxs-bazar/coxs-bazar.component').then(
-                (m) => m.CoxsBazarComponent,
-            ),
+            import('@pages/coxs-bazar/coxs-bazar.component').then((m) => m.CoxsBazarComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
@@ -363,9 +361,7 @@ const flattenedRoutes: Route[] = [
     {
         path: 'sundharban',
         loadComponent: () =>
-            import('@pages/sundarban/sundarban.component').then(
-                (m) => m.SundarbanComponent,
-            ),
+            import('@pages/sundarban/sundarban.component').then((m) => m.SundarbanComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
 ]
