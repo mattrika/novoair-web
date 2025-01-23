@@ -106,9 +106,9 @@ export class HeaderDefaultComponent {
             title: 'Top Places to See',
 
             items: [
-                { name: "Cox's Bazar", link: 'https://example.com/coxs-bazar' },
-                { name: 'Sundharban', link: 'https://example.com/sundharban' },
-                { name: 'St Martin Island', link: 'https://example.com/st-martin-island' },
+                { name: "Cox's Bazar", link: '/coxs-bazar' },
+                { name: 'Sundharban', link: '/sundharban' },
+                { name: 'St Martin Island', link: '/st-martin-island' },
                 { name: 'Nilgiri', link: 'https://example.com/nilgiri' },
                 { name: 'Kuakata', link: 'https://example.com/kuakata' },
                 { name: 'View More', link: 'https://example.com/view-more' },

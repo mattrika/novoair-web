@@ -331,17 +331,41 @@ const flattenedRoutes: Route[] = [
     {
         path: 'cancellation-refund',
         loadComponent: () =>
-            import(
-                '@pages/cancellation-refund/cancellation-refund.component'
-            ).then((m) => m.CancellationRefundComponent),
+            import('@pages/cancellation-refund/cancellation-refund.component').then(
+                (m) => m.CancellationRefundComponent,
+            ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
         path: 'special-assistance',
         loadComponent: () =>
-            import(
-                '@pages/special-assistance/special-assistance.component'
-            ).then((m) => m.SpecialAssistanceComponent),
+            import('@pages/special-assistance/special-assistance.component').then(
+                (m) => m.SpecialAssistanceComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'coxs-bazar',
+        loadComponent: () =>
+            import('@pages/coxs-bazar/coxs-bazar.component').then(
+                (m) => m.CoxsBazarComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'st-martin-island',
+        loadComponent: () =>
+            import('@pages/saint-martin/saint-martin.component').then(
+                (m) => m.SaintMartinComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'sundharban',
+        loadComponent: () =>
+            import('@pages/sundarban/sundarban.component').then(
+                (m) => m.SundarbanComponent,
+            ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
 ]
