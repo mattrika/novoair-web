@@ -364,6 +364,12 @@ const flattenedRoutes: Route[] = [
             import('@pages/sundarban/sundarban.component').then((m) => m.SundarbanComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
+    {
+        path: 'nilgiri',
+        loadComponent: () =>
+            import('@pages/nilgiri/nilgiri.component').then((m) => m.NilgiriComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
 ]
 groupedRoutes.forEach((routeGroup) => {
     Object.values(routeGroup).forEach((route) => flattenedRoutes.push(route))

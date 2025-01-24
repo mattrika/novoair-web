@@ -109,7 +109,7 @@ export class HeaderDefaultComponent {
                 { name: "Cox's Bazar", link: '/coxs-bazar' },
                 { name: 'Sundharban', link: '/sundharban' },
                 { name: 'St Martin Island', link: '/st-martin-island' },
-                { name: 'Nilgiri', link: 'https://example.com/nilgiri' },
+                { name: 'Nilgiri', link: '/nilgiri' },
                 { name: 'Kuakata', link: 'https://example.com/kuakata' },
                 { name: 'View More', link: 'https://example.com/view-more' },
             ],
