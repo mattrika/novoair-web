@@ -248,6 +248,122 @@ const flattenedRoutes: Route[] = [
             ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
+    {
+        path: 'pets-animals',
+        loadComponent: () =>
+            import('@pages/pets-animals/pets-animals.component').then(
+                (m) => m.PetsAnimalsComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'sports-gears',
+        loadComponent: () =>
+            import('@pages/sports-gears/sports-gears.component').then(
+                (m) => m.SportsGearsComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'fire-arms-ammunition',
+        loadComponent: () =>
+            import('@pages/arms-ammunition/arms-ammunition.component').then(
+                (m) => m.ArmsAmmunitionComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'other-baggages',
+        loadComponent: () =>
+            import('@pages/other-baggages/other-baggages.component').then(
+                (m) => m.OtherBaggagesComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'unaccompanied-minor',
+        loadComponent: () =>
+            import('@pages/unaccompanied-minor/unaccompanied-minor.component').then(
+                (m) => m.UnaccompaniedMinorComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'domestic-travel-documents',
+        loadComponent: () =>
+            import('@pages/domestic-travel-documents/domestic-travel-documents.component').then(
+                (m) => m.DomesticTravelDocumentsComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'transportation-infants',
+        loadComponent: () =>
+            import('@pages/transportation-of-infants/transportation-of-infants.component').then(
+                (m) => m.TransportationOfInfantsComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'incapacitated-passengers',
+        loadComponent: () =>
+            import('@pages/incapacitated-passengers/incapacitated-passengers.component').then(
+                (m) => m.IncapacitatedPassengersComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'expectant-mothers',
+        loadComponent: () =>
+            import('@pages/expectant-mother/expectant-mother.component').then(
+                (m) => m.ExpectantMotherComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'medical-clearance',
+        loadComponent: () =>
+            import(
+                '@pages/requirement-medical-clearance/requirement-medical-clearance.component'
+            ).then((m) => m.RequirementMedicalClearanceComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'cancellation-refund',
+        loadComponent: () =>
+            import('@pages/cancellation-refund/cancellation-refund.component').then(
+                (m) => m.CancellationRefundComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'special-assistance',
+        loadComponent: () =>
+            import('@pages/special-assistance/special-assistance.component').then(
+                (m) => m.SpecialAssistanceComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'coxs-bazar',
+        loadComponent: () =>
+            import('@pages/coxs-bazar/coxs-bazar.component').then((m) => m.CoxsBazarComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'st-martin-island',
+        loadComponent: () =>
+            import('@pages/saint-martin/saint-martin.component').then(
+                (m) => m.SaintMartinComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'sundharban',
+        loadComponent: () =>
+            import('@pages/sundarban/sundarban.component').then((m) => m.SundarbanComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
 ]
 groupedRoutes.forEach((routeGroup) => {
     Object.values(routeGroup).forEach((route) => flattenedRoutes.push(route))

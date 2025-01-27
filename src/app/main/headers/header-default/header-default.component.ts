@@ -106,9 +106,9 @@ export class HeaderDefaultComponent {
             title: 'Top Places to See',
 
             items: [
-                { name: "Cox's Bazar", link: 'https://example.com/coxs-bazar' },
-                { name: 'Sundharban', link: 'https://example.com/sundharban' },
-                { name: 'St Martin Island', link: 'https://example.com/st-martin-island' },
+                { name: "Cox's Bazar", link: '/coxs-bazar' },
+                { name: 'Sundharban', link: '/sundharban' },
+                { name: 'St Martin Island', link: '/st-martin-island' },
                 { name: 'Nilgiri', link: 'https://example.com/nilgiri' },
                 { name: 'Kuakata', link: 'https://example.com/kuakata' },
                 { name: 'View More', link: 'https://example.com/view-more' },
@@ -125,13 +125,13 @@ export class HeaderDefaultComponent {
             title: 'Baggage Information',
             items: [
                 { name: 'Baggage Size & Weight', link: '/baggage' },
-                { name: 'Pets/Animals', link: 'https://example.com/pets-animals' },
-                { name: 'Sports Gears', link: 'https://example.com/sports-gears' },
+                { name: 'Pets/Animals', link: '/pets-animals' },
+                { name: 'Sports Gears', link: '/sports-gears' },
                 {
                     name: 'Fire Arms & Ammunition',
-                    link: 'https://example.com/fire-arms-ammunition',
+                    link: '/fire-arms-ammunition',
                 },
-                { name: 'Other Baggages', link: 'https://example.com/other-baggages' },
+                { name: 'Other Baggages', link: '/other-baggages' },
             ],
         },
         {
@@ -139,24 +139,24 @@ export class HeaderDefaultComponent {
             items: [
                 {
                     name: 'Unaccompanied Minor/Young Passengers',
-                    link: 'https://example.com/unaccompanied-minor',
+                    link: '/unaccompanied-minor',
                 },
                 {
                     name: 'Travel Documents (Domestic)',
-                    link: 'https://example.com/travel-documents-domestic',
+                    link: '/domestic-travel-documents',
                 },
                 {
                     name: 'Transportation of Infants',
-                    link: 'https://example.com/transportation-infants',
+                    link: '/transportation-infants',
                 },
                 {
                     name: 'Incapacitated Passengers',
-                    link: 'https://example.com/incapacitated-passengers',
+                    link: '/incapacitated-passengers',
                 },
-                { name: 'Expectant Mothers', link: 'https://example.com/expectant-mothers' },
-                { name: 'Medical Clearance', link: 'https://example.com/medical-clearance' },
-                { name: 'Cancellation & Refund', link: 'https://example.com/cancellation-refund' },
-                { name: 'Special Assistance', link: 'https://example.com/special-assistance' },
+                { name: 'Expectant Mothers', link: '/expectant-mothers' },
+                { name: 'Medical Clearance', link: 'cance/medical-clearance' },
+                { name: 'Cancellation & Refund', link: '/cancellation-refund' },
+                { name: 'Special Assistance', link: '/special-assistance' },
             ],
         },
     ]
