@@ -364,6 +364,78 @@ const flattenedRoutes: Route[] = [
             import('@pages/sundarban/sundarban.component').then((m) => m.SundarbanComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
+    {
+        path: 'nilgiri',
+        loadComponent: () =>
+            import('@pages/nilgiri/nilgiri.component').then((m) => m.NilgiriComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'general-uidelines',
+        loadComponent: () =>
+            import('@pages/general-guidelines/general-guidelines.component').then((m) => m.GeneralGuidelinesComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'kuakata',
+        loadComponent: () =>
+            import('@pages/kuakata/kuakata.component').then((m) => m.KuakataComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'kolkata',
+        loadComponent: () =>
+            import('@pages/kolkata/kolkata.component').then((m) => m.KolkataComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'future-destinations',
+        loadComponent: () =>
+            import('@pages/future-destinations/future-destinations.component').then((m) => m.FutureDestinationsComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'dhaka',
+        loadComponent: () =>
+            import('@pages/dhaka/dhaka.component').then((m) => m.DhakaComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'chattogram',
+        loadComponent: () =>
+            import('@pages/chattogram/chattogram.component').then((m) => m.ChattogramComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'sylhet',
+        loadComponent: () =>
+            import('@pages/sylhet/sylhet.component').then((m) => m.SylhetComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'jeshore',
+        loadComponent: () =>
+            import('@pages/jeshore/jeshore.component').then((m) => m.JeshoreComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'rajsshahi',
+        loadComponent: () =>
+            import('@pages/rajshahi/rajshahi.component').then((m) => m.RajshahiComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'barishal',
+        loadComponent: () =>
+            import('@pages/barishal/barishal.component').then((m) => m.BarishalComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'saidpur',
+        loadComponent: () =>
+            import('@pages/saidpur/saidpur.component').then((m) => m.SaidpurComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
 ]
 groupedRoutes.forEach((routeGroup) => {
     Object.values(routeGroup).forEach((route) => flattenedRoutes.push(route))
