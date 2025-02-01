@@ -81,22 +81,22 @@ export class HeaderDefaultComponent {
             title: 'Destinations',
             type: 'International',
             items: [
-                { name: 'Kolkata', link: 'https://example.com/kolkata' },
-                { name: 'Future Destinations', link: 'https://example.com/future-destinations' },
+                { name: 'Kolkata', link: '/kolkata' },
+                { name: 'Future Destinations', link: '/future-destinations' },
             ],
         },
         {
             title: 'Destinations',
             type: 'Domestic',
             items: [
-                { name: 'Dhaka', link: 'https://example.com/dhaka' },
-                { name: 'Chattogram', link: 'https://example.com/chattogram' },
-                { name: "Cox's Bazar", link: 'https://example.com/coxs-bazar' },
-                { name: 'Sylhet', link: 'https://example.com/sylhet' },
-                { name: 'Jeshore', link: 'https://example.com/jeshore' },
-                { name: 'Rajsshahi', link: 'https://example.com/rajsshahi' },
-                { name: 'Barishal', link: 'https://example.com/barishal' },
-                { name: 'Saidpur', link: 'https://example.com/saidpur' },
+                { name: 'Dhaka', link: '/dhaka' },
+                { name: 'Chattogram', link: '/chattogram' },
+                { name: "Cox's Bazar", link: '/coxs-bazar' },
+                { name: 'Sylhet', link: '/sylhet' },
+                { name: 'Jeshore', link: '/jeshore' },
+                { name: 'Rajsshahi', link: '/rajsshahi' },
+                { name: 'Barishal', link: '/barishal' },
+                { name: 'Saidpur', link: '/saidpur' },
             ],
         },
     ]
@@ -110,13 +110,13 @@ export class HeaderDefaultComponent {
                 { name: 'Sundharban', link: '/sundharban' },
                 { name: 'St Martin Island', link: '/st-martin-island' },
                 { name: 'Nilgiri', link: '/nilgiri' },
-                { name: 'Kuakata', link: 'https://example.com/kuakata' },
+                { name: 'Kuakata', link: '/kuakata' },
                 { name: 'View More', link: 'https://example.com/view-more' },
             ],
         },
         {
             title: 'Tips & Guides',
-            items: [{ name: "Cox's Bazar", link: 'https://example.com/coxs-bazar-tips' }],
+            items: [{ name: "General Guidelines", link: '/general-uidelines' }],
         },
     ]
 
