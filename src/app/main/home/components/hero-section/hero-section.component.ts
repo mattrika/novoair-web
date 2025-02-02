@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common'
 import { Component } from '@angular/core'
 import { FormsModule } from '@angular/forms'
+import { Router } from '@angular/router'
 import { PrimeModules } from '@core/ui/primeng'
-import { Router } from '@angular/router';
-import { BookCardComponent } from "../../../book-flight/components/book-card/book-card.component";
-import { ManageBookComponent } from "../../../book-flight/components/manage-book/manage-book.component";
+import { BookCardComponent } from '../../../book-flight/components/book-card/book-card.component'
+import { ManageBookComponent } from '../../../book-flight/components/manage-book/manage-book.component'
 
 @Component({
     selector: 'app-hero-section',
@@ -14,15 +14,15 @@ import { ManageBookComponent } from "../../../book-flight/components/manage-book
 })
 export class HeroSectionComponent {
     ingredient = ''
-    activeTab: string = 'Book a Flight';
+    activeTab = 'Book a Flight'
 
     constructor(private router: Router) {}
 
-  selectTab(tab: string) {
-    this.activeTab = tab;
-  }
+    selectTab(tab: string) {
+        this.activeTab = tab
+    }
 
-  navigateToMobileCheckIn(){
-    this.router.navigate(['/domestic-travel-documents']);
-  }
+    navigateToMobileCheckIn() {
+        this.router.navigate(['/domestic-travel-documents'])
+    }
 }

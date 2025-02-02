@@ -95,35 +95,36 @@
         <div
             class="m-4 flex h-10 min-w-80 justify-center gap-4 text-nowrap rounded-3xl bg-white p-4 shadow-sm"
         >
-            <div class="flex items-center justify-center">
-                <p-radiobutton
-                    name="pizza"
-                    value="Cheese"
-                    [(ngModel)]="ingredient"
-                    inputId="ingredient1"
+            <label class="flex cursor-pointer items-center space-x-2">
+                <input
+                    type="radio"
+                    name="tabs"
+                    (click)="selectTab('return')"
+                    class="h-4 w-4"
+                    checked
                 />
-                <label for="ingredient1" class="text-sm md:ml-2">Return</label>
+                <span class=""> Return </span>
+            </label>
+
+            <!-- Form Tab -->
+            <label class="flex cursor-pointer items-center space-x-2">
+                <input type="radio" name="tabs" (click)="selectTab('oneWay')" class="h-4 w-4" />
+                <span class=""> One way </span>
+            </label>
+            <label class="flex cursor-pointer items-center space-x-2">
+                <input type="radio" name="tabs" (click)="selectTab('multiCity')" class="h-4 w-4" />
+                <span class=""> Multi-City </span>
+            </label>
+
+            <!-- <div class="radio-item">
+                <input type="radio" id="ritema" name="ritem" value="ropt1" />
+                <label for="ritema">Option 1</label>
             </div>
 
-            <div class="flex items-center">
-                <p-radiobutton
-                    name="pizza"
-                    value="Mushroom"
-                    [(ngModel)]="ingredient"
-                    inputId="ingredient2"
-                />
-                <label for="ingredient2" class="text-sm md:ml-2">One Way</label>
-            </div>
-
-            <div class="flex items-center">
-                <p-radiobutton
-                    name="pizza"
-                    value="Pepper"
-                    [(ngModel)]="ingredient"
-                    inputId="ingredient3"
-                />
-                <label for="ingredient3" class="text-sm md:ml-2">Multi-City</label>
-            </div>
+            <div class="radio-item">
+                <input type="radio" id="ritemb" name="ritem" value="ropt2" />
+                <label for="ritemb">Option 2</label>
+            </div> -->
         </div>
         <div
             class="m-4 flex h-10 cursor-pointer items-center justify-center gap-2 rounded-3xl bg-white px-4 shadow-sm hover:bg-blue-50"
@@ -132,38 +133,11 @@
             <h1>Promo Code</h1>
         </div>
     </div>
-    <div class="h-full items-center gap-4 rounded-xl bg-white p-2 md:flex md:h-20">
-        <div
-            class="h-full w-full items-center justify-around rounded-xl border-2 border-gray-200 p-6 md:flex md:h-16"
-        >
-            <div class="justify flex w-full items-center justify-between">
-                <div>From</div>
-
-                <i class="pi pi-arrow-up-right"></i>
-
-                <div>To</div>
-            </div>
-
-            <div class="mx-6 hidden h-8 border border-gray-300 md:flex"></div>
-
-            <div class="justify mt-4 flex w-full items-center justify-between md:mt-0">
-                <div>Departure</div>
-                <i class="pi pi-arrow-right-arrow-left"></i>
-                <div>Return</div>
-            </div>
-
-            <div class="mx-6 hidden h-8 border border-gray-300 md:flex"></div>
-
-            <div class="justify mt-4 flex w-1/2 items-center justify-between md:mt-0">
-                <div>Passengers</div>
-            </div>
-        </div>
-
-        <div
-            class="btn-primary mt-4 flex h-16 w-48 cursor-pointer items-center justify-center gap-2 rounded-full px-4 shadow-sm md:mt-0"
-        >
-            <i class="pi pi-search"></i>
-            <h1 class="">Search Flights</h1>
-        </div>
-    </div>
+    @if (activeTab === 'return') {
+        <app-return></app-return>
+    } @else if (activeTab === 'oneWay') {
+        <app-one-way></app-one-way>
+    } @else {
+        <app-multi-city></app-multi-city>
+    }
 </div>
