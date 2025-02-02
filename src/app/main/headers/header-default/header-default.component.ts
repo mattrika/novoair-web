@@ -116,7 +116,7 @@ export class HeaderDefaultComponent {
         },
         {
             title: 'Tips & Guides',
-            items: [{ name: "General Guidelines", link: '/general-uidelines' }],
+            items: [{ name: 'General Guidelines', link: '/general-uidelines' }],
         },
     ]
 

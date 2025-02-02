@@ -1,4 +1,4 @@
-<div class="mx-4 md:mx-auto md:max-w-[1200px] 2xl:max-w-[1300px] 3xl:max-w-[1500px]">
+<!-- <div class="mx-4 md:mx-auto md:max-w-[1200px] 2xl:max-w-[1300px] 3xl:max-w-[1500px]">
     <div
         class="rounded-rt-xl w-full rounded-t-xl bg-white/70 px-2 shadow-md backdrop-blur-md md:w-1/2"
     >
@@ -95,4 +95,76 @@
             </div>
         </div>
     </div>
+</div> -->
+
+<!-- -------------------- -->
+
+<!-- <div class="mx-4 md:mx-auto md:max-w-[1200px] 2xl:max-w-[1300px] 3xl:max-w-[1500px]">
+    <div
+        class="rounded-rt-xl w-full rounded-t-xl bg-white/70 px-2 shadow-md backdrop-blur-md md:w-1/2"
+    >
+        <div class="flex items-center justify-around">
+            <div
+                class="flex items-center gap-4 text-sm md:mt-0"
+                (click)="selectTab('Book a Flight')"
+                [ngClass]="activeTab === 'Book a Flight' ? 'bg-white' : ''"
+            >
+                <button>Book a Flight</button>
+            </div>
+            <div class="mx-6 hidden h-8 border border-gray-300 md:flex"></div>
+            <div
+                class="flex items-center gap-4 text-sm md:mt-0"
+                (click)="selectTab('Manage Booking')"
+                [ngClass]="activeTab === 'Manage Booking' ? 'bg-white' : ''"
+            >
+                <div></div>
+                <button>Manage Booking</button>
+            </div>
+            <div class="mx-6 hidden h-8 border border-gray-300 md:flex"></div>
+            <div class="flex cursor-pointer items-center gap-4 text-sm md:mt-0">
+                <div (click)="navigateToMobileCheckIn()">Mobile Check In</div>
+            </div>
+        </div>
+    </div>
+    @if (activeTab === 'Book a Flight') {
+        <app-book-card></app-book-card>
+    } @else if (activeTab === 'Manage Booking') {
+        <app-manage-book></app-manage-book>
+    }
+</div> -->
+
+<!-- -------------------- -->
+
+<div class="mx-4 md:mx-auto md:max-w-[1200px] 2xl:max-w-[1300px] 3xl:max-w-[1500px]">
+    <div class="rounded-rt-xl w-full rounded-t-xl bg-white/70 shadow-md backdrop-blur-md md:w-1/2">
+        <div class="flex items-center">
+            <div
+                class="flex-1 cursor-pointer items-center gap-4 rounded-tl-xl py-1 text-center text-sm md:mt-0"
+                (click)="selectTab('Book a Flight')"
+                [ngClass]="activeTab === 'Book a Flight' ? 'bg-white' : ''"
+            >
+                Book a Flight
+            </div>
+            <!-- <div class="mx-6 hidden h-8 border border-gray-300 md:flex"></div> -->
+            <div
+                class="flex-1 cursor-pointer items-center gap-4 border-l-[3px] border-r-[3px] border-gray-300 py-1 text-center text-sm md:mt-0"
+                (click)="selectTab('Manage Booking')"
+                [ngClass]="activeTab === 'Manage Booking' ? 'bg-white' : ''"
+            >
+                <span class="pi pi-calendar mr-1 text-[15px]"></span> Manage Booking
+            </div>
+            <!-- <div class="mx-6 hidden h-8 border border-gray-300 md:flex"></div> -->
+            <div
+                class="flex-1 cursor-pointer items-center gap-4 py-1 text-center text-sm md:mt-0"
+                (click)="navigateToMobileCheckIn()"
+            >
+                Mobile Check In
+            </div>
+        </div>
+    </div>
+    @if (activeTab === 'Book a Flight') {
+        <app-book-card></app-book-card>
+    } @else if (activeTab === 'Manage Booking') {
+        <app-manage-book></app-manage-book>
+    }
 </div>

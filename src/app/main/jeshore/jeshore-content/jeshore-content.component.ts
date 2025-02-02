@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-jeshore-content',
-  imports: [],
-  templateUrl: './jeshore-content.component.html',
-  styleUrl: './jeshore-content.component.scss'
+    selector: 'app-jeshore-content',
+    imports: [],
+    templateUrl: './jeshore-content.component.html',
+    styleUrl: './jeshore-content.component.scss',
 })
-export class JeshoreContentComponent {
-
-}
+export class JeshoreContentComponent {}

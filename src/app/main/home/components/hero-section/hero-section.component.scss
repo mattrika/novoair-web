@@ -1,3 +1,38 @@
 :host {
     display: block;
 }
+
+// $primary-color: #007bff;
+// $secondary-color: #ddd;
+// $text-color: white;
+// $transition-speed: 0.3s;
+
+// .tabs {
+//     display: flex;
+//     gap: 10px;
+//     margin-bottom: 10px;
+
+//     button {
+//         padding: 10px 15px;
+//         border: none;
+//         background: $secondary-color;
+//         cursor: pointer;
+//         transition: $transition-speed;
+
+//         &.active {
+//             background: $primary-color;
+//             color: $text-color;
+//         }
+
+//         &:hover {
+//             background: lighten($primary-color, 10%);
+//             color: white;
+//         }
+//     }
+// }
+
+// .tab-content {
+//     border: 1px solid $secondary-color;
+//     padding: 15px;
+//     background: lighten($secondary-color, 5%);
+// }

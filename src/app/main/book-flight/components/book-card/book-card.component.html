@@ -1,4 +1,4 @@
-<div class="container relative mb-24">
+<!-- <div class="container relative mb-24">
     <div class="flex justify-end">
         <p-button label="Reset Booking" [rounded]="true" severity="secondary" variant="outlined" />
         <div
@@ -82,6 +82,88 @@
                 <i class="pi pi-search"></i>
                 <h1 class="">Search Flights</h1>
             </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- ------------------------------------ -->
+
+<div
+    class="rounded-r-xl rounded-bl-xl rounded-tr-xl border border-white/20 bg-white/30 shadow-md backdrop-blur-sm"
+>
+    <div class="items-center justify-between md:flex">
+        <div
+            class="m-4 flex h-10 min-w-80 justify-center gap-4 text-nowrap rounded-3xl bg-white p-4 shadow-sm"
+        >
+            <div class="flex items-center justify-center">
+                <p-radiobutton
+                    name="pizza"
+                    value="Cheese"
+                    [(ngModel)]="ingredient"
+                    inputId="ingredient1"
+                />
+                <label for="ingredient1" class="text-sm md:ml-2">Return</label>
+            </div>
+
+            <div class="flex items-center">
+                <p-radiobutton
+                    name="pizza"
+                    value="Mushroom"
+                    [(ngModel)]="ingredient"
+                    inputId="ingredient2"
+                />
+                <label for="ingredient2" class="text-sm md:ml-2">One Way</label>
+            </div>
+
+            <div class="flex items-center">
+                <p-radiobutton
+                    name="pizza"
+                    value="Pepper"
+                    [(ngModel)]="ingredient"
+                    inputId="ingredient3"
+                />
+                <label for="ingredient3" class="text-sm md:ml-2">Multi-City</label>
+            </div>
+        </div>
+        <div
+            class="m-4 flex h-10 cursor-pointer items-center justify-center gap-2 rounded-3xl bg-white px-4 shadow-sm hover:bg-blue-50"
+        >
+            <i class="pi pi-plus"></i>
+            <h1>Promo Code</h1>
+        </div>
+    </div>
+    <div class="h-full items-center gap-4 rounded-xl bg-white p-2 md:flex md:h-20">
+        <div
+            class="h-full w-full items-center justify-around rounded-xl border-2 border-gray-200 p-6 md:flex md:h-16"
+        >
+            <div class="justify flex w-full items-center justify-between">
+                <div>From</div>
+
+                <i class="pi pi-arrow-up-right"></i>
+
+                <div>To</div>
+            </div>
+
+            <div class="mx-6 hidden h-8 border border-gray-300 md:flex"></div>
+
+            <div class="justify mt-4 flex w-full items-center justify-between md:mt-0">
+                <div>Departure</div>
+                <i class="pi pi-arrow-right-arrow-left"></i>
+                <div>Return</div>
+            </div>
+
+            <div class="mx-6 hidden h-8 border border-gray-300 md:flex"></div>
+
+            <div class="justify mt-4 flex w-1/2 items-center justify-between md:mt-0">
+                <div>Passengers</div>
+            </div>
+        </div>
+
+        <div
+            class="btn-primary mt-4 flex h-16 w-48 cursor-pointer items-center justify-center gap-2 rounded-full px-4 shadow-sm md:mt-0"
+        >
+            <i class="pi pi-search"></i>
+            <h1 class="">Search Flights</h1>
         </div>
     </div>
 </div>

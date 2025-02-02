@@ -373,7 +373,9 @@ const flattenedRoutes: Route[] = [
     {
         path: 'general-uidelines',
         loadComponent: () =>
-            import('@pages/general-guidelines/general-guidelines.component').then((m) => m.GeneralGuidelinesComponent),
+            import('@pages/general-guidelines/general-guidelines.component').then(
+                (m) => m.GeneralGuidelinesComponent,
+            ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
@@ -391,13 +393,14 @@ const flattenedRoutes: Route[] = [
     {
         path: 'future-destinations',
         loadComponent: () =>
-            import('@pages/future-destinations/future-destinations.component').then((m) => m.FutureDestinationsComponent),
+            import('@pages/future-destinations/future-destinations.component').then(
+                (m) => m.FutureDestinationsComponent,
+            ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
         path: 'dhaka',
-        loadComponent: () =>
-            import('@pages/dhaka/dhaka.component').then((m) => m.DhakaComponent),
+        loadComponent: () => import('@pages/dhaka/dhaka.component').then((m) => m.DhakaComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
