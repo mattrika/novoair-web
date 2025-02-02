@@ -1,58 +1,68 @@
 <div class="h-full items-center gap-4 rounded-xl bg-white p-2 md:flex md:h-20">
-    <div
+    <form
+        [formGroup]="flightForm"
         class="h-full w-full items-center justify-around rounded-xl border-2 border-gray-200 p-6 md:flex md:h-16"
     >
-        <div class="justify flex w-full items-center">
-            <div class="flex justify-center">
+        <div class="flex w-full items-center justify-between">
+            <div class="card flex justify-center">
                 <p-select
-                    [options]="countries"
-                    [(ngModel)]="selectedCountry"
-                    optionLabel="name"
-                    [filter]="true"
-                    filterBy="name"
-                    [showClear]="true"
-                    placeholder="From"
-                    class="w-full"
-                    styleClass="border-none"
+                    [options]="groupedCities"
+                    formControlName="from"
+                    placeholder="Form"
+                    [group]="true"
                     [dropdownIcon]="'none'"
+                    class="w-32"
                 >
-                    <ng-template #selectedItem let-selectedOption>
-                        <div class="flex items-center gap-2">
-                            <div>{{ selectedOption.name }}</div>
-                        </div>
-                    </ng-template>
-                    <ng-template let-country #item>
-                        <div class="flex items-center gap-2">
-                            <div>{{ country.name }}</div>
-                        </div>
-                    </ng-template>
                 </p-select>
             </div>
-
-            <i class="pi pi-arrow-up-right"></i>
-
-            <div>To</div>
+            <i class="pi pi-arrow-up-right mx-3"></i>
+            <div class="card flex justify-center">
+                <p-select
+                    [options]="groupedCities"
+                    formControlName="to"
+                    placeholder="To"
+                    [group]="true"
+                    [dropdownIcon]="'none'"
+                    class="w-32"
+                >
+                </p-select>
+            </div>
         </div>
-
         <div class="mx-6 hidden h-8 border border-gray-300 md:flex"></div>
-
         <div class="justify mt-4 flex w-full items-center justify-between md:mt-0">
-            <div>Departure</div>
-            <i class="pi pi-arrow-right-arrow-left"></i>
-            <div>Return</div>
+            <p-datepicker
+                formControlName="departure"
+                placeholder="Departure"
+                class="!border-0"
+            ></p-datepicker>
+            <i class="pi pi-arrow-right-arrow-left mx-5"></i>
+            <p-datepicker
+                formControlName="return"
+                placeholder="Return"
+                class="!border-0"
+            ></p-datepicker>
         </div>
-
         <div class="mx-6 hidden h-8 border border-gray-300 md:flex"></div>
-
-        <div class="justify mt-4 flex w-1/2 items-center justify-between md:mt-0">
-            <div>Passengers</div>
+        <div class="justify mt-4 flex w-1/2 items-center justify-between gap-5 md:mt-0">
+            <input
+                type="number"
+                formControlName="adults"
+                class="h-10 w-20 rounded-md border-[1.5px] outline-none placeholder:pl-2"
+                placeholder="Adults"
+            />
+            <input
+                type="number"
+                formControlName="children"
+                class="h-10 w-20 rounded-md border-[1.5px] outline-none placeholder:pl-2"
+                placeholder="Children"
+            />
         </div>
-    </div>
-
+    </form>
     <div
         class="btn-primary mt-4 flex h-16 w-48 cursor-pointer items-center justify-center gap-2 rounded-full px-4 shadow-sm md:mt-0"
+        (click)="searchFlights()"
     >
         <i class="pi pi-search"></i>
-        <h1 class="">Search Flights</h1>
+        <button type="button">Search Flights</button>
     </div>
 </div>

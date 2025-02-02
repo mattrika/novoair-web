@@ -3,13 +3,20 @@ import { Component } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { Router } from '@angular/router'
 import { PrimeModules } from '@core/ui/primeng'
-import { ReturnComponent } from "../return/return.component";
-import { OneWayComponent } from "../one-way/one-way.component";
-import { MultiCityComponent } from "../multi-city/multi-city.component";
+import { MultiCityComponent } from '../multi-city/multi-city.component'
+import { OneWayComponent } from '../one-way/one-way.component'
+import { ReturnComponent } from '../return/return.component'
 
 @Component({
     selector: 'app-book-card',
-    imports: [PrimeModules, CommonModule, FormsModule, ReturnComponent, OneWayComponent, MultiCityComponent],
+    imports: [
+        PrimeModules,
+        CommonModule,
+        FormsModule,
+        ReturnComponent,
+        OneWayComponent,
+        MultiCityComponent,
+    ],
     templateUrl: './book-card.component.html',
     styleUrl: './book-card.component.scss',
 })

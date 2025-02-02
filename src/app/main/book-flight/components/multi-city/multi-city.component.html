@@ -1,1 +1,88 @@
-<p>multi-city works!</p>
+<div class="flex h-full flex-row items-center gap-4 rounded-xl bg-white p-2 md:h-auto">
+    <form
+        [formGroup]="flightForm"
+        class="flex h-full w-full flex-wrap justify-between rounded-xl border-2 border-gray-200 p-2"
+    >
+        <div>
+            <div formArrayName="cities">
+                @for (city of cities.controls; track $index) {
+                    <div
+                        [formGroupName]="$index"
+                        class="mt-4 flex w-full items-center justify-between gap-4"
+                    >
+                        <div class="card flex justify-center">
+                            <p-select
+                                [options]="groupedCities"
+                                formControlName="from"
+                                placeholder="From"
+                                [group]="true"
+                                class="w-32"
+                            >
+                            </p-select>
+                        </div>
+                        <i class="pi pi-arrow-up-right mx-3"></i>
+                        <div class="card flex justify-center">
+                            <p-select
+                                [options]="groupedCities"
+                                formControlName="to"
+                                placeholder="To"
+                                [group]="true"
+                                class="w-32"
+                            >
+                            </p-select>
+                        </div>
+
+                        <p-datepicker
+                            formControlName="departure"
+                            placeholder="Departure"
+                            class="w-36 !border-0"
+                        ></p-datepicker>
+
+                        <button
+                            type="button"
+                            (click)="addCity()"
+                            class="btn-primary flex items-center gap-2 rounded-lg bg-blue-500 px-4 py-2 text-white shadow-sm"
+                        >
+                            <i class="pi pi-plus"></i>
+                        </button>
+
+                        @if (cities.length > 1) {
+                            <button
+                                type="button"
+                                (click)="removeCity($index)"
+                                class="btn-secondary rounded-lg bg-red-500 px-3 py-1 text-white"
+                            >
+                                <i class="pi pi-trash"></i>
+                            </button>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="mx-6 hidden min-h-8 border border-gray-300 md:flex"></div>
+
+        <div class="mt-4 flex items-center justify-between gap-2 md:mt-0">
+            <input
+                type="number"
+                formControlName="adults"
+                class="h-10 w-20 rounded-md border-[1.5px] outline-none placeholder:pl-2"
+                placeholder="Adults"
+            />
+            <input
+                type="number"
+                formControlName="children"
+                class="h-10 w-20 rounded-md border-[1.5px] outline-none placeholder:pl-2"
+                placeholder="Children"
+            />
+        </div>
+    </form>
+
+    <div
+        class="btn-primary mt-4 flex h-16 w-48 cursor-pointer items-center justify-center gap-2 rounded-full px-4 shadow-sm md:mt-0"
+        (click)="searchFlights()"
+    >
+        <i class="pi pi-search"></i>
+        <button type="button">Search Flights</button>
+    </div>
+</div>
