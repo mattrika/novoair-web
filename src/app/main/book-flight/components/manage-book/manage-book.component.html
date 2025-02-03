@@ -10,9 +10,9 @@
         <form
             #reservationForm="ngForm"
             (ngSubmit)="onFindReservation(reservationForm)"
-            class="flex w-full gap-7"
+            class="flex w-full flex-col gap-7 md:flex-row"
         >
-            <div class="w-[37%] rounded-md border">
+            <div class="w-full rounded-md border md:w-[37%]">
                 <input
                     class="!h-10 !w-full rounded-md border-none p-3 placeholder:text-sm"
                     pInputText
@@ -24,7 +24,7 @@
                     required
                 />
             </div>
-            <div class="w-[37%] rounded-md border">
+            <div class="w-full rounded-md border md:w-[37%]">
                 <input
                     class="!h-10 !w-full rounded-md border-none placeholder:text-sm"
                     id="name"

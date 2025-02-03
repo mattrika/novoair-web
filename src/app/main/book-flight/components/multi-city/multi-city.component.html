@@ -1,60 +1,69 @@
-<div class="flex h-full flex-row items-center gap-4 rounded-xl bg-white p-2 md:h-auto">
+<div class="flex h-full flex-col items-center gap-4 rounded-xl bg-white p-2 md:h-auto md:flex-row">
     <form
         [formGroup]="flightForm"
-        class="flex h-full w-full flex-wrap justify-between rounded-xl border-2 border-gray-200 p-2"
+        class="mt-20 flex h-full w-full flex-col justify-between rounded-xl border-2 border-gray-200 p-2 md:mt-0 md:flex-row"
     >
-        <div>
+        <div class="ml-16 md:ml-0">
             <div formArrayName="cities">
                 @for (city of cities.controls; track $index) {
                     <div
                         [formGroupName]="$index"
-                        class="mt-4 flex w-full items-center justify-between gap-4"
+                        class="mb-2 flex w-full flex-col items-center justify-between gap-4 md:flex-row"
                     >
-                        <div class="card flex justify-center">
-                            <p-select
-                                [options]="groupedCities"
-                                formControlName="from"
-                                placeholder="From"
-                                [group]="true"
-                                class="w-32"
-                            >
-                            </p-select>
+                        <div class="flex flex-row items-center justify-center">
+                            <div class="card flex justify-center">
+                                <p-select
+                                    [options]="groupedCities"
+                                    formControlName="from"
+                                    placeholder="From"
+                                    [group]="true"
+                                    class="w-32 border-none shadow-none"
+                                    [dropdownIcon]="'none'"
+                                >
+                                </p-select>
+                            </div>
+                            <i class="pi pi-arrow-up-right z-10 -ml-5 mr-6"></i>
+                            <div class="card flex justify-center">
+                                <p-select
+                                    [options]="groupedCities"
+                                    formControlName="to"
+                                    placeholder="To"
+                                    [group]="true"
+                                    class="w-32 border-none shadow-none"
+                                    [dropdownIcon]="'none'"
+                                >
+                                </p-select>
+                            </div>
+                            <div
+                                class="z-10 -ml-7 mr-6 hidden h-8 border border-gray-300 md:flex"
+                            ></div>
                         </div>
-                        <i class="pi pi-arrow-up-right mx-3"></i>
-                        <div class="card flex justify-center">
-                            <p-select
-                                [options]="groupedCities"
-                                formControlName="to"
-                                placeholder="To"
-                                [group]="true"
-                                class="w-32"
-                            >
-                            </p-select>
-                        </div>
 
-                        <p-datepicker
-                            formControlName="departure"
-                            placeholder="Departure"
-                            class="w-36 !border-0"
-                        ></p-datepicker>
+                        <div class="-ml-20 flex flex-row items-center justify-center md:ml-0">
+                            <p-datepicker
+                                formControlName="departure"
+                                placeholder="Departure"
+                                class="w-36"
+                            ></p-datepicker>
 
-                        <button
-                            type="button"
-                            (click)="addCity()"
-                            class="btn-primary flex items-center gap-2 rounded-lg bg-blue-500 px-4 py-2 text-white shadow-sm"
-                        >
-                            <i class="pi pi-plus"></i>
-                        </button>
-
-                        @if (cities.length > 1) {
                             <button
                                 type="button"
-                                (click)="removeCity($index)"
-                                class="btn-secondary rounded-lg bg-red-500 px-3 py-1 text-white"
+                                (click)="addCity()"
+                                class="btn-primary flex items-center gap-2 rounded-lg bg-blue-500 px-4 py-2 text-white shadow-sm"
                             >
-                                <i class="pi pi-trash"></i>
+                                <i class="pi pi-plus"></i>
                             </button>
-                        }
+
+                            @if (cities.length > 1) {
+                                <button
+                                    type="button"
+                                    (click)="removeCity($index)"
+                                    class="btn-secondary ml-2 rounded-lg bg-red-500 px-3 py-1 text-white"
+                                >
+                                    <i class="pi pi-trash"></i>
+                                </button>
+                            }
+                        </div>
                     </div>
                 }
             </div>
@@ -62,27 +71,81 @@
 
         <div class="mx-6 hidden min-h-8 border border-gray-300 md:flex"></div>
 
-        <div class="mt-4 flex items-center justify-between gap-2 md:mt-0">
-            <input
-                type="number"
-                formControlName="adults"
-                class="h-10 w-20 rounded-md border-[1.5px] outline-none placeholder:pl-2"
-                placeholder="Adults"
-            />
-            <input
-                type="number"
-                formControlName="children"
-                class="h-10 w-20 rounded-md border-[1.5px] outline-none placeholder:pl-2"
-                placeholder="Children"
-            />
+        <div class="ml-10 mr-6 flex items-center md:ml-0 md:mt-0">
+            <div>
+                <input
+                    type="number"
+                    formControlName="adults"
+                    class="h-10 w-20 rounded-md outline-none"
+                    placeholder="Adults"
+                />
+                <input
+                    type="number"
+                    formControlName="children"
+                    class="ml-2 h-10 w-20 rounded-md outline-none"
+                    placeholder="Children"
+                />
+            </div>
         </div>
     </form>
 
-    <div
-        class="btn-primary mt-4 flex h-16 w-48 cursor-pointer items-center justify-center gap-2 rounded-full px-4 shadow-sm md:mt-0"
-        (click)="searchFlights()"
-    >
-        <i class="pi pi-search"></i>
-        <button type="button">Search Flights</button>
+    <div>
+        <div class="mb-7 mt-6 flex h-10 md:-mt-[75px]">
+            <form [formGroup]="flightForm">
+                <p-button
+                    (click)="showDialog()"
+                    label=""
+                    class=""
+                    styleClass="rounded-3xl px-5 bg-white text-black border-none hover:bg-blue-50"
+                    ><i class="pi pi-plus"></i>Promo Code</p-button
+                >
+                <p-dialog
+                    [modal]="true"
+                    [(visible)]="visible"
+                    [style]="{ width: '25rem', height: '15rem' }"
+                >
+                    <div class="z-50 mb-4 flex flex-row items-center gap-4">
+                        <div>
+                            <input
+                                pInputText
+                                id="promocode"
+                                class="h-8 w-40 flex-auto border p-2 text-center"
+                                autocomplete="off"
+                                formControlName="promocode"
+                                placeholder="Enter Promo Code"
+                                (input)="validatePromoCode()"
+                            />
+                            @if (promoCodeError) {
+                                <p class="text-red-500">{{ promoCodeError }}</p>
+                            }
+                        </div>
+
+                        <div
+                            class="flex justify-end gap-2"
+                            [ngClass]="{ '-mt-6': promoCodeError.length > 0 }"
+                        >
+                            <p-button
+                                label="Cancel"
+                                styleClass="btn-primary text-[15px] py-[6px] mt-[2px]"
+                                (click)="visible = false"
+                            />
+                            <p-button
+                                label="Submit"
+                                styleClass="btn-primary text-[15px] py-[6px] mt-[2px]"
+                                (click)="visible = false"
+                                [disabled]="!isPromoValid"
+                            />
+                        </div>
+                    </div>
+                </p-dialog>
+            </form>
+        </div>
+        <div
+            class="btn-primary mt-4 flex h-16 w-48 cursor-pointer items-center justify-center gap-2 rounded-full px-4 shadow-sm md:mt-0"
+            (click)="searchFlights()"
+        >
+            <i class="pi pi-search"></i>
+            <button type="button">Search Flights</button>
+        </div>
     </div>
 </div>

@@ -1,3 +1,33 @@
 :host {
     display: block;
 }
+
+:host {
+    ::ng-deep p-datepicker .p-inputtext {
+        border: none;
+        box-shadow: none;
+    }
+
+    ::ng-deep p-datepicker input::placeholder {
+        color: #595959;
+    }
+    ::ng-deep p-select .p-placeholder {
+        color: #595959;
+    }
+
+    input::placeholder {
+        color: #595959;
+    }
+    ::ng-deep p-select {
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: none;
+    }
+}
+
+// @media (max-width: 410px) {
+//     :host {
+//         ::ng-deep p-select {
+//             background-color: none;
+//         }
+//     }
+// }
