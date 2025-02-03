@@ -3,11 +3,15 @@
 }
 
 header {
-    border-bottom: 4px solid; /* Set the border thickness */
+    border-bottom: 3px solid; /* Set the border thickness */
     border-image: linear-gradient(to right, #0057f8, #23cefe, #fa7421, #bc4f02) 1; /* Apply the gradient to the border */
 }
 
 .mobile-menu {
     border-top: 4px solid; /* Add a gradient border at the top of the mobile menu */
     border-image: linear-gradient(to right, #0057f8, #23cefe, #fa7421, #bc4f02) 1;
+}
+
+.group ul {
+    transition-delay: 200ms;
 }
