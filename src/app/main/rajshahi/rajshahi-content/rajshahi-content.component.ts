@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-rajshahi-content',
-  imports: [],
-  templateUrl: './rajshahi-content.component.html',
-  styleUrl: './rajshahi-content.component.scss'
+    selector: 'app-rajshahi-content',
+    imports: [],
+    templateUrl: './rajshahi-content.component.html',
+    styleUrl: './rajshahi-content.component.scss',
 })
-export class RajshahiContentComponent {
-
-}
+export class RajshahiContentComponent {}
