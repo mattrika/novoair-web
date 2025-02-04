@@ -1,5 +1,5 @@
-import { Component } from '@angular/core'
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
+import { Component, ElementRef, HostListener } from '@angular/core'
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, AbstractControl } from '@angular/forms'
 import { PrimeModules } from '@core/ui/primeng'
 import { SelectItemGroup } from 'primeng/api'
 
@@ -10,24 +10,31 @@ import { SelectItemGroup } from 'primeng/api'
     styleUrl: './return.component.scss',
 })
 export class ReturnComponent {
-    visible: boolean = false;
+    visible = false
     flightForm: FormGroup
     groupedCities!: SelectItemGroup[]
 
-    promoCodeError: string = '';
-    isPromoValid: boolean = false;
-    validPromoCodes: string[] = ['Abc', 'Bcd'];
+    promoCodeError = ''
+    isPromoValid = false
+    validPromoCodes: string[] = ['Abc', 'Bcd']
 
-    constructor(private fb: FormBuilder) {
-        this.flightForm = this.fb.group({
-            from: ['', Validators.required],
-            to: ['', Validators.required],
-            departure: ['', Validators.required],
-            return: [''],
-            adults: [[Validators.required, Validators.min(1)]],
-            children: [],
-            promocode:['']
-        })
+    constructor(
+        private fb: FormBuilder,
+        private eRef: ElementRef,
+    ) {
+        this.flightForm = this.fb.group(
+            {
+                from: ['', Validators.required],
+                to: ['', Validators.required],
+                departure: ['', Validators.required],
+                return: [''],
+                adults: [this.adults, [Validators.required, Validators.min(1)]],
+                children: [this.children],
+                infants: [this.infants],
+                promocode: [''],
+            },
+            { validators: this.dateValidator },
+        )
 
         this.groupedCities = [
             {
@@ -48,31 +55,95 @@ export class ReturnComponent {
         ]
     }
 
-    showDialog() {
-        this.visible = true;
-        this.promoCodeError = '';
-        this.isPromoValid = false;
-        this.flightForm.get('promocode')?.setValue('');
+    // showDialog() {
+    //     this.visible = true
+    //     this.promoCodeError = ''
+    //     this.isPromoValid = false
+    //     this.flightForm.get('promocode')?.setValue('')
+    // }
+
+    dateValidator(control: AbstractControl) {
+        const departure = control.get('departure')?.value
+        const returnDate = control.get('return')?.value
+
+        if (departure && returnDate && new Date(departure) > new Date(returnDate)) {
+            control.get('return')?.setValue('')
+            return { invalidReturnDate: true }
+        }
+        return null
+    }
+
+
+    onDepartureSelect() {
+        this.flightForm.get('return')?.updateValueAndValidity()
     }
 
     validatePromoCode() {
-        const enteredCode = this.flightForm.get('promocode')?.value?.trim();
+        const enteredCode = this.flightForm.get('promocode')?.value?.trim()
 
         if (!enteredCode) {
-            this.promoCodeError = '';
-            this.isPromoValid = false;
-            return;
+            this.promoCodeError = ''
+            this.isPromoValid = false
+            return
         }
 
         if (!this.validPromoCodes.includes(enteredCode)) {
-            this.promoCodeError = 'Wrong Promo Code';
-            this.isPromoValid = false;
+            this.promoCodeError = 'Wrong Promo Code'
+            this.isPromoValid = false
         } else {
-            this.promoCodeError = '';
-            this.isPromoValid = true;
+            this.promoCodeError = ''
+            this.isPromoValid = true
         }
     }
 
+    adults: number = 1
+    children: number = 0
+    infants: number = 0
+
+    get totalGuests(): number {
+        return this.adults + this.children + this.infants
+    }
+
+    increase(type: string) {
+        if (this.totalGuests < 9) {
+            if (type === 'adults' && this.adults < 9) {
+                this.adults++
+                this.flightForm.get('adults')?.setValue(this.adults)
+            } else if (type === 'children' && this.children < 9) {
+                this.children++
+                this.flightForm.get('children')?.setValue(this.children)
+            } else if (type === 'infants' && this.infants < 9) {
+                this.infants++
+                this.flightForm.get('infants')?.setValue(this.infants)
+            }
+        }
+    }
+
+    decrease(type: string) {
+        if (type === 'adults' && this.adults > 1) {
+            this.adults--
+            this.flightForm.get('adults')?.setValue(this.adults)
+        } else if (type === 'children' && this.children > 0) {
+            this.children--
+            this.flightForm.get('children')?.setValue(this.children)
+        } else if (type === 'infants' && this.infants > 0) {
+            this.infants--
+            this.flightForm.get('infants')?.setValue(this.infants)
+        }
+    }
+
+    showInputs = false
+
+    toggleInputs() {
+        this.showInputs = !this.showInputs
+    }
+
+    @HostListener('document:click', ['$event'])
+    onClickOutside(event: Event) {
+        if (!this.eRef.nativeElement.contains(event.target)) {
+            this.showInputs = false
+        }
+    }
 
     searchFlights() {
         if (this.flightForm.valid) {

@@ -34,6 +34,7 @@
                 formControlName="departure"
                 placeholder="Departure"
                 class="shadow-none"
+                (onSelect)="onDepartureSelect()"
             ></p-datepicker>
             <i class="pi pi-arrow-right-arrow-left mx-5"></i>
             <p-datepicker
@@ -41,9 +42,15 @@
                 placeholder="Return"
                 class="shadow-none"
             ></p-datepicker>
+            <!-- <div *ngIf="flightForm.errors?.['invalidReturnDate']" class="text-sm text-red-500">
+                Return date cannot be before the departure date.
+            </div> -->
         </div>
+        <!-- <div *ngIf="flightForm.errors?.['invalidReturnDate']" class="text-sm text-red-500">
+            Return date cannot be before the departure date.
+        </div> -->
         <div class="mx-6 hidden h-8 border border-gray-300 md:flex"></div>
-        <div
+        <!-- <div
             class="justify ml-4 mt-4 flex w-1/2 items-center justify-between gap-5 sm:ml-0 md:mt-0"
         >
             <input
@@ -58,57 +65,147 @@
                 class="h-10 w-20 rounded-md border-none outline-none"
                 placeholder="Children"
             />
+        </div> -->
+        <div class="relative flex flex-1 justify-center">
+            <div class="">
+                <button (click)="toggleInputs()" class="flex text-gray-700">
+                    Passengers <span class="ml-2">&#9662;</span>
+                </button>
+                <div
+                    [ngClass]="{ hidden: !showInputs }"
+                    class="absolute z-10 -ml-28 mt-2 flex min-w-64 flex-col gap-2 space-y-2 rounded-md border border-gray-300 bg-white p-4"
+                >
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="text-md text-[#595959]">
+                            Adults <br />
+                            <span class="text-sm text-gray-400">> 12 Years</span>
+                        </div>
+                        <div class="flex flex-row items-center justify-center gap-2">
+                            <button
+                                (click)="decrease('adults')"
+                                [disabled]="adults === 0"
+                                class="rounded px-[9px] text-gray-700"
+                                [ngClass]="{
+                                    'bg-gray-300': adults === 0,
+                                    'btn-primary': totalGuests <= 9 && adults !== 0,
+                                }"
+                            >
+                                -
+                                <!-- <i class="pi-minus"></i> -->
+                            </button>
+                            <div class="text-[#595959]">{{ adults }}</div>
+
+                            <button
+                                (click)="increase('adults')"
+                                [disabled]="totalGuests >= 9"
+                                class="rounded px-[7px] text-white"
+                                [ngClass]="{
+                                    'bg-gray-300': totalGuests >= 9,
+                                    'btn-primary': totalGuests < 9,
+                                }"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="text-md text-[#595959]">
+                            Children <br />
+                            <span class="text-sm text-gray-400">2-12 Years</span>
+                        </div>
+                        <div class="flex flex-row items-center justify-center gap-2">
+                            <button
+                                (click)="decrease('children')"
+                                [disabled]="children === 0"
+                                class="rounded px-[9px] text-gray-700"
+                                [ngClass]="{
+                                    'bg-gray-300': children === 0,
+                                    'btn-primary': totalGuests <= 9 && children !== 0,
+                                }"
+                            >
+                                -
+                                <!-- <i class="pi-minus"></i> -->
+                            </button>
+                            <div class="text-[#595959]">{{ children }}</div>
+
+                            <button
+                                (click)="increase('children')"
+                                [disabled]="totalGuests >= 9"
+                                class="rounded px-[7px] text-white"
+                                [ngClass]="{
+                                    'bg-gray-300': totalGuests >= 9,
+                                    'btn-primary': totalGuests < 9,
+                                }"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="text-md text-[#595959]">
+                            Infants <br /><span class="text-sm text-gray-400"> < 2 Years</span>
+                        </div>
+                        <div class="flex flex-row items-center justify-center gap-2">
+                            <button
+                                (click)="decrease('infants')"
+                                [disabled]="infants === 0"
+                                class="rounded px-[9px] text-gray-700"
+                                [ngClass]="{
+                                    'bg-gray-300': infants === 0,
+                                    'btn-primary': totalGuests <= 9 && infants !== 0,
+                                }"
+                            >
+                                -
+                                <!-- <i class="pi-minus"></i> -->
+                            </button>
+                            <div class="text-[#595959]">{{ infants }}</div>
+
+                            <button
+                                (click)="increase('infants')"
+                                [disabled]="totalGuests >= 9"
+                                class="rounded px-[7px] text-white"
+                                [ngClass]="{
+                                    'bg-gray-300': totalGuests >= 9,
+                                    'btn-primary': totalGuests < 9,
+                                }"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
     <div>
         <div class="mb-7 mt-6 flex h-10 md:-mt-[75px]">
             <form [formGroup]="flightForm">
-                <p-button
-                    (click)="showDialog()"
-                    label=""
-                    class=""
-                    styleClass="rounded-3xl px-5 bg-white text-black border-none hover:bg-blue-50"
-                    ><i class="pi pi-plus"></i>Promo Code</p-button
-                >
-                <p-dialog
-                    [modal]="true"
-                    [(visible)]="visible"
-                    [style]="{ width: '25rem', height: '15rem' }"
-                >
-                    <div class="z-50 mb-4 flex flex-row items-center gap-4">
-                        <div>
-                            <input
-                                pInputText
-                                id="promocode"
-                                class="h-8 w-40 flex-auto border p-2 text-center"
-                                autocomplete="off"
-                                formControlName="promocode"
-                                placeholder="Enter Promo Code"
-                                (input)="validatePromoCode()"
-                            />
-                            @if (promoCodeError) {
-                                <p class="text-red-500">{{ promoCodeError }}</p>
-                            }
-                        </div>
-
-                        <div
-                            class="flex justify-end gap-2"
-                            [ngClass]="{ '-mt-6': promoCodeError.length > 0 }"
-                        >
-                            <p-button
-                                label="Cancel"
-                                styleClass="btn-primary text-[15px] py-[6px] mt-[2px]"
-                                (click)="visible = false"
-                            />
-                            <p-button
-                                label="Submit"
-                                styleClass="btn-primary text-[15px] py-[6px] mt-[2px]"
-                                (click)="visible = false"
-                                [disabled]="!isPromoValid"
-                            />
-                        </div>
+                <div class="mb z-50 flex flex-row items-center gap-1">
+                    <div>
+                        <input
+                            pInputText
+                            id="promocode"
+                            class="h-10 w-32 flex-auto rounded-3xl border p-2 text-center"
+                            autocomplete="off"
+                            formControlName="promocode"
+                            placeholder="Promo Code"
+                            (input)="validatePromoCode()"
+                        />
+                        @if (promoCodeError) {
+                            <p class="text-sm text-red-500">{{ promoCodeError }}</p>
+                        }
                     </div>
-                </p-dialog>
+                    <div
+                        class="flex w-12 justify-end gap-2"
+                        [ngClass]="{ '-mt-6': promoCodeError.length > 0 }"
+                    >
+                        <p-button
+                            styleClass="pi pi-arrow-right btn-primary text-[15px] py-[9px] mt-[2px]"
+                            (click)="visible = false"
+                            [disabled]="!isPromoValid"
+                        />
+                    </div>
+                </div>
             </form>
         </div>
         <div
@@ -119,4 +216,9 @@
             <button type="button">Search Flights</button>
         </div>
     </div>
+</div>
+<div class="mb-2 flex justify-center">
+    @if (flightForm.errors?.['invalidReturnDate']) {
+        <div class="text-sm text-red-500">Return date cannot be before the departure date.</div>
+    }
 </div>
