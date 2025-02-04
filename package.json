@@ -35,6 +35,8 @@
         "@angular/router": "^19.0.5",
         "@auth0/angular-jwt": "^5.2.0",
         "@ng-icons/core": "^30.2.0",
+        "@ng-icons/heroicons": "^30.2.0",
+        "@ng-icons/material-icons": "^30.2.0",
         "@ng-web-apis/common": "^4.11.1",
         "@ngneat/dialog": "^5.1.2",
         "@primeng/themes": "^19.0.2",

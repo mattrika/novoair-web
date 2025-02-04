@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common'
 import { Component, HostListener } from '@angular/core'
+import { NgIcon } from '@ng-icons/core'
 
 interface ListItem {
     icon: string
@@ -33,7 +34,7 @@ interface GridItem {
 
 @Component({
     selector: 'app-header-default',
-    imports: [CommonModule],
+    imports: [CommonModule, NgIcon],
     templateUrl: './header-default.component.html',
     styleUrl: './header-default.component.scss',
 })

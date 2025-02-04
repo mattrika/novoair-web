@@ -41,6 +41,12 @@ importers:
       '@ng-icons/core':
         specifier: ^30.2.0
         version: 30.2.0(@angular/common@19.0.5(@angular/core@19.0.5(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1))(@angular/core@19.0.5(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1)
+      '@ng-icons/heroicons':
+        specifier: ^30.2.0
+        version: 30.2.0
+      '@ng-icons/material-icons':
+        specifier: ^30.2.0
+        version: 30.2.0
       '@ng-web-apis/common':
         specifier: ^4.11.1
         version: 4.11.1(@angular/common@19.0.5(@angular/core@19.0.5(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1))(@angular/core@19.0.5(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1)
@@ -1664,6 +1670,12 @@ packages:
       '@angular/common': '>=18.0.0'
       '@angular/core': '>=18.0.0'
       rxjs: ^6.5.3 || ^7.4.0
+
+  '@ng-icons/heroicons@30.2.0':
+    resolution: {integrity: sha512-f1td7Uow/DFXcNB0sFyc+y5/9O2uQqTAfKR3VJM32Z0hAjzar13b3q/Lt4odmUDnQFeVE0BHNgJGVzvw9Wo22g==}
+
+  '@ng-icons/material-icons@30.2.0':
+    resolution: {integrity: sha512-xteBKL7648UoB3CWYFYSSoh3TzwicM/qi9Yh/QNRMwThqCzE1DPpcjOT7CsnO/nfNnu0gAWsLJwdPNT26hhrvw==}
 
   '@ng-web-apis/common@4.11.1':
     resolution: {integrity: sha512-fXbcMrd/+L+9j9knbgXbDwYe30H4Wt0hQzvqyhpXTVrc0jYwlk3MJTYrnazKz5HvP9318caEv5n4qt3HMf5uPQ==}
@@ -7359,6 +7371,14 @@ snapshots:
       '@angular/common': 19.0.5(@angular/core@19.0.5(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1)
       '@angular/core': 19.0.5(rxjs@7.8.1)(zone.js@0.15.0)
       rxjs: 7.8.1
+      tslib: 2.8.1
+
+  '@ng-icons/heroicons@30.2.0':
+    dependencies:
+      tslib: 2.8.1
+
+  '@ng-icons/material-icons@30.2.0':
+    dependencies:
       tslib: 2.8.1
 
   '@ng-web-apis/common@4.11.1(@angular/common@19.0.5(@angular/core@19.0.5(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1))(@angular/core@19.0.5(rxjs@7.8.1)(zone.js@0.15.0))(rxjs@7.8.1)':
