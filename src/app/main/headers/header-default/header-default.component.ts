@@ -177,7 +177,7 @@ export class HeaderDefaultComponent {
         },
         {
             icon: 'pi pi-linkedin',
-            title: 'LinkedIN',
+            title: 'LinkedIn',
             link: 'https://www.linkedin.com/company/novoair/',
         },
     ]
