@@ -1,7 +1,11 @@
 import { Component, ElementRef, HostListener } from '@angular/core'
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators,FormControl } from '@angular/forms'
 import { PrimeModules } from '@core/ui/primeng'
 import { SelectItemGroup } from 'primeng/api'
+
+interface SearchType {
+    searchTypeName: string;
+}
 
 @Component({
     selector: 'app-one-way',
@@ -10,14 +14,24 @@ import { SelectItemGroup } from 'primeng/api'
     styleUrl: './one-way.component.scss',
 })
 export class OneWayComponent {
-    visible = false
+    searchType: SearchType[] | undefined;
+
     flightForm: FormGroup
     groupedCities!: SelectItemGroup[]
     promoCodeError = ''
-    isPromoValid = false
+
     validPromoCodes: string[] = ['Abc', 'Bcd']
 
-    constructor(private fb: FormBuilder,private eRef: ElementRef) {
+    constructor(
+        private fb: FormBuilder,
+        private eRef: ElementRef,
+    ) {
+
+        this.searchType = [
+            { searchTypeName: 'Flexible' },
+            { searchTypeName: 'Fixed' }
+        ];
+
         this.flightForm = this.fb.group({
             from: ['', Validators.required],
             to: ['', Validators.required],
@@ -26,7 +40,10 @@ export class OneWayComponent {
             children: [this.children],
             infants: [this.infants],
             promocode: [''],
-        })
+            selectedSearch: new FormControl<SearchType | null>(null)
+        }
+    ,
+    { validators: this.sameCityValidator })
 
         this.groupedCities = [
             {
@@ -47,30 +64,32 @@ export class OneWayComponent {
         ]
     }
 
-    // showDialog() {
-    //     this.visible = true
-    //     this.promoCodeError = ''
-    //     this.isPromoValid = false
-    //     this.flightForm.get('promocode')?.setValue('')
-    // }
+    sameCityValidator(form: FormGroup) {
+    const fromValue = form.get('from')?.value;
+    const toValue = form.get('to')?.value;
 
-    validatePromoCode() {
-        const enteredCode = this.flightForm.get('promocode')?.value?.trim()
-
-        if (!enteredCode) {
-            this.promoCodeError = ''
-            this.isPromoValid = false
-            return
-        }
-
-        if (!this.validPromoCodes.includes(enteredCode)) {
-            this.promoCodeError = 'Wrong Promo Code'
-            this.isPromoValid = false
-        } else {
-            this.promoCodeError = ''
-            this.isPromoValid = true
-        }
+    return fromValue && toValue && fromValue === toValue
+        ? { sameCity: true }
+        : null;
     }
+
+
+
+     validatePromoCode() {
+    const enteredCode = this.flightForm.get('promocode')?.value?.trim();
+
+    if (!enteredCode) {
+        this.promoCodeError = '';
+        return;
+    }
+
+    if (!this.validPromoCodes.includes(enteredCode)) {
+        this.promoCodeError = 'Wrong Promo Code';
+    } else {
+        this.promoCodeError = '';
+        this.flightForm.get('promocode')?.setValue(enteredCode);
+    }
+}
 
     searchFlights() {
         if (this.flightForm.valid) {
@@ -80,54 +99,56 @@ export class OneWayComponent {
         }
     }
 
+    adults = 0
+    children = 0
+    infants = 0
 
-  adults: number = 1;
-  children: number = 0;
-  infants: number = 0;
-
-  get totalGuests(): number {
-    return this.adults + this.children + this.infants;
-  }
-
-
-increase(type: string) {
-  if (this.totalGuests < 9) {
-    if (type === 'adults' && this.adults < 9) {
-      this.adults++;
-      this.flightForm.get('adults')?.setValue(this.adults);
-    } else if (type === 'children' && this.children < 9) {
-      this.children++;
-      this.flightForm.get('children')?.setValue(this.children);
-    } else if (type === 'infants' && this.infants < 9) {
-      this.infants++;
-      this.flightForm.get('infants')?.setValue(this.infants);
+    get totalGuests(): number {
+        if(this.adults===0){
+            this.children=0
+            this.infants=0
+        }
+        return this.adults + this.children + this.infants
     }
-  }
-}
 
-decrease(type: string) {
-  if (type === 'adults' && this.adults > 1) {
-    this.adults--;
-    this.flightForm.get('adults')?.setValue(this.adults);
-  } else if (type === 'children' && this.children > 0) {
-    this.children--;
-    this.flightForm.get('children')?.setValue(this.children);
-  } else if (type === 'infants' && this.infants > 0) {
-    this.infants--;
-    this.flightForm.get('infants')?.setValue(this.infants);
-  }
-}
-
-  showInputs = false;
-
-  toggleInputs() {
-    this.showInputs = !this.showInputs;
-  }
-
-   @HostListener('document:click', ['$event'])
-  onClickOutside(event: Event) {
-    if (!this.eRef.nativeElement.contains(event.target)) {
-      this.showInputs = false;
+    increase(type: string) {
+        if (this.totalGuests < 9) {
+            if (type === 'adults' && this.adults < 9) {
+                this.adults++
+                this.flightForm.get('adults')?.setValue(this.adults)
+            } else if (type === 'children' && this.children < 9) {
+                this.children++
+                this.flightForm.get('children')?.setValue(this.children)
+            } else if (type === 'infants' && this.infants < 9) {
+                this.infants++
+                this.flightForm.get('infants')?.setValue(this.infants)
+            }
+        }
     }
-  }
+
+    decrease(type: string) {
+        if (type === 'adults' && this.adults >= 1) {
+            this.adults--
+            this.flightForm.get('adults')?.setValue(this.adults)
+        } else if (type === 'children' && this.children > 0) {
+            this.children--
+            this.flightForm.get('children')?.setValue(this.children)
+        } else if (type === 'infants' && this.infants > 0) {
+            this.infants--
+            this.flightForm.get('infants')?.setValue(this.infants)
+        }
+    }
+
+    showInputs = false
+
+    toggleInputs() {
+        this.showInputs = !this.showInputs
+    }
+
+    @HostListener('document:click', ['$event'])
+    onClickOutside(event: Event) {
+        if (!this.eRef.nativeElement.contains(event.target)) {
+            this.showInputs = false
+        }
+    }
 }

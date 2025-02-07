@@ -1,7 +1,18 @@
 import { Component, ElementRef, HostListener } from '@angular/core'
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, AbstractControl } from '@angular/forms'
+import {
+    AbstractControl,
+    FormBuilder,
+    FormGroup,
+    ReactiveFormsModule,
+    Validators,
+    FormControl
+} from '@angular/forms'
 import { PrimeModules } from '@core/ui/primeng'
 import { SelectItemGroup } from 'primeng/api'
+
+interface SearchType {
+    searchTypeName: string;
+}
 
 @Component({
     selector: 'app-return',
@@ -10,31 +21,42 @@ import { SelectItemGroup } from 'primeng/api'
     styleUrl: './return.component.scss',
 })
 export class ReturnComponent {
-    visible = false
+    searchType: SearchType[] | undefined;
+
+
+
     flightForm: FormGroup
     groupedCities!: SelectItemGroup[]
 
     promoCodeError = ''
-    isPromoValid = false
+
     validPromoCodes: string[] = ['Abc', 'Bcd']
 
     constructor(
         private fb: FormBuilder,
         private eRef: ElementRef,
     ) {
+
+        this.searchType = [
+            { searchTypeName: 'Flexible' },
+            { searchTypeName: 'Fixed' }
+        ];
+
         this.flightForm = this.fb.group(
-            {
-                from: ['', Validators.required],
-                to: ['', Validators.required],
-                departure: ['', Validators.required],
-                return: [''],
-                adults: [this.adults, [Validators.required, Validators.min(1)]],
-                children: [this.children],
-                infants: [this.infants],
-                promocode: [''],
-            },
-            { validators: this.dateValidator },
-        )
+    {
+        from: ['', Validators.required],
+        to: ['', Validators.required],
+        departure: ['', Validators.required],
+        return: [''],
+        adults: [this.adults, [Validators.required, Validators.min(1)]],
+        children: [this.children],
+        infants: [this.infants],
+        promocode: [''],
+        selectedSearch: new FormControl<SearchType | null>(null)
+    },
+    { validators: [this.sameCityValidator, this.dateValidator] }
+);
+
 
         this.groupedCities = [
             {
@@ -55,12 +77,17 @@ export class ReturnComponent {
         ]
     }
 
-    // showDialog() {
-    //     this.visible = true
-    //     this.promoCodeError = ''
-    //     this.isPromoValid = false
-    //     this.flightForm.get('promocode')?.setValue('')
-    // }
+
+    sameCityValidator(form: FormGroup) {
+    const fromValue = form.get('from')?.value;
+    const toValue = form.get('to')?.value;
+
+    return fromValue && toValue && fromValue === toValue
+        ? { sameCity: true }
+        : null;
+    }
+
+
 
     dateValidator(control: AbstractControl) {
         const departure = control.get('departure')?.value
@@ -73,34 +100,37 @@ export class ReturnComponent {
         return null
     }
 
-
     onDepartureSelect() {
         this.flightForm.get('return')?.updateValueAndValidity()
     }
 
     validatePromoCode() {
-        const enteredCode = this.flightForm.get('promocode')?.value?.trim()
+    const enteredCode = this.flightForm.get('promocode')?.value?.trim();
 
-        if (!enteredCode) {
-            this.promoCodeError = ''
-            this.isPromoValid = false
-            return
-        }
-
-        if (!this.validPromoCodes.includes(enteredCode)) {
-            this.promoCodeError = 'Wrong Promo Code'
-            this.isPromoValid = false
-        } else {
-            this.promoCodeError = ''
-            this.isPromoValid = true
-        }
+    if (!enteredCode) {
+        this.promoCodeError = '';
+        return;
     }
 
-    adults: number = 1
-    children: number = 0
-    infants: number = 0
+    if (!this.validPromoCodes.includes(enteredCode)) {
+        this.promoCodeError = 'Wrong Promo Code';
+    } else {
+        this.promoCodeError = '';
+        this.flightForm.get('promocode')?.setValue(enteredCode);
+    }
+}
+
+    adults = 0
+    children = 0
+    infants = 0
+
+
 
     get totalGuests(): number {
+        if(this.adults===0){
+            this.children=0
+            this.infants=0
+        }
         return this.adults + this.children + this.infants
     }
 
@@ -120,7 +150,7 @@ export class ReturnComponent {
     }
 
     decrease(type: string) {
-        if (type === 'adults' && this.adults > 1) {
+        if (type === 'adults' && this.adults >= 1) {
             this.adults--
             this.flightForm.get('adults')?.setValue(this.adults)
         } else if (type === 'children' && this.children > 0) {

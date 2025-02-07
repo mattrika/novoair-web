@@ -13,7 +13,6 @@ import { ManageBookComponent } from '../../../book-flight/components/manage-book
     styleUrl: './hero-section.component.scss',
 })
 export class HeroSectionComponent {
-    ingredient = ''
     activeTab = 'Book a Flight'
 
     constructor(private router: Router) {}

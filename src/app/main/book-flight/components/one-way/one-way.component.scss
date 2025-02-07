@@ -22,20 +22,41 @@
         color: #595959;
     }
 
+    // ::ng-deep .p-select-label.p-placeholder {
+    //     margin-left: 45px;
+    // }
+
+    ::ng-deep .p-datepicker-day-selected {
+        background-color: #005cc8;
+    }
+
+    ::ng-deep p-datepicker .p-datepicker-input {
+        cursor: pointer;
+    }
+
+    ::ng-deep .p-select-option.p-select-option-selected.p-focus {
+        background-color: #005dc835;
+    }
+    ::ng-deep .p-select-option.p-select-option-selected {
+        background-color: #005dc835;
+        color: #1e293b;
+    }
+
     input::placeholder {
         color: #595959;
     }
-    .hidden {
-        display: none;
-    }
+    // .hidden {
+    //     display: none;
+    // }
 
-    .responsive-div {
-        display: none; /* Hide by default */
-    }
+    // .responsive-div {
+    //     display: none;
+    // }
 }
 
-@media (min-width: 768px) {
-    .responsive-div {
-        display: block; /* Hide by default */
-    }
-}
+// @media (max-width: 400px) {
+//     .card {
+//         display: flex;
+//         justify-content: end;
+//     }
+// }

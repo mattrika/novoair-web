@@ -15,12 +15,28 @@
         color: #595959;
     }
 
+    ::ng-deep p-datepicker .p-datepicker-input {
+        cursor: pointer;
+    }
+
     input::placeholder {
         color: #595959;
     }
     ::ng-deep p-select {
         background-color: rgba(255, 255, 255, 0);
         box-shadow: none;
+    }
+
+    ::ng-deep .p-datepicker-day-selected {
+        background-color: #005cc8;
+    }
+
+    ::ng-deep .p-select-option.p-select-option-selected.p-focus {
+        background-color: #005dc835;
+    }
+    ::ng-deep .p-select-option.p-select-option-selected {
+        background-color: #005dc835;
+        color: #1e293b;
     }
 }
 

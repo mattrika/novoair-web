@@ -21,8 +21,6 @@ import { ReturnComponent } from '../return/return.component'
     styleUrl: './book-card.component.scss',
 })
 export class BookCardComponent {
-    ingredient = ''
-    // activeTab = 'Book a Flight'
     activeTab = 'return'
 
     constructor(private router: Router) {}
