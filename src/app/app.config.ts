@@ -27,9 +27,31 @@ import { providePrimeNG } from 'primeng/config'
 import { AppRoutes } from './app.routes'
 import { MyPrimeNGConfig } from './primeng.config'
 
+// Import NgIconsModule and icons
+import { NgIconsModule } from '@ng-icons/core'
+import { heroCog, heroUsers } from '@ng-icons/heroicons/outline' // Example icons
+import {
+    matAirplanemodeActiveOutline,
+    matCardGiftcardOutline,
+    matDirectionsBusOutline,
+    matLocalOfferOutline,
+    matMyLocationOutline,
+} from '@ng-icons/material-icons/outline' // Import the missing icon
+
 export const appConfig: ApplicationConfig = {
     providers: [
-        importProvidersFrom(JwtModule),
+        importProvidersFrom(
+            JwtModule,
+            NgIconsModule.withIcons({
+                heroUsers,
+                heroCog,
+                matAirplanemodeActiveOutline,
+                matCardGiftcardOutline,
+                matMyLocationOutline,
+                matDirectionsBusOutline,
+                matLocalOfferOutline,
+            }), // Register icons here
+        ),
         { provide: APP_ENVIRONMENT, useValue: environment },
         { provide: DATE_PIPE_DEFAULT_OPTIONS, useValue: { dateFormat: 'shortDate' } },
         { provide: TitleStrategy, useClass: CustomTitleStrategy },

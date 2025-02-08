@@ -3,11 +3,36 @@
 }
 
 header {
-    border-bottom: 4px solid; /* Set the border thickness */
+    border-bottom: 3px solid; /* Set the border thickness */
     border-image: linear-gradient(to right, #0057f8, #23cefe, #fa7421, #bc4f02) 1; /* Apply the gradient to the border */
 }
 
 .mobile-menu {
     border-top: 4px solid; /* Add a gradient border at the top of the mobile menu */
     border-image: linear-gradient(to right, #0057f8, #23cefe, #fa7421, #bc4f02) 1;
+}
+
+.sub-menu {
+    border-radius: 0.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: rgb(68 64 60);
+    &:hover {
+        color: rgb(3 105 161);
+    }
+}
+
+.sub-item {
+    color: rgb(68 64 60);
+    &:hover {
+        color: rgb(3 105 161);
+    }
+}
+
+.group ul {
+    transition-delay: 200ms;
 }

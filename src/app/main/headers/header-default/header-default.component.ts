@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common'
 import { Component, HostListener } from '@angular/core'
+import { NgIcon } from '@ng-icons/core'
 
 interface ListItem {
     icon: string
@@ -33,7 +34,7 @@ interface GridItem {
 
 @Component({
     selector: 'app-header-default',
-    imports: [CommonModule],
+    imports: [CommonModule, NgIcon],
     templateUrl: './header-default.component.html',
     styleUrl: './header-default.component.scss',
 })
@@ -116,7 +117,7 @@ export class HeaderDefaultComponent {
         },
         {
             title: 'Tips & Guides',
-            items: [{ name: "General Guidelines", link: '/general-uidelines' }],
+            items: [{ name: 'General Guidelines', link: '/general-uidelines' }],
         },
     ]
 
@@ -176,7 +177,7 @@ export class HeaderDefaultComponent {
         },
         {
             icon: 'pi pi-linkedin',
-            title: 'LinkedIN',
+            title: 'LinkedIn',
             link: 'https://www.linkedin.com/company/novoair/',
         },
     ]
