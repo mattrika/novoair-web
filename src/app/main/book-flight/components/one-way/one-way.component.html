@@ -1,0 +1,213 @@
+<div class="h-full items-center gap-4 rounded-xl bg-white p-2 md:flex md:h-20">
+    <form
+        [formGroup]="flightForm"
+        class="mt-20 h-full w-full items-center justify-around gap-5 rounded-xl border-2 border-gray-200 p-6 md:mt-0 md:flex md:h-16"
+    >
+        <div
+            class="-ml-1 flex w-full flex-1 flex-col sm:ml-0 sm:flex-row sm:items-center sm:justify-between"
+        >
+            <div class="card ml-[60px] flex justify-center sm:ml-0">
+                <p-select
+                    [options]="groupedCities"
+                    formControlName="from"
+                    placeholder="Form"
+                    [group]="true"
+                    [dropdownIcon]="'none'"
+                    class="border-none sm:max-w-36"
+                    styleClass=""
+                >
+                </p-select>
+            </div>
+            <div class="flex justify-center py-3 sm:py-0">
+                <i class="pi pi-arrow-up-right hide z-10 mx-3 ml-6 md:ml-5 md:mr-14"></i>
+            </div>
+            <div class="card ml-[110px] flex justify-center sm:ml-0">
+                <p-select
+                    [options]="groupedCities"
+                    formControlName="to"
+                    placeholder="To"
+                    [group]="true"
+                    [dropdownIcon]="'none'"
+                    class="w-36 border-none"
+                >
+                </p-select>
+            </div>
+        </div>
+
+        <div class="z-10 -ml-7 mr-6 hidden h-8 border border-gray-300 md:flex"></div>
+
+        <div class="justify ml-4 flex w-full flex-1 items-center justify-center sm:ml-0 md:mt-0">
+            <p-datepicker
+                formControlName="departure"
+                placeholder="Departure"
+                class="placeholder:text-black"
+                styleClass="border-none"
+            ></p-datepicker>
+        </div>
+
+        <div class="z-10 mb-2 hidden border border-gray-300 md:mb-0 md:flex md:h-8"></div>
+
+        <div class="relative ml-3 mt-2 flex flex-1 justify-center sm:ml-0 sm:mt-0">
+            <div class="cursor-pointer">
+                <div (click)="toggleInputs()" class="flex text-gray-700">
+                    @if (adults < 1) {
+                        Passengers <span class="ml-2">&#9662;</span>
+                    } @else {
+                        <span>Adults {{ adults }} Chil...</span>
+                    }
+                </div>
+                <div
+                    [ngClass]="{ hidden: !showInputs }"
+                    class="absolute z-10 -ml-[90px] mt-2 flex min-w-64 flex-col gap-2 space-y-2 rounded-md border border-gray-300 bg-white p-4 sm:-ml-28"
+                >
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="text-md text-[#595959]">
+                            Adults <br />
+                            <span class="text-sm text-gray-400">> 12 Years</span>
+                        </div>
+                        <div class="flex flex-row items-center justify-center gap-2">
+                            <button
+                                (click)="decrease('adults')"
+                                [disabled]="adults === 0"
+                                class="rounded px-[9px] text-gray-700"
+                                [ngClass]="{
+                                    'bg-gray-300': adults === 0,
+                                    'btn-primary': totalGuests <= 9 && adults !== 0,
+                                }"
+                            >
+                                -
+                            </button>
+                            <div class="text-[#595959]">{{ adults }}</div>
+
+                            <button
+                                (click)="increase('adults')"
+                                [disabled]="totalGuests >= 9"
+                                class="rounded px-[7px] text-white"
+                                [ngClass]="{
+                                    'bg-gray-300': totalGuests >= 9,
+                                    'btn-primary': totalGuests < 9,
+                                }"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="text-md text-[#595959]">
+                            Children <br />
+                            <span class="text-sm text-gray-400">2-12 Years</span>
+                        </div>
+                        <div class="flex flex-row items-center justify-center gap-2">
+                            <button
+                                (click)="decrease('children')"
+                                [disabled]="children === 0"
+                                class="rounded px-[9px] text-gray-700"
+                                [ngClass]="{
+                                    'bg-gray-300': children === 0,
+                                    'btn-primary': totalGuests <= 9 && children !== 0,
+                                }"
+                            >
+                                -
+                            </button>
+                            <div class="text-[#595959]">{{ children }}</div>
+
+                            <button
+                                (click)="increase('children')"
+                                [disabled]="totalGuests >= 9 || adults === 0"
+                                class="rounded px-[7px] text-white"
+                                [ngClass]="{
+                                    'bg-gray-300': totalGuests >= 9 || adults === 0,
+                                    'btn-primary': totalGuests < 9 && adults !== 0,
+                                }"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="text-md text-[#595959]">
+                            Infants <br /><span class="text-sm text-gray-400"> < 2 Years</span>
+                        </div>
+                        <div class="flex flex-row items-center justify-center gap-2">
+                            <button
+                                (click)="decrease('infants')"
+                                [disabled]="infants === 0"
+                                class="rounded px-[9px] text-gray-700"
+                                [ngClass]="{
+                                    'bg-gray-300': infants === 0,
+                                    'btn-primary': totalGuests <= 9 && infants !== 0,
+                                }"
+                            >
+                                -
+                            </button>
+                            <div class="text-[#595959]">{{ infants }}</div>
+
+                            <button
+                                (click)="increase('infants')"
+                                [disabled]="totalGuests >= 9 || adults === 0"
+                                class="rounded px-[7px] text-white"
+                                [ngClass]="{
+                                    'bg-gray-300': totalGuests >= 9 || adults === 0,
+                                    'btn-primary': totalGuests < 9 && adults !== 0,
+                                }"
+                            >
+                                +
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="mt-4 flex justify-center sm:mt-0 md:-mb-16">
+        <div>
+            <div class="md:-ml-56 md:-mt-32">
+                <form [formGroup]="flightForm">
+                    <p-select
+                        formControlName="selectedSearch"
+                        [options]="searchType"
+                        optionLabel="searchTypeName"
+                        placeholder="Select Type"
+                        class="h-10 w-48 md:w-44"
+                        styleClass="!bg-white rounded-3xl px-3 "
+                    />
+                </form>
+            </div>
+
+            <div class="mb-6 mt-6 h-10 w-full md:-mt-[45px]">
+                <form [formGroup]="flightForm">
+                    <div class="mb z-50 flex flex-row items-center gap-1">
+                        <div>
+                            <input
+                                pInputText
+                                id="promocode"
+                                class="h-10 w-48 flex-auto rounded-3xl border p-2 text-center"
+                                autocomplete="off"
+                                formControlName="promocode"
+                                placeholder="Promo Code"
+                                (input)="validatePromoCode()"
+                            />
+                            @if (promoCodeError) {
+                                <p class="text-sm text-red-500">{{ promoCodeError }}</p>
+                            }
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <button
+                class="btn-primary mt-4 flex h-10 w-48 items-center justify-center gap-2 rounded-full px-4 shadow-sm sm:h-16 md:mt-0"
+                (click)="searchFlights()"
+                [disabled]="flightForm.invalid"
+            >
+                <i class="pi pi-search"></i>
+                Search Flights
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="mb-2 ml-5 text-sm text-red-500">
+    @if (flightForm.hasError('sameCity')) {
+        <p>Can't be select same destination</p>
+    }
+</div>
