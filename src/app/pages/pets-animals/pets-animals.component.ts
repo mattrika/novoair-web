@@ -3,7 +3,9 @@ import { NovoneelNovoairComponent } from '../../main/novoneel-novoair/novoneel-n
 
 @Component({
     selector: 'app-pets-animals',
-    imports: [NovoneelNovoairComponent],
+    imports: [
+        /* NovoneelNovoairComponent */
+    ],
     templateUrl: './pets-animals.component.html',
     styleUrl: './pets-animals.component.scss',
 })

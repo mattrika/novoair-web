@@ -1,10 +1,16 @@
 import { Component, ElementRef, HostListener } from '@angular/core'
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators,FormControl } from '@angular/forms'
+import {
+    FormBuilder,
+    FormControl,
+    FormGroup,
+    ReactiveFormsModule,
+    Validators,
+} from '@angular/forms'
 import { PrimeModules } from '@core/ui/primeng'
 import { SelectItemGroup } from 'primeng/api'
 
 interface SearchType {
-    searchTypeName: string;
+    searchTypeName: string
 }
 
 @Component({
@@ -14,7 +20,7 @@ interface SearchType {
     styleUrl: './one-way.component.scss',
 })
 export class OneWayComponent {
-    searchType: SearchType[] | undefined;
+    searchType: SearchType[] | undefined
 
     flightForm: FormGroup
     groupedCities!: SelectItemGroup[]
@@ -26,24 +32,21 @@ export class OneWayComponent {
         private fb: FormBuilder,
         private eRef: ElementRef,
     ) {
+        this.searchType = [{ searchTypeName: 'Flexible' }, { searchTypeName: 'Fixed' }]
 
-        this.searchType = [
-            { searchTypeName: 'Flexible' },
-            { searchTypeName: 'Fixed' }
-        ];
-
-        this.flightForm = this.fb.group({
-            from: ['', Validators.required],
-            to: ['', Validators.required],
-            departure: ['', Validators.required],
-            adults: [this.adults, [Validators.required, Validators.min(1)]],
-            children: [this.children],
-            infants: [this.infants],
-            promocode: [''],
-            selectedSearch: new FormControl<SearchType | null>(null)
-        }
-    ,
-    { validators: this.sameCityValidator })
+        this.flightForm = this.fb.group(
+            {
+                from: ['', Validators.required],
+                to: ['', Validators.required],
+                departure: ['', Validators.required],
+                adults: [this.adults, [Validators.required, Validators.min(1)]],
+                children: [this.children],
+                infants: [this.infants],
+                promocode: [''],
+                selectedSearch: new FormControl<SearchType | null>(null),
+            },
+            { validators: this.sameCityValidator },
+        )
 
         this.groupedCities = [
             {
@@ -65,31 +68,27 @@ export class OneWayComponent {
     }
 
     sameCityValidator(form: FormGroup) {
-    const fromValue = form.get('from')?.value;
-    const toValue = form.get('to')?.value;
+        const fromValue = form.get('from')?.value
+        const toValue = form.get('to')?.value
 
-    return fromValue && toValue && fromValue === toValue
-        ? { sameCity: true }
-        : null;
+        return fromValue && toValue && fromValue === toValue ? { sameCity: true } : null
     }
 
+    validatePromoCode() {
+        const enteredCode = this.flightForm.get('promocode')?.value?.trim()
 
+        if (!enteredCode) {
+            this.promoCodeError = ''
+            return
+        }
 
-     validatePromoCode() {
-    const enteredCode = this.flightForm.get('promocode')?.value?.trim();
-
-    if (!enteredCode) {
-        this.promoCodeError = '';
-        return;
+        if (!this.validPromoCodes.includes(enteredCode)) {
+            this.promoCodeError = 'Wrong Promo Code'
+        } else {
+            this.promoCodeError = ''
+            this.flightForm.get('promocode')?.setValue(enteredCode)
+        }
     }
-
-    if (!this.validPromoCodes.includes(enteredCode)) {
-        this.promoCodeError = 'Wrong Promo Code';
-    } else {
-        this.promoCodeError = '';
-        this.flightForm.get('promocode')?.setValue(enteredCode);
-    }
-}
 
     searchFlights() {
         if (this.flightForm.valid) {
@@ -104,9 +103,9 @@ export class OneWayComponent {
     infants = 0
 
     get totalGuests(): number {
-        if(this.adults===0){
-            this.children=0
-            this.infants=0
+        if (this.adults === 0) {
+            this.children = 0
+            this.infants = 0
         }
         return this.adults + this.children + this.infants
     }

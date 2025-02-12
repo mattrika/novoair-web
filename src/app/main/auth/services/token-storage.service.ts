@@ -25,10 +25,10 @@ export class TokenStorageService {
     }
 
     getAccessToken(): string | null {
-        return this.windowRef.sessionStorage.getItem(ACCESS_TOKEN_KEY)
+        return this.windowRef.sessionStorage?.getItem(ACCESS_TOKEN_KEY)
     }
 
     getRefreshToken(): string | null {
-        return this.windowRef.sessionStorage.getItem(REFRESH_TOKEN_KEY)
+        return this.windowRef.sessionStorage?.getItem(REFRESH_TOKEN_KEY)
     }
 }
