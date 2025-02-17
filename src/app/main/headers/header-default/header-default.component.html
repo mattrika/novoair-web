@@ -1,7 +1,7 @@
 <header class="w-full bg-white py-2 backdrop-blur-lg md:bg-white/50">
     <div class="container flex items-center justify-between px-4 md:px-0">
         <!-- Logo -->
-        <a href="">
+        <a routerLink="">
             <img src="assets/logo/logo.png" alt="MyBrand Logo" class="w-40" />
         </a>
 
@@ -42,6 +42,7 @@
                                 <li>
                                     <a
                                         href="https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx"
+                                        target="_blank"
                                         class="flex items-center gap-2 rounded px-4 py-2 text-sm text-stone-700 hover:bg-amber-100 hover:text-sky-700"
                                     >
                                         <ng-icon
@@ -53,7 +54,7 @@
                                 </li>
                                 <li>
                                     <a
-                                        href="/holiday-packages"
+                                        routerLink="/holiday-packages"
                                         class="flex items-center gap-2 rounded px-4 py-2 text-sm text-stone-700 hover:bg-amber-100 hover:text-sky-700"
                                     >
                                         <ng-icon
@@ -65,7 +66,7 @@
                                 </li>
                                 <li>
                                     <a
-                                        href="/our-destination"
+                                        routerLink="/our-destination"
                                         class="flex items-center gap-2 rounded px-4 py-2 text-sm text-stone-700 hover:bg-amber-100 hover:text-sky-700"
                                     >
                                         <ng-icon
@@ -89,7 +90,7 @@
                                 </li>
                                 <li>
                                     <a
-                                        href="/offers"
+                                        routerLink="/offers"
                                         class="flex items-center gap-2 rounded px-4 py-2 text-sm text-stone-700 hover:bg-amber-100 hover:text-sky-700"
                                     >
                                         <ng-icon
@@ -132,10 +133,24 @@
                             >
                                 @for (item of listItemsBooks; track item.text) {
                                     <li class="rounded-lg text-stone-700 hover:text-sky-700">
-                                        <a class="flex items-center gap-2" [href]="item.link">
-                                            <i [class]="item.icon" style="font-size: 1rem"></i>
-                                            <span>{{ item.text }}</span>
-                                        </a>
+                                        @if (item.link.startsWith('http')) {
+                                            <a
+                                                class="flex items-center gap-2"
+                                                [attr.href]="item.link"
+                                                target="_blank"
+                                            >
+                                                <i [class]="item.icon" style="font-size: 1rem"></i>
+                                                <span>{{ item.text }}</span>
+                                            </a>
+                                        } @else {
+                                            <a
+                                                class="flex items-center gap-2"
+                                                [routerLink]="item.link"
+                                            >
+                                                <i [class]="item.icon" style="font-size: 1rem"></i>
+                                                <span>{{ item.text }}</span>
+                                            </a>
+                                        }
                                     </li>
                                 }
                             </div>
@@ -170,7 +185,17 @@
                                             </h1>
                                             @for (item of destination.items; track item) {
                                                 <li class="sub-item text-sm">
-                                                    <a [href]="item.link">{{ item.name }}</a>
+                                                    @if (item.link.startsWith('http')) {
+                                                        <a
+                                                            [attr.href]="item.link"
+                                                            target="_blank"
+                                                            >{{ item.name }}</a
+                                                        >
+                                                    } @else {
+                                                        <a [routerLink]="item.link">{{
+                                                            item.name
+                                                        }}</a>
+                                                    }
                                                 </li>
                                             }
                                         </ul>
@@ -186,7 +211,17 @@
                                             </h1>
                                             @for (item of info.items; track item) {
                                                 <li class="sub-item text-sm">
-                                                    <a [href]="item.link">{{ item.name }}</a>
+                                                    @if (item.link.startsWith('http')) {
+                                                        <a
+                                                            [attr.href]="item.link"
+                                                            target="_blank"
+                                                            >{{ item.name }}</a
+                                                        >
+                                                    } @else {
+                                                        <a [routerLink]="item.link">{{
+                                                            item.name
+                                                        }}</a>
+                                                    }
                                                 </li>
                                             }
                                         </ul>
@@ -202,7 +237,17 @@
                                             </h1>
                                             @for (item of info.items; track item) {
                                                 <li class="sub-item text-sm">
-                                                    <a [href]="item.link">{{ item.name }}</a>
+                                                    @if (item.link.startsWith('http')) {
+                                                        <a
+                                                            [attr.href]="item.link"
+                                                            target="_blank"
+                                                            >{{ item.name }}</a
+                                                        >
+                                                    } @else {
+                                                        <a [routerLink]="item.link">{{
+                                                            item.name
+                                                        }}</a>
+                                                    }
                                                 </li>
                                             }
                                         </ul>
@@ -214,10 +259,24 @@
                             >
                                 @for (item of listItemsManage; track item.text) {
                                     <li class="sub-item rounded-lg">
-                                        <a class="flex items-center gap-2" [href]="item.link">
-                                            <i [class]="item.icon" style="font-size: 1rem"></i>
-                                            <span>{{ item.text }}</span>
-                                        </a>
+                                        @if (item.link.startsWith('http')) {
+                                            <a
+                                                class="flex items-center gap-2"
+                                                [attr.href]="item.link"
+                                                target="_blank"
+                                            >
+                                                <i [class]="item.icon" style="font-size: 1rem"></i>
+                                                <span>{{ item.text }}</span>
+                                            </a>
+                                        } @else {
+                                            <a
+                                                class="flex items-center gap-2"
+                                                [routerLink]="item.link"
+                                            >
+                                                <i [class]="item.icon" style="font-size: 1rem"></i>
+                                                <span>{{ item.text }}</span>
+                                            </a>
+                                        }
                                     </li>
                                 }
                             </div>
@@ -239,10 +298,24 @@
                         <div class="flex gap-4 p-4">
                             <div class="grid justify-around text-sm md:grid-cols-2 lg:grid-cols-4">
                                 @for (item of gridItems; track item.title) {
-                                    <a [href]="item.link" class="sub-item justify-items-center p-4">
-                                        <i [class]="item.icon" style="font-size: 2rem"></i>
-                                        <h1 class="text-lg font-semibold">{{ item.title }}</h1>
-                                    </a>
+                                    @if (item.link.startsWith('http')) {
+                                        <a
+                                            [attr.href]="item.link"
+                                            target="_blank"
+                                            class="sub-item justify-items-center p-4"
+                                        >
+                                            <i [class]="item.icon" style="font-size: 2rem"></i>
+                                            <h1 class="text-lg font-semibold">{{ item.title }}</h1>
+                                        </a>
+                                    } @else {
+                                        <a
+                                            [routerLink]="item.link"
+                                            class="sub-item justify-items-center p-4"
+                                        >
+                                            <i [class]="item.icon" style="font-size: 2rem"></i>
+                                            <h1 class="text-lg font-semibold">{{ item.title }}</h1>
+                                        </a>
+                                    }
                                 }
                             </div>
                             <div
@@ -250,10 +323,24 @@
                             >
                                 @for (item of listItemsExplore; track item.text) {
                                     <li class="sub-item rounded-lg">
-                                        <a class="flex items-center gap-2" [href]="item.link">
-                                            <i [class]="item.icon" style="font-size: 1rem"></i>
-                                            <span>{{ item.text }}</span>
-                                        </a>
+                                        @if (item.link.startsWith('http')) {
+                                            <a
+                                                class="flex items-center gap-2"
+                                                [attr.href]="item.link"
+                                                target="_blank"
+                                            >
+                                                <i [class]="item.icon" style="font-size: 1rem"></i>
+                                                <span>{{ item.text }}</span>
+                                            </a>
+                                        } @else {
+                                            <a
+                                                class="flex items-center gap-2"
+                                                [routerLink]="item.link"
+                                            >
+                                                <i [class]="item.icon" style="font-size: 1rem"></i>
+                                                <span>{{ item.text }}</span>
+                                            </a>
+                                        }
                                     </li>
                                 }
                             </div>
@@ -271,12 +358,12 @@
                     >
                         <li class="flex gap-4 p-4">
                             <a
-                                href="/co-branded-prepaid-card"
+                                routerLink="/co-branded-prepaid-card"
                                 class="block px-4 py-2 hover:bg-gray-100"
                                 ><img class="h-8 w-32" src="assets/logo/smc.png" alt="MyBrand Logo"
                             /></a>
                             <a
-                                href="/smiles-frequent-flyer"
+                                routerLink="/smiles-frequent-flyer"
                                 class="block px-4 py-2 hover:bg-gray-100"
                                 ><img
                                     class="h-8 w-32"
@@ -315,6 +402,7 @@
                             <li>
                                 <a
                                     href="https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx"
+                                    target="_blank"
                                     class="flex items-center gap-2 rounded px-4 py-2 text-sm text-stone-700 hover:bg-amber-100"
                                 >
                                     <ng-icon
@@ -326,7 +414,7 @@
                             </li>
                             <li>
                                 <a
-                                    href="/holiday-packages"
+                                    routerLink="/holiday-packages"
                                     class="flex items-center gap-2 rounded px-4 py-2 text-sm text-stone-700 hover:bg-amber-100"
                                 >
                                     <ng-icon
@@ -338,7 +426,7 @@
                             </li>
                             <li>
                                 <a
-                                    href="/our-destination"
+                                    routerLink="/our-destination"
                                     class="flex items-center gap-2 rounded px-4 py-2 text-sm text-stone-700 hover:bg-amber-100"
                                 >
                                     <ng-icon
@@ -362,7 +450,7 @@
                             </li>
                             <li>
                                 <a
-                                    href="/offers"
+                                    routerLink="/offers"
                                     class="flex items-center gap-2 rounded px-4 py-2 text-sm text-stone-700 hover:bg-amber-100"
                                 >
                                     <ng-icon
@@ -406,10 +494,21 @@
                         >
                             @for (item of listItemsBooks; track item.text) {
                                 <li class="rounded-lg text-stone-700">
-                                    <a class="flex items-center gap-2" [href]="item.link">
-                                        <i [class]="item.icon" style="font-size: 1rem"></i>
-                                        <span>{{ item.text }}</span>
-                                    </a>
+                                    @if (item.link.startsWith('http')) {
+                                        <a
+                                            class="flex items-center gap-2"
+                                            [attr.href]="item.link"
+                                            target="_blank"
+                                        >
+                                            <i [class]="item.icon" style="font-size: 1rem"></i>
+                                            <span>{{ item.text }}</span>
+                                        </a>
+                                    } @else {
+                                        <a class="flex items-center gap-2" [routerLink]="item.link">
+                                            <i [class]="item.icon" style="font-size: 1rem"></i>
+                                            <span>{{ item.text }}</span>
+                                        </a>
+                                    }
                                 </li>
                             }
                         </div>
@@ -440,7 +539,13 @@
                                         </h1>
                                         @for (item of destination.items; track item) {
                                             <li class="sub-item text-sm">
-                                                <a [href]="item.link">{{ item.name }}</a>
+                                                @if (item.link.startsWith('http')) {
+                                                    <a [attr.href]="item.link" target="_blank">{{
+                                                        item.name
+                                                    }}</a>
+                                                } @else {
+                                                    <a [routerLink]="item.link">{{ item.name }}</a>
+                                                }
                                             </li>
                                         }
                                     </ul>
@@ -456,7 +561,13 @@
                                         </h1>
                                         @for (item of info.items; track item) {
                                             <li class="sub-item text-sm">
-                                                <a [href]="item.link">{{ item.name }}</a>
+                                                @if (item.link.startsWith('http')) {
+                                                    <a [attr.href]="item.link" target="_blank">{{
+                                                        item.name
+                                                    }}</a>
+                                                } @else {
+                                                    <a [routerLink]="item.link">{{ item.name }}</a>
+                                                }
                                             </li>
                                         }
                                     </ul>
@@ -472,7 +583,13 @@
                                         </h1>
                                         @for (item of info.items; track item) {
                                             <li class="sub-item text-sm">
-                                                <a [href]="item.link">{{ item.name }}</a>
+                                                @if (item.link.startsWith('http')) {
+                                                    <a [attr.href]="item.link" target="_blank">{{
+                                                        item.name
+                                                    }}</a>
+                                                } @else {
+                                                    <a [routerLink]="item.link">{{ item.name }}</a>
+                                                }
                                             </li>
                                         }
                                     </ul>
@@ -484,10 +601,21 @@
                         >
                             @for (item of listItemsManage; track item.text) {
                                 <li class="sub-item rounded-lg">
-                                    <a class="flex items-center gap-2" [href]="item.link">
-                                        <i [class]="item.icon" style="font-size: 1rem"></i>
-                                        <span>{{ item.text }}</span>
-                                    </a>
+                                    @if (item.link.startsWith('http')) {
+                                        <a
+                                            class="flex items-center gap-2"
+                                            [attr.href]="item.link"
+                                            target="_blank"
+                                        >
+                                            <i [class]="item.icon" style="font-size: 1rem"></i>
+                                            <span>{{ item.text }}</span>
+                                        </a>
+                                    } @else {
+                                        <a class="flex items-center gap-2" [routerLink]="item.link">
+                                            <i [class]="item.icon" style="font-size: 1rem"></i>
+                                            <span>{{ item.text }}</span>
+                                        </a>
+                                    }
                                 </li>
                             }
                         </div>
@@ -510,13 +638,24 @@
                     <div class="gap-4 p-2">
                         <div class="my-2 grid grid-cols-2 text-sm">
                             @for (item of gridItems; track item.title) {
-                                <a
-                                    [href]="item.link"
-                                    class="sub-item justify-items-center p-2 hover:bg-gray-50"
-                                >
-                                    <i [class]="item.icon" style="font-size: 1rem"></i>
-                                    <h1 class="font-semibold">{{ item.title }}</h1>
-                                </a>
+                                @if (item.link.startsWith('http')) {
+                                    <a
+                                        [attr.href]="item.link"
+                                        target="_blank"
+                                        class="sub-item justify-items-center p-4"
+                                    >
+                                        <i [class]="item.icon" style="font-size: 2rem"></i>
+                                        <h1 class="text-lg font-semibold">{{ item.title }}</h1>
+                                    </a>
+                                } @else {
+                                    <a
+                                        [routerLink]="item.link"
+                                        class="sub-item justify-items-center p-4"
+                                    >
+                                        <i [class]="item.icon" style="font-size: 2rem"></i>
+                                        <h1 class="text-lg font-semibold">{{ item.title }}</h1>
+                                    </a>
+                                }
                             }
                         </div>
                         <div
@@ -524,10 +663,21 @@
                         >
                             @for (item of listItemsExplore; track item.text) {
                                 <li class="sub-item rounded-lg">
-                                    <a class="flex items-center gap-2" [href]="item.link">
-                                        <i [class]="item.icon" style="font-size: 1rem"></i>
-                                        <span>{{ item.text }}</span>
-                                    </a>
+                                    @if (item.link.startsWith('http')) {
+                                        <a
+                                            class="flex items-center gap-2"
+                                            [attr.href]="item.link"
+                                            target="_blank"
+                                        >
+                                            <i [class]="item.icon" style="font-size: 1rem"></i>
+                                            <span>{{ item.text }}</span>
+                                        </a>
+                                    } @else {
+                                        <a class="flex items-center gap-2" [routerLink]="item.link">
+                                            <i [class]="item.icon" style="font-size: 1rem"></i>
+                                            <span>{{ item.text }}</span>
+                                        </a>
+                                    }
                                 </li>
                             }
                         </div>
@@ -546,10 +696,14 @@
                     [ngClass]="{ hidden: !dropdownStates['smileDropdown'] }"
                 >
                     <li class="flex gap-1 p-1">
-                        <a href="/co-branded-prepaid-card" class="block px-4 py-2 hover:bg-gray-100"
+                        <a
+                            routerLink="/co-branded-prepaid-card"
+                            class="block px-4 py-2 hover:bg-gray-100"
                             ><img class="h-8 w-32" src="assets/logo/smc.png" alt="MyBrand Logo"
                         /></a>
-                        <a href="/smiles-frequent-flyer" class="block px-4 py-2 hover:bg-gray-100"
+                        <a
+                            routerLink="/smiles-frequent-flyer"
+                            class="block px-4 py-2 hover:bg-gray-100"
                             ><img class="h-8 w-32" src="assets/logo/smc1.png" alt="MyBrand Logo"
                         /></a>
                     </li>

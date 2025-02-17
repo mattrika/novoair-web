@@ -2,16 +2,16 @@ import { Component, ElementRef, HostListener } from '@angular/core'
 import {
     AbstractControl,
     FormBuilder,
+    FormControl,
     FormGroup,
     ReactiveFormsModule,
     Validators,
-    FormControl
 } from '@angular/forms'
 import { PrimeModules } from '@core/ui/primeng'
 import { SelectItemGroup } from 'primeng/api'
 
 interface SearchType {
-    searchTypeName: string;
+    searchTypeName: string
 }
 
 @Component({
@@ -21,9 +21,7 @@ interface SearchType {
     styleUrl: './return.component.scss',
 })
 export class ReturnComponent {
-    searchType: SearchType[] | undefined;
-
-
+    searchType: SearchType[] | undefined
 
     flightForm: FormGroup
     groupedCities!: SelectItemGroup[]
@@ -36,27 +34,22 @@ export class ReturnComponent {
         private fb: FormBuilder,
         private eRef: ElementRef,
     ) {
-
-        this.searchType = [
-            { searchTypeName: 'Flexible' },
-            { searchTypeName: 'Fixed' }
-        ];
+        this.searchType = [{ searchTypeName: 'Flexible' }, { searchTypeName: 'Fixed' }]
 
         this.flightForm = this.fb.group(
-    {
-        from: ['', Validators.required],
-        to: ['', Validators.required],
-        departure: ['', Validators.required],
-        return: [''],
-        adults: [this.adults, [Validators.required, Validators.min(1)]],
-        children: [this.children],
-        infants: [this.infants],
-        promocode: [''],
-        selectedSearch: new FormControl<SearchType | null>(null)
-    },
-    { validators: [this.sameCityValidator, this.dateValidator] }
-);
-
+            {
+                from: ['', Validators.required],
+                to: ['', Validators.required],
+                departure: ['', Validators.required],
+                return: [''],
+                adults: [this.adults, [Validators.required, Validators.min(1)]],
+                children: [this.children],
+                infants: [this.infants],
+                promocode: [''],
+                selectedSearch: new FormControl<SearchType | null>(null),
+            },
+            { validators: [this.sameCityValidator, this.dateValidator] },
+        )
 
         this.groupedCities = [
             {
@@ -77,17 +70,12 @@ export class ReturnComponent {
         ]
     }
 
-
     sameCityValidator(form: FormGroup) {
-    const fromValue = form.get('from')?.value;
-    const toValue = form.get('to')?.value;
+        const fromValue = form.get('from')?.value
+        const toValue = form.get('to')?.value
 
-    return fromValue && toValue && fromValue === toValue
-        ? { sameCity: true }
-        : null;
+        return fromValue && toValue && fromValue === toValue ? { sameCity: true } : null
     }
-
-
 
     dateValidator(control: AbstractControl) {
         const departure = control.get('departure')?.value
@@ -105,31 +93,29 @@ export class ReturnComponent {
     }
 
     validatePromoCode() {
-    const enteredCode = this.flightForm.get('promocode')?.value?.trim();
+        const enteredCode = this.flightForm.get('promocode')?.value?.trim()
 
-    if (!enteredCode) {
-        this.promoCodeError = '';
-        return;
-    }
+        if (!enteredCode) {
+            this.promoCodeError = ''
+            return
+        }
 
-    if (!this.validPromoCodes.includes(enteredCode)) {
-        this.promoCodeError = 'Wrong Promo Code';
-    } else {
-        this.promoCodeError = '';
-        this.flightForm.get('promocode')?.setValue(enteredCode);
+        if (!this.validPromoCodes.includes(enteredCode)) {
+            this.promoCodeError = 'Wrong Promo Code'
+        } else {
+            this.promoCodeError = ''
+            this.flightForm.get('promocode')?.setValue(enteredCode)
+        }
     }
-}
 
     adults = 0
     children = 0
     infants = 0
 
-
-
     get totalGuests(): number {
-        if(this.adults===0){
-            this.children=0
-            this.infants=0
+        if (this.adults === 0) {
+            this.children = 0
+            this.infants = 0
         }
         return this.adults + this.children + this.infants
     }
