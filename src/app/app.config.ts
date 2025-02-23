@@ -27,7 +27,6 @@ import { providePrimeNG } from 'primeng/config'
 import { AppRoutes } from './app.routes'
 import { MyPrimeNGConfig } from './primeng.config'
 
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser' // Import the missing icon
 // Import NgIconsModule and icons
 import { NgIconsModule } from '@ng-icons/core'
 import { heroCog, heroUsers } from '@ng-icons/heroicons/outline' // Example icons
@@ -37,7 +36,7 @@ import {
     matDirectionsBusOutline,
     matLocalOfferOutline,
     matMyLocationOutline,
-} from '@ng-icons/material-icons/outline'
+} from '@ng-icons/material-icons/outline' // Import the missing icon
 
 export const appConfig: ApplicationConfig = {
     providers: [
@@ -71,6 +70,5 @@ export const appConfig: ApplicationConfig = {
         ),
         provideAnimationsAsync(),
         providePrimeNG(MyPrimeNGConfig),
-        provideClientHydration(withEventReplay()),
     ],
 }
