@@ -61,7 +61,7 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'baggage',
+        path: 'baggage/baggage-size-weight',
         loadComponent: () =>
             import('@pages/baggage/baggage.component').then((m) => m.BaggageComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
@@ -249,7 +249,7 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'pets-animals',
+        path: 'baggage/pets-animals',
         loadComponent: () =>
             import('@pages/pets-animals/pets-animals.component').then(
                 (m) => m.PetsAnimalsComponent,
@@ -257,7 +257,7 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'sports-gears',
+        path: 'baggage/sports-gears',
         loadComponent: () =>
             import('@pages/sports-gears/sports-gears.component').then(
                 (m) => m.SportsGearsComponent,
@@ -265,7 +265,7 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'fire-arms-ammunition',
+        path: 'baggage/fire-arms-ammunition',
         loadComponent: () =>
             import('@pages/arms-ammunition/arms-ammunition.component').then(
                 (m) => m.ArmsAmmunitionComponent,
@@ -273,7 +273,7 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'other-baggages',
+        path: 'baggage/other-baggages',
         loadComponent: () =>
             import('@pages/other-baggages/other-baggages.component').then(
                 (m) => m.OtherBaggagesComponent,
@@ -281,7 +281,7 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'unaccompanied-minor',
+        path: 'policies/unaccompanied-minor',
         loadComponent: () =>
             import('@pages/unaccompanied-minor/unaccompanied-minor.component').then(
                 (m) => m.UnaccompaniedMinorComponent,
@@ -289,7 +289,7 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'domestic-travel-documents',
+        path: 'policies/domestic-travel-documents',
         loadComponent: () =>
             import('@pages/domestic-travel-documents/domestic-travel-documents.component').then(
                 (m) => m.DomesticTravelDocumentsComponent,
@@ -297,7 +297,7 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'transportation-infants',
+        path: 'policies/transportation-infants',
         loadComponent: () =>
             import('@pages/transportation-of-infants/transportation-of-infants.component').then(
                 (m) => m.TransportationOfInfantsComponent,
@@ -305,7 +305,7 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'incapacitated-passengers',
+        path: 'policies/incapacitated-passengers',
         loadComponent: () =>
             import('@pages/incapacitated-passengers/incapacitated-passengers.component').then(
                 (m) => m.IncapacitatedPassengersComponent,
@@ -313,7 +313,7 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'expectant-mothers',
+        path: 'policies/expectant-mothers',
         loadComponent: () =>
             import('@pages/expectant-mother/expectant-mother.component').then(
                 (m) => m.ExpectantMotherComponent,
@@ -321,7 +321,7 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'medical-clearance',
+        path: 'policies/medical-clearance',
         loadComponent: () =>
             import(
                 '@pages/requirement-medical-clearance/requirement-medical-clearance.component'
@@ -329,7 +329,7 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'cancellation-refund',
+        path: 'policies/cancellation-refund',
         loadComponent: () =>
             import('@pages/cancellation-refund/cancellation-refund.component').then(
                 (m) => m.CancellationRefundComponent,
@@ -337,7 +337,7 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'special-assistance',
+        path: 'policies/special-assistance',
         loadComponent: () =>
             import('@pages/special-assistance/special-assistance.component').then(
                 (m) => m.SpecialAssistanceComponent,
@@ -345,13 +345,13 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'coxs-bazar',
+        path: 'top-place/coxs-bazar',
         loadComponent: () =>
             import('@pages/coxs-bazar/coxs-bazar.component').then((m) => m.CoxsBazarComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'st-martin-island',
+        path: 'top-place/st-martin-island',
         loadComponent: () =>
             import('@pages/saint-martin/saint-martin.component').then(
                 (m) => m.SaintMartinComponent,
@@ -359,19 +359,19 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'sundharban',
+        path: 'top-place/sundharban',
         loadComponent: () =>
             import('@pages/sundarban/sundarban.component').then((m) => m.SundarbanComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'nilgiri',
+        path: 'top-place/nilgiri',
         loadComponent: () =>
             import('@pages/nilgiri/nilgiri.component').then((m) => m.NilgiriComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'general-uidelines',
+        path: 'tips-guides/general-guidelines',
         loadComponent: () =>
             import('@pages/general-guidelines/general-guidelines.component').then(
                 (m) => m.GeneralGuidelinesComponent,
@@ -379,19 +379,19 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'kuakata',
+        path: 'top-place/kuakata',
         loadComponent: () =>
             import('@pages/kuakata/kuakata.component').then((m) => m.KuakataComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'kolkata',
+        path: 'international/kolkata',
         loadComponent: () =>
             import('@pages/kolkata/kolkata.component').then((m) => m.KolkataComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'future-destinations',
+        path: 'international/future-destinations',
         loadComponent: () =>
             import('@pages/future-destinations/future-destinations.component').then(
                 (m) => m.FutureDestinationsComponent,
@@ -399,42 +399,48 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'dhaka',
+        path: 'domestic/dhaka',
         loadComponent: () => import('@pages/dhaka/dhaka.component').then((m) => m.DhakaComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'chattogram',
+        path: 'domestic/chattogram',
         loadComponent: () =>
             import('@pages/chattogram/chattogram.component').then((m) => m.ChattogramComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'sylhet',
+        path: 'domestic/coxs-bazar',
+        loadComponent: () =>
+            import('@pages/coxs-bazar/coxs-bazar.component').then((m) => m.CoxsBazarComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'domestic/sylhet',
         loadComponent: () =>
             import('@pages/sylhet/sylhet.component').then((m) => m.SylhetComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'jeshore',
+        path: 'domestic/jeshore',
         loadComponent: () =>
             import('@pages/jeshore/jeshore.component').then((m) => m.JeshoreComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'rajsshahi',
+        path: 'domestic/rajsshahi',
         loadComponent: () =>
             import('@pages/rajshahi/rajshahi.component').then((m) => m.RajshahiComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'barishal',
+        path: 'domestic/barishal',
         loadComponent: () =>
             import('@pages/barishal/barishal.component').then((m) => m.BarishalComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'saidpur',
+        path: 'domestic/saidpur',
         loadComponent: () =>
             import('@pages/saidpur/saidpur.component').then((m) => m.SaidpurComponent),
         resolve: { layout: setLayout(PageLayout.Default) },

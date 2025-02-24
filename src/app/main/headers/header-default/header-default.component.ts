@@ -83,22 +83,22 @@ export class HeaderDefaultComponent {
             title: 'Destinations',
             type: 'International',
             items: [
-                { name: 'Kolkata', link: '/kolkata' },
-                { name: 'Future Destinations', link: '/future-destinations' },
+                { name: 'Kolkata', link: '/international/kolkata' },
+                { name: 'Future Destinations', link: '/international/future-destinations' },
             ],
         },
         {
             title: 'Destinations',
             type: 'Domestic',
             items: [
-                { name: 'Dhaka', link: '/dhaka' },
-                { name: 'Chattogram', link: '/chattogram' },
-                { name: "Cox's Bazar", link: '/coxs-bazar' },
-                { name: 'Sylhet', link: '/sylhet' },
-                { name: 'Jeshore', link: '/jeshore' },
-                { name: 'Rajsshahi', link: '/rajsshahi' },
-                { name: 'Barishal', link: '/barishal' },
-                { name: 'Saidpur', link: '/saidpur' },
+                { name: 'Dhaka', link: '/domestic/dhaka' },
+                { name: 'Chattogram', link: '/domestic/chattogram' },
+                { name: "Cox's Bazar", link: '/domestic/coxs-bazar' },
+                { name: 'Sylhet', link: '/domestic/sylhet' },
+                { name: 'Jeshore', link: '/domestic/jeshore' },
+                { name: 'Rajsshahi', link: '/domestic/rajsshahi' },
+                { name: 'Barishal', link: '/domestic/barishal' },
+                { name: 'Saidpur', link: '/domestic/saidpur' },
             ],
         },
     ]
@@ -108,17 +108,17 @@ export class HeaderDefaultComponent {
             title: 'Top Places to See',
 
             items: [
-                { name: "Cox's Bazar", link: '/coxs-bazar' },
-                { name: 'Sundharban', link: '/sundharban' },
-                { name: 'St Martin Island', link: '/st-martin-island' },
-                { name: 'Nilgiri', link: '/nilgiri' },
-                { name: 'Kuakata', link: '/kuakata' },
+                { name: "Cox's Bazar", link: '/top-place/coxs-bazar' },
+                { name: 'Sundharban', link: '/top-place/sundharban' },
+                { name: 'St Martin Island', link: '/top-place/st-martin-island' },
+                { name: 'Nilgiri', link: '/top-place/nilgiri' },
+                { name: 'Kuakata', link: '/top-place/kuakata' },
                 { name: 'View More', link: 'https://example.com/view-more' },
             ],
         },
         {
             title: 'Tips & Guides',
-            items: [{ name: 'General Guidelines', link: '/general-uidelines' }],
+            items: [{ name: 'General Guidelines', link: '/tips-guides/general-guidelines' }],
         },
     ]
 
@@ -126,14 +126,14 @@ export class HeaderDefaultComponent {
         {
             title: 'Baggage Information',
             items: [
-                { name: 'Baggage Size & Weight', link: '/baggage' },
-                { name: 'Pets/Animals', link: '/pets-animals' },
-                { name: 'Sports Gears', link: '/sports-gears' },
+                { name: 'Baggage Size & Weight', link: '/baggage/baggage-size-weight' },
+                { name: 'Pets/Animals', link: '/baggage/pets-animals' },
+                { name: 'Sports Gears', link: '/baggage/sports-gears' },
                 {
                     name: 'Fire Arms & Ammunition',
-                    link: '/fire-arms-ammunition',
+                    link: '/baggage/fire-arms-ammunition',
                 },
-                { name: 'Other Baggages', link: '/other-baggages' },
+                { name: 'Other Baggages', link: '/baggage/other-baggages' },
             ],
         },
         {
@@ -141,24 +141,24 @@ export class HeaderDefaultComponent {
             items: [
                 {
                     name: 'Unaccompanied Minor/Young Passengers',
-                    link: '/unaccompanied-minor',
+                    link: '/policies/unaccompanied-minor',
                 },
                 {
                     name: 'Travel Documents (Domestic)',
-                    link: '/domestic-travel-documents',
+                    link: '/policies/domestic-travel-documents',
                 },
                 {
                     name: 'Transportation of Infants',
-                    link: '/transportation-infants',
+                    link: '/policies/transportation-infants',
                 },
                 {
                     name: 'Incapacitated Passengers',
-                    link: '/incapacitated-passengers',
+                    link: '/policies/incapacitated-passengers',
                 },
-                { name: 'Expectant Mothers', link: '/expectant-mothers' },
-                { name: 'Medical Clearance', link: 'cance/medical-clearance' },
-                { name: 'Cancellation & Refund', link: '/cancellation-refund' },
-                { name: 'Special Assistance', link: '/special-assistance' },
+                { name: 'Expectant Mothers', link: '/policies/expectant-mothers' },
+                { name: 'Medical Clearance', link: '/policies/medical-clearance' },
+                { name: 'Cancellation & Refund', link: '/policies/cancellation-refund' },
+                { name: 'Special Assistance', link: '/policies/special-assistance' },
             ],
         },
     ]
