@@ -1,8 +1,9 @@
 import { Component } from '@angular/core'
+import { FaqContentComponent } from "../../main/faq-content/faq-content.component";
 
 @Component({
     selector: 'app-faq',
-    imports: [],
+    imports: [FaqContentComponent],
     templateUrl: './faq.component.html',
     styleUrl: './faq.component.scss',
 })

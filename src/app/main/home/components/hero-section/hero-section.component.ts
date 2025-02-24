@@ -22,6 +22,6 @@ export class HeroSectionComponent {
     }
 
     navigateToMobileCheckIn() {
-        this.router.navigate(['/domestic-travel-documents'])
+        this.router.navigate(['/policies/domestic-travel-documents'])
     }
 }
