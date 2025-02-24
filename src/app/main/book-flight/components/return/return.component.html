@@ -1,32 +1,32 @@
 <div class="h-full items-center gap-4 rounded-xl bg-white p-2 md:flex md:h-20">
     <form
         [formGroup]="flightForm"
-        class="mt-20 h-full w-full items-center justify-around rounded-xl border-2 border-gray-200 p-6 md:mt-0 md:flex md:h-16"
+        class="h-full w-full items-center justify-around rounded-xl border-2 border-gray-200 p-2 md:flex md:h-16 md:p-6"
     >
-        <div class="flex w-full flex-col sm:flex sm:flex-row sm:items-center sm:justify-between">
-            <div class="card ml-[77px] flex justify-center sm:ml-0">
+        <div class="flex w-full items-center rounded-md border-2 px-4 md:border-none md:px-0">
+            <div class="card ml-0 flex justify-center md:ml-[10px]">
                 <p-select
                     [options]="groupedCities"
                     formControlName="from"
-                    placeholder="Form"
+                    placeholder="From"
                     [group]="true"
                     [dropdownIcon]="'none'"
-                    class="w-32 border-none shadow-none"
+                    class="w-full border-none shadow-none"
                     styleClass=""
                 >
                 </p-select>
             </div>
-            <div class="flex justify-center py-3 sm:py-0">
-                <i class="pi pi-arrow-up-right z-10 ml-6 mr-5 sm:-ml-5 md:mr-10"></i>
+            <div>
+                <i class="pi pi-arrow-up-right z-10"></i>
             </div>
-            <div class="card ml-[89px] flex justify-center sm:ml-0">
+            <div class="card mx-12 mr-6 flex justify-end md:mr-0">
                 <p-select
                     [options]="groupedCities"
                     formControlName="to"
                     placeholder="To"
                     [group]="true"
                     [dropdownIcon]="'none'"
-                    class="w-32 border-none shadow-none"
+                    class="w-full border-none shadow-none"
                 >
                 </p-select>
             </div>
@@ -34,24 +34,32 @@
 
         <div class="z-20 -ml-10 mr-6 hidden border border-gray-300 md:flex md:h-8"></div>
 
-        <div class="justify mt-0 flex w-full items-center justify-between md:mt-0">
+        <div
+            class="justify mt-0 flex w-full items-center justify-between rounded-md border-2 md:mt-0 md:border-none"
+        >
             <p-datepicker
                 formControlName="departure"
                 placeholder="Departure"
                 class="shadow-none"
+                [minDate]="minDate"
+                appendTo="body"
                 (onSelect)="onDepartureSelect()"
             ></p-datepicker>
             <i class="pi pi-arrow-right-arrow-left mx-5"></i>
             <p-datepicker
                 formControlName="return"
                 placeholder="Return"
+                [minDate]="minDate"
+                appendTo="body"
                 class="shadow-none"
             ></p-datepicker>
         </div>
 
         <div class="mx-6 hidden h-8 border border-gray-300 md:flex"></div>
 
-        <div class="relative mt-3 flex flex-1 cursor-pointer justify-center md:mt-0 md:min-w-32">
+        <div
+            class="relative mt-3 flex flex-1 cursor-pointer justify-center rounded-full border-2 md:mt-0 md:min-w-32 md:border-none"
+        >
             <div class="">
                 <div (click)="toggleInputs()" class="flex text-gray-700">
                     @if (adults < 1) {
@@ -166,35 +174,34 @@
     <div class="mt-4 flex justify-center md:mt-16">
         <div>
             <!--  -->
-            <div class="md:-ml-56 md:-mt-32">
+            <div class="md:-ml-24 md:-mt-32">
                 <form [formGroup]="flightForm">
                     <p-select
                         formControlName="selectedSearch"
                         [options]="searchType"
                         optionLabel="searchTypeName"
                         placeholder="Select Type"
-                        class="h-10 w-48 px-2 md:w-44"
+                        class="h-10 w-48 px-2 md:w-36"
                         styleClass="!bg-white rounded-3xl "
                     />
                 </form>
             </div>
 
-            <div class="mb-6 mt-6 h-10 w-full md:-mt-[45px]">
+            <div class="mb-6 mt-4 h-10 md:-mt-[45px]">
                 <form [formGroup]="flightForm">
-                    <div class="mb z-50 flex flex-row items-center gap-1">
+                    <div
+                        class="mb z-50 flex flex-row items-center justify-center gap-1 md:justify-end"
+                    >
                         <div>
                             <input
                                 pInputText
                                 id="promocode"
-                                class="h-10 w-48 flex-auto rounded-3xl border p-2 text-center"
+                                class="h-10 w-32 flex-auto rounded-3xl border p-2 text-center"
                                 autocomplete="off"
                                 formControlName="promocode"
                                 placeholder="Promo Code"
                                 (input)="validatePromoCode()"
                             />
-                            @if (promoCodeError) {
-                                <p class="text-sm text-red-500">{{ promoCodeError }}</p>
-                            }
                         </div>
                     </div>
                 </form>

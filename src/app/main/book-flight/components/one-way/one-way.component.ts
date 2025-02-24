@@ -21,12 +21,10 @@ interface SearchType {
 })
 export class OneWayComponent {
     searchType: SearchType[] | undefined
-
     flightForm: FormGroup
     groupedCities!: SelectItemGroup[]
     promoCodeError = ''
-
-    validPromoCodes: string[] = ['Abc', 'Bcd']
+    minDate: Date = new Date()
 
     constructor(
         private fb: FormBuilder,
@@ -36,14 +34,14 @@ export class OneWayComponent {
 
         this.flightForm = this.fb.group(
             {
-                from: ['', Validators.required],
-                to: ['', Validators.required],
+                from: ['', Validators.required], // IATA Code Required
+                to: ['', Validators.required], // IATA Code Required
                 departure: ['', Validators.required],
                 adults: [this.adults, [Validators.required, Validators.min(1)]],
                 children: [this.children],
                 infants: [this.infants],
                 promocode: [''],
-                selectedSearch: new FormControl<SearchType | null>(null),
+                selectedSearch: new FormControl<SearchType | null>(this.searchType[0]), // Set "Flexible" as default
             },
             { validators: this.sameCityValidator },
         )
@@ -53,16 +51,16 @@ export class OneWayComponent {
                 label: 'Domestic',
                 value: 'local',
                 items: [
-                    { label: 'Dhaka', value: 'Dhaka' },
-                    { label: 'Chattrogram', value: 'Chattrogram' },
-                    { label: 'Sylhet', value: 'Sylhet' },
-                    { label: 'Barishal', value: 'Barishal' },
+                    { label: 'Dhaka', value: 'DAC' },
+                    { label: 'Chattogram', value: 'CGP' },
+                    { label: 'Sylhet', value: 'ZYL' },
+                    { label: 'Barishal', value: 'BZL' },
                 ],
             },
             {
                 label: 'International',
                 value: 'inter',
-                items: [{ label: 'Kalkata', value: 'Kalkata' }],
+                items: [{ label: 'Kolkata', value: 'CCU' }],
             },
         ]
     }
@@ -74,31 +72,39 @@ export class OneWayComponent {
         return fromValue && toValue && fromValue === toValue ? { sameCity: true } : null
     }
 
-    validatePromoCode() {
-        const enteredCode = this.flightForm.get('promocode')?.value?.trim()
-
-        if (!enteredCode) {
-            this.promoCodeError = ''
-            return
-        }
-
-        if (!this.validPromoCodes.includes(enteredCode)) {
-            this.promoCodeError = 'Wrong Promo Code'
-        } else {
-            this.promoCodeError = ''
-            this.flightForm.get('promocode')?.setValue(enteredCode)
-        }
+    formatDate(dateString: string, format: 'YYYY-MM' | 'DD'): string {
+        const date = new Date(dateString)
+        if (isNaN(date.getTime())) return ''
+        return format === 'YYYY-MM'
+            ? `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`
+            : String(date.getDate()).padStart(2, '0')
     }
 
     searchFlights() {
         if (this.flightForm.valid) {
-            console.log(this.flightForm.value)
+            const bookingData = {
+                DC: this.flightForm.get('from')?.value, // IATA Code for Departure
+                AC: this.flightForm.get('to')?.value, // IATA Code for Arrival
+                AM: this.formatDate(this.flightForm.get('departure')?.value, 'YYYY-MM'),
+                AD: this.formatDate(this.flightForm.get('departure')?.value, 'DD'),
+                TT: 'OW', // One-way trip
+                FL: 'on',
+                PA: this.flightForm.get('adults')?.value,
+                PC: this.flightForm.get('children')?.value,
+                PI: this.flightForm.get('infants')?.value,
+                CD: this.flightForm.get('promocode')?.value || '',
+            }
+
+            const queryParams = new URLSearchParams(bookingData as any).toString()
+            const url = `https://secure.flynovoair.com/bookings/flight_selection.aspx?${queryParams}`
+
+            window.location.href = url
         } else {
-            console.log('Form is invalid')
+            this.flightForm.errors
         }
     }
 
-    adults = 0
+    adults = 1 // Default adult count set to 1
     children = 0
     infants = 0
 

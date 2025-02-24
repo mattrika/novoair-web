@@ -26,8 +26,12 @@ export class MultiCityComponent {
     groupedCities!: SelectItemGroup[]
     promoCodeError = ''
     validPromoCodes: string[] = ['Abc', 'Bcd']
-
     multiCity = false
+
+    adults = 1
+    children = 0
+    infants = 0
+    showInputs = false
 
     constructor(
         private fb: FormBuilder,
@@ -37,7 +41,7 @@ export class MultiCityComponent {
 
         this.flightForm = this.fb.group({
             cities: this.fb.array([this.createCityGroup()]),
-            adults: [this.adults],
+            adults: [this.adults, [Validators.required, Validators.min(1)]],
             children: [this.children],
             infants: [this.infants],
             promocode: [''],
@@ -63,10 +67,12 @@ export class MultiCityComponent {
         ]
     }
 
+    // Get cities array
     get cities(): FormArray {
         return this.flightForm.get('cities') as FormArray
     }
 
+    // Create a city group with validation
     createCityGroup(): FormGroup {
         return this.fb.group(
             {
@@ -78,22 +84,26 @@ export class MultiCityComponent {
         )
     }
 
+    // Ensure departure & arrival cities are not the same
     sameCityValidator(form: FormGroup) {
         const fromValue = form.get('from')?.value
         const toValue = form.get('to')?.value
         return fromValue && toValue && fromValue === toValue ? { sameCity: true } : null
     }
 
+    // Add another flight segment
     addCity() {
         this.cities.push(this.createCityGroup())
     }
 
+    // Remove a flight segment (minimum 1 required)
     removeCity(index: number) {
         if (this.cities.length > 1) {
             this.cities.removeAt(index)
         }
     }
 
+    // Validate Promo Code
     validatePromoCode() {
         const enteredCode = this.flightForm.get('promocode')?.value?.trim()
 
@@ -110,18 +120,55 @@ export class MultiCityComponent {
         }
     }
 
+    // Format date to YYYY-MM and DD separately
+    formatDate(dateString: string, format: string): string {
+        const date = new Date(dateString)
+        if (isNaN(date.getTime())) return ''
+
+        const year = date.getFullYear()
+        const month = String(date.getMonth() + 1).padStart(2, '0')
+        const day = String(date.getDate()).padStart(2, '0')
+
+        return format === 'YYYY-MM' ? `${year}-${month}` : day
+    }
+
+    // Search Flights
     searchFlights() {
         if (this.flightForm.valid) {
-            console.log(this.flightForm.value)
+            // Extract city segments
+            const citiesArray = this.flightForm.get('cities') as FormArray
+            const segments = citiesArray.value.map((segment: any, index: number) => ({
+                [`DC${index + 1}`]: segment.from, // IATA Code for Departure
+                [`AC${index + 1}`]: segment.to, // IATA Code for Arrival
+                [`AM${index + 1}`]: this.formatDate(segment.departure, 'YYYY-MM'),
+                [`AD${index + 1}`]: this.formatDate(segment.departure, 'DD'),
+            }))
+
+            // Passenger & promo details
+            const passengerData = {
+                TT: segments.length > 1 ? 'MC' : 'OW', // MC for Multi-City, OW for One-Way
+                FL: 'on',
+                PA: this.flightForm.get('adults')?.value,
+                PC: this.flightForm.get('children')?.value,
+                PI: this.flightForm.get('infants')?.value,
+                CD: this.flightForm.get('promocode')?.value || '',
+            }
+
+            // Merge flight segments & passenger data into query params
+            const queryParams = new URLSearchParams({
+                ...Object.assign({}, ...segments), // Flatten segments array into object
+                ...passengerData,
+            }).toString()
+
+            const url = `https://secure.flynovoair.com/bookings/flight_selection.aspx?${queryParams}`
+
+            window.location.href = url
         } else {
-            console.log('Form is invalid', this.flightForm.value)
+            this.flightForm.errors
         }
     }
 
-    adults = 0
-    children = 0
-    infants = 0
-
+    // Guest count validation
     get totalGuests(): number {
         if (this.adults === 0) {
             this.children = 0
@@ -130,6 +177,7 @@ export class MultiCityComponent {
         return this.adults + this.children + this.infants
     }
 
+    // Increase guest count
     increase(type: string) {
         if (this.totalGuests < 9) {
             if (type === 'adults' && this.adults < 9) {
@@ -145,6 +193,7 @@ export class MultiCityComponent {
         }
     }
 
+    // Decrease guest count
     decrease(type: string) {
         if (type === 'adults' && this.adults >= 1) {
             this.adults--
@@ -158,12 +207,12 @@ export class MultiCityComponent {
         }
     }
 
-    showInputs = false
-
+    // Toggle guest selection visibility
     toggleInputs() {
         this.showInputs = !this.showInputs
     }
 
+    // Hide input when clicking outside
     @HostListener('document:click', ['$event'])
     onClickOutside(event: Event) {
         if (!this.eRef.nativeElement.contains(event.target)) {

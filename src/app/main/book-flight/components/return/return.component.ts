@@ -22,13 +22,11 @@ interface SearchType {
 })
 export class ReturnComponent {
     searchType: SearchType[] | undefined
-
+    minDate: Date = new Date()
     flightForm: FormGroup
     groupedCities!: SelectItemGroup[]
 
     promoCodeError = ''
-
-    validPromoCodes: string[] = ['Abc', 'Bcd']
 
     constructor(
         private fb: FormBuilder,
@@ -42,11 +40,11 @@ export class ReturnComponent {
                 to: ['', Validators.required],
                 departure: ['', Validators.required],
                 return: [''],
-                adults: [this.adults, [Validators.required, Validators.min(1)]],
-                children: [this.children],
-                infants: [this.infants],
+                adults: [1, [Validators.required, Validators.min(1)]], // Set default adults to 1
+                children: [0],
+                infants: [0],
                 promocode: [''],
-                selectedSearch: new FormControl<SearchType | null>(null),
+                selectedSearch: new FormControl<SearchType | null>(this.searchType[0]), // Set default to "Flexible"
             },
             { validators: [this.sameCityValidator, this.dateValidator] },
         )
@@ -56,16 +54,16 @@ export class ReturnComponent {
                 label: 'Domestic',
                 value: 'local',
                 items: [
-                    { label: 'Dhaka', value: 'Dhaka' },
-                    { label: 'Chattrogram', value: 'Chattrogram' },
-                    { label: 'Sylhet', value: 'Sylhet' },
-                    { label: 'Barishal', value: 'Barishal' },
+                    { label: 'Dhaka', value: 'DAC' },
+                    { label: 'Chattrogram', value: 'CGP' },
+                    { label: 'Sylhet', value: 'ZYL' },
+                    { label: 'Barishal', value: 'BZL' },
                 ],
             },
             {
                 label: 'International',
                 value: 'inter',
-                items: [{ label: 'Kalkata', value: 'Kalkata' }],
+                items: [{ label: 'Kalkata', value: 'CCU' }],
             },
         ]
     }
@@ -100,15 +98,12 @@ export class ReturnComponent {
             return
         }
 
-        if (!this.validPromoCodes.includes(enteredCode)) {
-            this.promoCodeError = 'Wrong Promo Code'
-        } else {
-            this.promoCodeError = ''
-            this.flightForm.get('promocode')?.setValue(enteredCode)
-        }
+        // Remove static promo code validation
+        this.promoCodeError = ''
+        this.flightForm.get('promocode')?.setValue(enteredCode)
     }
 
-    adults = 0
+    adults = 1 // Set default adults to 1
     children = 0
     infants = 0
 
@@ -163,9 +158,41 @@ export class ReturnComponent {
 
     searchFlights() {
         if (this.flightForm.valid) {
-            console.log(this.flightForm.value)
+            const bookingData = {
+                DC: this.flightForm.get('from')?.value, // Departure City
+                AC: this.flightForm.get('to')?.value, // Arrival City
+                AM: this.formatDate(this.flightForm.get('departure')?.value, 'YYYY-MM'), // Departure Year-Month
+                AD: this.formatDate(this.flightForm.get('departure')?.value, 'DD'), // Departure Day
+                RM: this.flightForm.get('return')?.value
+                    ? this.formatDate(this.flightForm.get('return')?.value, 'YYYY-MM')
+                    : '', // Return Year-Month
+                RD: this.flightForm.get('return')?.value
+                    ? this.formatDate(this.flightForm.get('return')?.value, 'DD')
+                    : '', // Return Day
+                TT: this.flightForm.get('return')?.value ? 'RT' : 'OW', // Trip Type: RT (Round Trip) or OW (One Way)
+                FL: 'on', // Fixed Parameter
+                PA: this.flightForm.get('adults')?.value, // Number of Adults
+                PC: this.flightForm.get('children')?.value, // Number of Children
+                PI: this.flightForm.get('infants')?.value, // Number of Infants
+                CD: this.flightForm.get('promocode')?.value || '', // Promo Code
+            }
+
+            // Construct URL with query parameters
+            const queryParams = new URLSearchParams(bookingData as any).toString()
+            const url = `https://secure.flynovoair.com/bookings/flight_selection.aspx?${queryParams}`
+
+            window.location.href = url
         } else {
-            console.log('Form is invalid')
+            this.flightForm.errors
         }
+    }
+
+    // Helper function to format date
+    formatDate(dateString: string, format: 'YYYY-MM' | 'DD'): string {
+        if (!dateString) return ''
+        const date = new Date(dateString)
+        return format === 'YYYY-MM'
+            ? `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`
+            : String(date.getDate()).padStart(2, '0')
     }
 }

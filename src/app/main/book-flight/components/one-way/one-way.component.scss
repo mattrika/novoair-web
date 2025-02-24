@@ -16,15 +16,10 @@
 
     ::ng-deep p-datepicker input::placeholder {
         color: #595959;
-        padding-left: 40px;
     }
     ::ng-deep p-select .p-placeholder {
         color: #595959;
     }
-
-    // ::ng-deep .p-select-label.p-placeholder {
-    //     margin-left: 45px;
-    // }
 
     ::ng-deep .p-datepicker-day-selected {
         background-color: #005cc8;
