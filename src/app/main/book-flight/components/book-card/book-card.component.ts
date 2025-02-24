@@ -1,9 +1,7 @@
 import { CommonModule } from '@angular/common'
 import { Component } from '@angular/core'
 import { FormsModule } from '@angular/forms'
-import { Router } from '@angular/router'
 import { PrimeModules } from '@core/ui/primeng'
-import { MultiCityComponent } from '../multi-city/multi-city.component'
 import { OneWayComponent } from '../one-way/one-way.component'
 import { ReturnComponent } from '../return/return.component'
 
@@ -15,21 +13,21 @@ import { ReturnComponent } from '../return/return.component'
         FormsModule,
         ReturnComponent,
         OneWayComponent,
-        MultiCityComponent,
     ],
     templateUrl: './book-card.component.html',
     styleUrl: './book-card.component.scss',
 })
 export class BookCardComponent {
-    activeTab = 'return'
-
-    constructor(private router: Router) {}
+    activeTab: string = 'return';
 
     selectTab(tab: string) {
-        this.activeTab = tab
+        this.activeTab = tab;
+        if (tab === 'multiCity') {
+            this.redirectToMultiCity();
+        }
     }
 
-    navigateToMobileCheckIn() {
-        this.router.navigate(['/domestic-travel-documents'])
+    redirectToMultiCity() {
+        window.location.href = 'https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx';
     }
 }

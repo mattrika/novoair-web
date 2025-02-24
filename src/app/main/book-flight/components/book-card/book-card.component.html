@@ -20,17 +20,19 @@
                 <input type="radio" name="tabs" (click)="selectTab('oneWay')" class="h-4 w-4" />
                 <span class=""> One way </span>
             </label>
+
             <label class="flex cursor-pointer items-center space-x-2">
                 <input type="radio" name="tabs" (click)="selectTab('multiCity')" class="h-4 w-4" />
                 <span class=""> Multi-City </span>
             </label>
         </div>
     </div>
+
     @if (activeTab === 'return') {
         <app-return></app-return>
     } @else if (activeTab === 'oneWay') {
         <app-one-way></app-one-way>
     } @else {
-        <app-multi-city></app-multi-city>
+        <ng-container *ngIf="redirectToMultiCity()"></ng-container>
     }
 </div>

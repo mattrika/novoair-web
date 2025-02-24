@@ -6,7 +6,7 @@
                 (click)="selectTab('Book a Flight')"
                 [ngClass]="activeTab === 'Book a Flight' ? 'bg-white' : ''"
             >
-                Book a Flight
+                <span class="pi pi-send mr-1 text-[15px]"></span> Book a Flight
             </div>
 
             <div
@@ -18,10 +18,10 @@
             </div>
 
             <div
-                class="pi pi-mobile flex-1 cursor-pointer items-center gap-4 py-1 text-center text-sm md:mt-0"
+                class="flex-1 cursor-pointer items-center gap-4 py-1 text-center text-sm md:mt-0"
                 (click)="navigateToMobileCheckIn()"
             >
-                Mobile Check In
+                <span class="pi pi-mobile mr-1 text-[15px]"></span> Mobile Check-In
             </div>
         </div>
     </div>
