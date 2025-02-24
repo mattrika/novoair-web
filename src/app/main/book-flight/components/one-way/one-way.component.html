@@ -1,12 +1,10 @@
 <div class="h-full items-center gap-4 rounded-xl bg-white p-2 md:flex md:h-20">
     <form
         [formGroup]="flightForm"
-        class="mt-20 h-full w-full items-center justify-around gap-5 rounded-xl border-2 border-gray-200 p-6 md:mt-0 md:flex md:h-16"
+        class="h-full w-full items-center gap-5 rounded-xl border-2 border-gray-200 p-2 md:mt-0 md:flex md:h-16"
     >
-        <div
-            class="-ml-1 flex w-full flex-1 flex-col sm:ml-0 sm:flex-row sm:items-center sm:justify-between"
-        >
-            <div class="card ml-[60px] flex justify-center sm:ml-0">
+        <div class="flex w-full items-center rounded-md border-2 px-4 md:border-none md:px-0">
+            <div class="card ml-0 flex justify-center md:ml-[10px]">
                 <p-select
                     [options]="groupedCities"
                     formControlName="from"
@@ -21,7 +19,7 @@
             <div class="flex justify-center py-3 sm:py-0">
                 <i class="pi pi-arrow-up-right hide z-10 mx-3 ml-6 md:ml-5 md:mr-14"></i>
             </div>
-            <div class="card ml-[110px] flex justify-center sm:ml-0">
+            <div class="card mx-12 mr-6 flex justify-end md:mr-0">
                 <p-select
                     [options]="groupedCities"
                     formControlName="to"
@@ -36,19 +34,22 @@
 
         <div class="z-10 -ml-7 mr-6 hidden h-8 border border-gray-300 md:flex"></div>
 
-        <div class="justify ml-4 flex w-full flex-1 items-center justify-center sm:ml-0 md:mt-0">
+        <div class="w-ful mt-0 rounded-md border-2 md:mt-0 md:border-none">
             <p-datepicker
                 formControlName="departure"
                 placeholder="Departure"
                 class="placeholder:text-black"
                 styleClass="border-none"
+                appendTo="body"
                 [minDate]="minDate"
             ></p-datepicker>
         </div>
 
         <div class="z-10 mb-2 hidden border border-gray-300 md:mb-0 md:flex md:h-8"></div>
 
-        <div class="relative ml-3 mt-2 flex flex-1 justify-center sm:ml-0 sm:mt-0">
+        <div
+            class="relative mt-3 flex flex-1 cursor-pointer justify-center rounded-full border-2 md:mt-0 md:min-w-32 md:border-none"
+        >
             <div class="cursor-pointer">
                 <div (click)="toggleInputs()" class="flex text-gray-700">
                     @if (adults < 1) {
@@ -177,7 +178,9 @@
 
             <div class="mb-6 mt-6 h-10 md:-mt-[45px]">
                 <form [formGroup]="flightForm">
-                    <div class="mb z-50 flex flex-row items-center justify-end gap-1">
+                    <div
+                        class="mb z-50 flex flex-row items-center justify-center gap-1 md:justify-end"
+                    >
                         <div>
                             <input
                                 pInputText

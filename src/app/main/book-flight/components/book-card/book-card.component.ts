@@ -7,27 +7,21 @@ import { ReturnComponent } from '../return/return.component'
 
 @Component({
     selector: 'app-book-card',
-    imports: [
-        PrimeModules,
-        CommonModule,
-        FormsModule,
-        ReturnComponent,
-        OneWayComponent,
-    ],
+    imports: [PrimeModules, CommonModule, FormsModule, ReturnComponent, OneWayComponent],
     templateUrl: './book-card.component.html',
     styleUrl: './book-card.component.scss',
 })
 export class BookCardComponent {
-    activeTab: string = 'return';
+    activeTab = 'return'
 
     selectTab(tab: string) {
-        this.activeTab = tab;
+        this.activeTab = tab
         if (tab === 'multiCity') {
-            this.redirectToMultiCity();
+            this.redirectToMultiCity()
         }
     }
 
     redirectToMultiCity() {
-        window.location.href = 'https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx';
+        window.location.href = 'https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx'
     }
 }
