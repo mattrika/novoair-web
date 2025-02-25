@@ -8,6 +8,6 @@ import { Component } from '@angular/core'
 })
 export class SylhetContentComponent {
     bookNow() {
-    window.open('https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx', '_blank');
-}
+        window.open('https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx', '_blank')
+    }
 }
