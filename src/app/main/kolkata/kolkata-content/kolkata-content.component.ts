@@ -6,4 +6,8 @@ import { Component } from '@angular/core'
     templateUrl: './kolkata-content.component.html',
     styleUrl: './kolkata-content.component.scss',
 })
-export class KolkataContentComponent {}
+export class KolkataContentComponent {
+    bookNow() {
+    window.open('https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx', '_blank');
+}
+}

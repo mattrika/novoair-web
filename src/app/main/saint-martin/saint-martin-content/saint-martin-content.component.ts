@@ -6,4 +6,6 @@ import { Component } from '@angular/core'
     templateUrl: './saint-martin-content.component.html',
     styleUrl: './saint-martin-content.component.scss',
 })
-export class SaintMartinContentComponent {}
+export class SaintMartinContentComponent {bookNow() {
+    window.open('https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx', '_blank');
+}}

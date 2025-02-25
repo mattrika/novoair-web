@@ -1,0 +1,205 @@
+<div class="mt-5">
+    <ul class="space-y-3 pl-5">
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                Any Member's total SMILES Miles in Account is defined as the sum of Passenger FLIGHT
+                Miles earned and BONUS Miles Rewarded. Flight Miles is the accrued Miles earned by
+                our Passenger based on actual Miles flown. Bonus Miles is the accrued Miles Rewarded
+                to our Passenger based on promotional offers such as Web-Purchase and Ticket Class
+                boosters.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                Flight Miles may be accrued towards any Member's SMILES Account on qualified fare
+                families; to be credited only after the Flight is complete, even if reservation
+                suffers a no-show. Flight Miles are based on domestic travel destinations as shown
+                below:
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h1 class="mt-7 text-center text-2xl">FARE FAMILY WISE FLIGHT MILES ACCRUAL (ONE WAY)</h1>
+    <h4 class="mb-5 mt-3 text-center text-lg text-black">DOMESTIC SECTORS</h4>
+    <div class="card">
+        <p-table [value]="FlightDataDomestic" stripedRows [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th class="text-blue-600">DAC (TO/FROM)</th>
+                    <th class="text-blue-600">SPECIAL PROMO / TOUR (X 0.25)</th>
+                    <th class="text-blue-600">PROMO (X 0.50)</th>
+                    <th class="text-blue-600">SPECIAL (X 0.75)</th>
+                    <th class="text-blue-600">DISCOUNTED (X 1.00)</th>
+                    <th class="text-blue-600">SAVER (X 1.15)</th>
+                    <th class="text-blue-600">FLEXIBLE (X 1.25)</th>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-rowData>
+                <tr>
+                    <td>{{ rowData.destination }}</td>
+                    <td>{{ rowData.specialPromo }}</td>
+                    <td>{{ rowData.promo }}</td>
+                    <td>{{ rowData.special }}</td>
+                    <td>{{ rowData.discounted }}</td>
+                    <td>{{ rowData.saver }}</td>
+                    <td>{{ rowData.flexible }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <h4 class="mb-3 mt-8 text-center text-lg text-black">INTERNATIONAL SECTORS</h4>
+    <div class="card">
+        <p-table
+            [value]="FlightDataInternational"
+            stripedRows
+            [tableStyle]="{ 'min-width': '50rem' }"
+        >
+            <ng-template pTemplate="header">
+                <tr>
+                    <th class="text-blue-600">DAC <br />(TO/FROM)</th>
+                    <th class="text-blue-600">PROMO <br />(x 0.50)</th>
+                    <th class="text-blue-600">EXCURSION <br />(x 0.50)</th>
+                    <th class="text-blue-600">DISCOUNTED <br />(x 0.75)</th>
+                    <th class="text-blue-600">SAVER <br />(x 1.00)</th>
+                    <th class="text-blue-600">FLEXIBLE <br />(x 1.25)</th>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-rowData>
+                <tr>
+                    <td>{{ rowData.destination }}</td>
+                    <td>{{ rowData.promo }}</td>
+                    <td>{{ rowData.excursion }}</td>
+                    <td>{{ rowData.discounted }}</td>
+                    <td>{{ rowData.saver }}</td>
+                    <td>{{ rowData.flexible }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <div class="mb-4 mt-8">
+        <ul class="space-y-3 pl-5">
+            <li class="-ml-2 flex">
+                <div class="-mt-1 flex-shrink-0">
+                    <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+                </div>
+                <div class="ml-3">
+                    Bonus Miles may be accrued towards Member's SMILES Account on NOVOAIR
+                    Promotional offers. Current offers are:
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="card">
+        <p-table [value]="FlightDataBonuMiles" stripedRows [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th class="text-blue-600">BONUS MILES BOOSTERS</th>
+                    <th class="text-blue-600">BASIC</th>
+                    <th class="text-blue-600">SAPPHIRE</th>
+                    <th class="text-blue-600">PLATINUM</th>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-rowData>
+                <tr>
+                    <td>{{ rowData.bonusMiles }}</td>
+                    <td>{{ rowData.basic }}</td>
+                    <td>{{ rowData.sapphire }}</td>
+                    <td>{{ rowData.platinum }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
+
+<div class="mb-6 mt-9">
+    <ul class="space-y-3 pl-5">
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                To earn Miles, a Member must either produce a membership card or quote the SMILES
+                FF# with valid photo ID at the time of reservation or check-in for Qualifying
+                Flights.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                <span class="font-semibold text-red-600">Missing Mileage Claim:</span> If members do
+                not include SMILES FF# at the time of booking, member can request the credits be
+                applied to his/her account within <span class="font-semibold">15 days</span> of the
+                travel date. A Member must provide travel information such as; Booking
+                Reference#/PNR#, Flight details on the boarding passes, transaction documents,
+                receipts and any other documents requested by NOVOAIR to smiles&#64;flynovoair.com
+                when making a retroactive claim. Requests received later than
+                <span class="font-semibold">15 days</span> after travel date will not be honored.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                Tickets issued on the following basis are not eligible to earn SMILES miles: FOC,
+                Promotional Discount, Barter Agreement, Frequent Flyer Redemption and on any other
+                promotion or reward ticket.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                NOVOAIR and/or any partner, at its/their discretion, may also exclude certain types
+                of paid tickets from credit eligibility. These include, but are not limited to,
+                unused tickets, travel industry discounts, charters, tickets obtained or used in a
+                fraudulent manner and any other fares/tickets that may later be specified by
+                NOVOAIR, with or without notice. SMILES Miles accrued for any of these reasons may
+                be subsequently deducted from the account.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                If a Member voids or refunds any part of a ticket, Miles will be credited only for
+                the journey flown on Qualifying Flights on that ticket.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                In the event a scheduled NOVOAIR Flight is postponed due to delays, or transferred
+                by passenger, NOVOAIR SMILES FFP will endorse Member's account with the new
+                itinerary.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                SMILES Member accounts will be credited
+                <span class="font-semibold">within 7 (seven) days</span> of completed of travel.
+                Members cannot transfer Miles to any other frequent flyer program.
+            </div>
+        </li>
+    </ul>
+</div>

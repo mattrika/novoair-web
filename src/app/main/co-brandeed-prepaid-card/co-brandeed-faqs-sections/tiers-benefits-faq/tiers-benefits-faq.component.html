@@ -1,0 +1,57 @@
+<div class="mb-3 mt-5">
+    <ul class="space-y-3 pl-5">
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                SMILES Members will be entitled to the following Tier-based Membership Benefits :
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="card">
+    <p-table [value]="memberBenefitsPrivileges" stripedRows [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th class="text-blue-600">MEMBER BENEFITS & PRIVILEGES</th>
+                <th class="text-blue-600">BASIC</th>
+                <th class="text-blue-600">SAPPHIRE</th>
+                <th class="text-blue-600">PLATINUM</th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-rowData>
+            <tr>
+                <td>{{ rowData.memberBenefits }}</td>
+                <td>{{ rowData.basic }}</td>
+                <td>{{ rowData.sapphire }}</td>
+                <td>{{ rowData.platinum }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<div class="mb-5 mt-9">
+    <ul class="space-y-3 pl-5">
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                The number of Tier Miles required for each Membership Tier and associated Tier
+                benefits and privileges may be changed by NOVOAIR SMILES FFP at any time without
+                prior notice.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                Excess Baggage allowances may not be guaranteed due to technical limitations e.g.
+                flight loads.
+            </div>
+        </li>
+    </ul>
+</div>

@@ -422,7 +422,7 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
-        path: 'domestic/jeshore',
+        path: 'domestic/jessore',
         loadComponent: () =>
             import('@pages/jeshore/jeshore.component').then((m) => m.JeshoreComponent),
         resolve: { layout: setLayout(PageLayout.Default) },

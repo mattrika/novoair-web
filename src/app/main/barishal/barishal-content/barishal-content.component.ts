@@ -6,4 +6,8 @@ import { Component } from '@angular/core'
     templateUrl: './barishal-content.component.html',
     styleUrl: './barishal-content.component.scss',
 })
-export class BarishalContentComponent {}
+export class BarishalContentComponent {
+    bookNow() {
+    window.open('https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx', '_blank');
+}
+}
