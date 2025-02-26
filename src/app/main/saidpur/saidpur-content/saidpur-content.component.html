@@ -2,9 +2,7 @@
     <div class="min-w-2xl w-full overflow-hidden">
         <div
             class="h-96 border-none bg-cover bg-center"
-            style="
-                background-image: url('https://www.flynovoair.com/assets/images/destinations/domestic/sdp1.jpg');
-            "
+            style="background-image: url('../assets/images/saidpur1.jpg')"
         >
             <div
                 class="flex h-full items-start justify-center bg-gradient-to-b from-[#ffffff] via-[#83cfe86d] to-[rgba(0,0,0,0.5)]"
@@ -16,12 +14,13 @@
                     <h2 class="mt-4 text-2xl font-bold">
                         Where Business Meets <span class="text-3xl font-extrabold">Tradition</span>
                     </h2>
-                    <p class="mt-2 font-semibold">
+                    <p class="mx-2 mt-2 font-semibold sm:mx-0">
                         Discover the thriving commercial hub and cultural heart of northern
                         Bangladesh.
                     </p>
                     <button
                         class="my-10 rounded-full bg-[#217f96] px-6 py-2 font-semibold text-white hover:bg-[#175a6b] focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                        (click)="bookNow()"
                     >
                         Book Your Trip Now
                     </button>
@@ -29,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div class="mx-auto mb-12 mt-28 text-center">
+    <div class="mx-14 mb-12 mt-28 text-center sm:mx-auto">
         <h1 class="mb-6 text-3xl font-bold text-[#217f96]">Explore Saidpur</h1>
 
         <p class="mb-8 text-lg text-gray-600">
@@ -73,31 +72,29 @@
                 <div class="flex h-full w-full justify-center py-16 md:block">
                     <div
                         class="mx-auto h-full w-[70%] bg-cover bg-center py-32"
-                        style="
-                            background-image: url('https://www.flynovoair.com/assets/images/places_to_see/Nilgiri/1.jpg');
-                        "
+                        style="background-image: url('../assets/images/saidpur2.jpg')"
                     ></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!--  -->
     <div class="mb-20 flex items-center justify-center md:mt-24">
         <div
-            class="mx-auto flex max-w-4xl flex-col items-center rounded-lg bg-white shadow-lg md:flex md:flex-row md:items-stretch"
+            class="mx-14 flex flex-col items-center rounded-lg bg-white sm:mx-auto sm:max-w-4xl md:flex md:max-h-56 md:flex-row md:items-stretch md:shadow-lg"
         >
-            <div class="w-1/2">
+            <div class="w-full sm:w-1/2">
                 <img
-                    src="https://images.unsplash.com/photo-1560279420-8677849eca9e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="../assets/images/saidpur3.jpg"
                     alt="Beautiful place"
-                    class="max-h-52 w-full rounded-l-lg object-cover"
+                    class="h-full w-full rounded-l-none rounded-t-lg object-cover md:rounded-l-lg md:rounded-tr-none"
                 />
             </div>
-            <div class="w-1/2 rounded-lg border px-6 pb-4 md:pb-0">
+            <div class="w-full rounded-b-lg border px-6 pb-4 sm:w-1/2 md:rounded-r-lg md:pb-0">
                 <div class="mt-10 flex justify-center md:mt-0">
                     <button
                         class="text-md rounded-md bg-slate-600 px-3 py-1 font-semibold text-white md:rounded-bl-lg md:rounded-br-lg md:rounded-tl-none md:rounded-tr-none"
+                        (click)="bookNow()"
                     >
                         Book now
                     </button>
@@ -114,5 +111,4 @@
             </div>
         </div>
     </div>
-    <!--  -->
 </div>

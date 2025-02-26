@@ -6,4 +6,8 @@ import { Component } from '@angular/core'
     templateUrl: './coxs-bazar-content.component.html',
     styleUrl: './coxs-bazar-content.component.scss',
 })
-export class CoxsBazarContentComponent {}
+export class CoxsBazarContentComponent {
+    bookNow() {
+        window.open('https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx', '_blank')
+    }
+}

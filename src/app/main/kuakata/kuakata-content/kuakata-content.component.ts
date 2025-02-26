@@ -6,4 +6,8 @@ import { Component } from '@angular/core'
     templateUrl: './kuakata-content.component.html',
     styleUrl: './kuakata-content.component.scss',
 })
-export class KuakataContentComponent {}
+export class KuakataContentComponent {
+    bookNow() {
+        window.open('https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx', '_blank')
+    }
+}

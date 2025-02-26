@@ -6,4 +6,8 @@ import { Component } from '@angular/core'
     templateUrl: './dhaka-content.component.html',
     styleUrl: './dhaka-content.component.scss',
 })
-export class DhakaContentComponent {}
+export class DhakaContentComponent {
+    bookNow() {
+        window.open('https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx', '_blank')
+    }
+}

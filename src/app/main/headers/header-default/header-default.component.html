@@ -78,7 +78,7 @@
                                 </li>
                                 <li>
                                     <a
-                                        href="#"
+                                        href="/shuttle"
                                         class="flex items-center gap-2 rounded px-4 py-2 text-sm text-stone-700 hover:bg-amber-100 hover:text-sky-700"
                                     >
                                         <ng-icon
@@ -105,10 +105,12 @@
                                 <h1 class="mb-4 px-4 font-semibold">Travel Information</h1>
 
                                 <li>
-                                    <a href="#" class="sub-menu"> Travel Requirements </a>
+                                    <a href="/baggage/baggage-size-weight" class="sub-menu">
+                                        Travel Requirements
+                                    </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="sub-menu"> Our Fleet </a>
+                                    <a href="/fleet" class="sub-menu"> Our Fleet </a>
                                 </li>
                                 <li>
                                     <a href="#" class="sub-menu"> Our Partners </a>
@@ -452,7 +454,7 @@
                             </li>
                             <li>
                                 <a
-                                    href="#"
+                                    href="/shuttle"
                                     class="flex items-center gap-2 rounded px-4 py-2 text-sm text-stone-700 hover:bg-amber-100"
                                 >
                                     <ng-icon
@@ -480,10 +482,12 @@
                             <h1 class="mb-4 px-4 font-semibold">Travel Information</h1>
 
                             <li>
-                                <a href="#" class="sub-menu"> Travel Requirements </a>
+                                <a href="/baggage/baggage-size-weight" class="sub-menu">
+                                    Travel Requirements
+                                </a>
                             </li>
                             <li>
-                                <a href="#" class="sub-menu"> Our Fleet </a>
+                                <a href="/fleet" class="sub-menu"> Our Fleet </a>
                             </li>
                             <li>
                                 <a href="#" class="sub-menu"> Our Partners </a>
@@ -709,7 +713,14 @@
                     class="hidden pl-4"
                     [ngClass]="{ hidden: !dropdownStates['smileDropdown'] }"
                 >
-                    <li class="flex gap-1 p-1">
+                    <li class="gap-1 space-y-2 p-1">
+                        <p-button
+                            (click)="navigateToSmilesLogin()"
+                            severity="info"
+                            size="large"
+                            label="Smiles Login"
+                            icon="pi pi-user"
+                        />
                         <a
                             routerLink="/co-branded-prepaid-card"
                             class="block px-4 py-2 hover:bg-gray-100"
@@ -722,6 +733,14 @@
                         /></a>
                     </li>
                 </ul>
+                <p-button
+                    severity="info"
+                    class="mt-4"
+                    (click)="navigateToAgentLogin()"
+                    [outlined]="true"
+                    label="Agent Login"
+                    icon="pi pi-user"
+                />
             </li>
         </ul>
 
