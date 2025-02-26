@@ -67,6 +67,12 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
+        path: 'flight-status',
+        loadComponent: () =>
+            import('@pages/flight-status/flight-status.component').then((m) => m.FlightStatusComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
         path: 'shuttle',
         loadComponent: () =>
             import('@pages/shuttle/shuttle.component').then((m) => m.ShuttleComponent),

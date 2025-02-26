@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common'
 import { Component, HostListener } from '@angular/core'
 import { RouterLink } from '@angular/router'
+import { PrimeModules } from '@core/ui/primeng'
 import { NgIcon } from '@ng-icons/core'
 
 interface ListItem {
@@ -35,7 +36,7 @@ interface GridItem {
 
 @Component({
     selector: 'app-header-default',
-    imports: [CommonModule, NgIcon, RouterLink],
+    imports: [CommonModule, NgIcon, RouterLink, PrimeModules],
     templateUrl: './header-default.component.html',
     styleUrl: './header-default.component.scss',
 })
@@ -65,7 +66,7 @@ export class HeaderDefaultComponent {
     ]
     listItemsManage: ListItem[] = [
         { icon: 'pi pi-calendar', text: 'Flight Schedule', link: '' },
-        { icon: 'pi pi-clock', text: 'Live Flight Status', link: '' },
+        { icon: 'pi pi-clock', text: 'Live Flight Status', link: '/flight-status' },
         { icon: 'pi pi-map', text: 'Route Map', link: '' },
         { icon: 'pi pi-twitch', text: 'Travel Advisory', link: '' },
         { icon: 'pi pi-exclamation-triangle', text: 'NOTAM!', link: '' },
@@ -182,6 +183,14 @@ export class HeaderDefaultComponent {
             link: 'https://www.linkedin.com/company/novoair/',
         },
     ]
+
+navigateToSmilesLogin() {
+  window.location.href = 'https://secure.flynovoair.com/rewards/dashboard#/login';
+}
+navigateToAgentLogin() {
+  window.location.href = 'https://secure.flynovoair.com/agents/';
+}
+
 
     toggleMobileMenu() {
         this.isMobileMenuOpen = !this.isMobileMenuOpen
