@@ -5,6 +5,7 @@ import { GetOurAppComponent } from '../../main/home/components/get-our-app/get-o
 import { HeroSectionComponent } from '../../main/home/components/hero-section/hero-section.component'
 import { OngoingOffersCardComponent } from '../../main/home/components/ongoing-offers-card/ongoing-offers-card.component'
 import { TravelGuidelineComponent } from '../../main/home/components/travel-guideline/travel-guideline.component'
+import { PrimeModules } from '@core/ui/primeng'
 
 @Component({
     selector: 'app-dashboard-home',
@@ -15,6 +16,7 @@ import { TravelGuidelineComponent } from '../../main/home/components/travel-guid
         FareDealsComponent,
         TravelGuidelineComponent,
         GetOurAppComponent,
+        PrimeModules
     ],
     templateUrl: './dashboard-home.component.html',
     styleUrl: './dashboard-home.component.scss',
