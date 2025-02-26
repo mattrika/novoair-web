@@ -220,6 +220,11 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
+        path: 'group-booking',
+        loadComponent: () => import('@pages/group-booking/group-booking.component').then((m) => m.GroupBookingComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
         path: 'faq',
         loadComponent: () => import('@pages/faq/faq.component').then((m) => m.FaqComponent),
         resolve: { layout: setLayout(PageLayout.Default) },

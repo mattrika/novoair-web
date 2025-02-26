@@ -6,3 +6,48 @@ footer {
     border-top: 8px solid; /* Set the border thickness */
     border-image: linear-gradient(to right, #0057f8, #23cefe, #fa7421, #bc4f02) 1; /* Apply the gradient to the border */
 }
+
+.social-icons {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+}
+
+.icon {
+    width: 40px; /* Fixed size for all icons */
+    height: 40px; /* Fixed size for all icons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Optional: Makes the buttons circular */
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.icon svg {
+    width: 24px; /* Adjust icon size inside the button */
+    height: 24px; /* Adjust icon size inside the button */
+    fill: white; /* Default icon color */
+}
+
+.icon:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Platform-specific colors */
+.facebook {
+    background-color: #3b5998;
+}
+.youtube {
+    background-color: #ff0000;
+}
+.twitter {
+    background-color: #000000;
+} /* X (Twitter) uses black */
+.linkedin {
+    background-color: #0077b5;
+}
+.instagram {
+    background-color: #e4405f;
+}

@@ -52,7 +52,7 @@ export class HeaderDefaultComponent {
     }
 
     listItemsBooks: ListItem[] = [
-        { icon: 'pi pi-users', text: 'Group Booking(10+ Traveler)', link: '' },
+        { icon: 'pi pi-users', text: 'Group Booking(10+ Traveler)', link: '/group-booking' },
         {
             icon: 'pi pi-sliders-h',
             text: 'Manage Booking',
