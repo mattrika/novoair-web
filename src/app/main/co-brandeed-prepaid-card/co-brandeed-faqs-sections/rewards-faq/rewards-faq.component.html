@@ -1,0 +1,172 @@
+<div class="mt-5">
+    <ul class="space-y-3 pl-5">
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                To claim a SMILES Reward, a Member must have accumulated the required amount of
+                SMILES Miles in his or her Account. Members may redeem SMILES Miles for Rewards at
+                any time while the SMILES Miles are valid, subject to availability and applicable
+                conditions. When requesting a Reward, a Member may be requested to complete a Reward
+                Authorization Form and supply a copy of his or her passport.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                SMILES Members can redeem their SMILES for Reward Flights only if their accrued
+                Account SMILES are sufficient to meet the Reward Ticket qualifications as shown
+                below:
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="card mb-12 mt-10">
+    <p-table [value]="domesticRewards" stripedRows [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th class="text-center text-blue-600">DOMESTIC</th>
+                <th class="text-center text-blue-600">ONE WAY MILEAGE</th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-rowData>
+            <tr>
+                <td class="text-center" [innerHTML]="rowData.domestic"></td>
+                <td class="text-center">{{ rowData.oneWay }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+<div class="card">
+    <p-table [value]="internationalRewards" stripedRows [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th class="text-center text-blue-600">INTERNATIONAL</th>
+                <th class="text-center text-blue-600">ONE WAY MILEAGE</th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-rowData>
+            <tr>
+                <!-- <td class="text-center" >{{ rowData.domestic }}</td> -->
+                <td class="text-center" [innerHTML]="rowData.international"></td>
+                <td class="text-center">{{ rowData.oneWay }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<div class="mb-5 mt-12">
+    <ul class="space-y-3 pl-5">
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                SMILES Members can book Reward Tickets via their SMILES Account on-line, or with a
+                NOVOAIR Contact Centre or authorized Partner location. Open tickets will not be
+                issued as Rewards. Outbound and return Flights must be booked and confirmed at the
+                same time. Wait listing for Reward Flights are not permitted.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                Rewards do not have any cash value and neither SMILES Miles nor Rewards are
+                convertible into cash.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                All taxes, duties and carrier imposed charges (including airport and/or government
+                taxes) are the responsibility of the Member and must be paid on the time of
+                ticketing.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                NOVOAIR SMILES FFP may be re-credited to a Members Account if a Reward ticket is
+                completely unused, valid And refunded
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                It is the responsibility of the Member to verify the availability of Reward travel
+                in instances where a promotional Partner is providing joint-services with NOVOAIR.
+                Reward travel may not be possible on certain joint services or codeshare services.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                The use of a Reward ticket may not entitle the Member to certain benefits which are
+                associated with a full fare ticket.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                In the event of cancellation or major disruption to a Flight, a Member travelling on
+                a Reward ticket will be transferred to the next NOVOAIR Flight based on priority
+                status of membership
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                A Member may not sell a Reward ticket or any other Reward for cash or other
+                consideration and a Member may not purchase a Reward ticket or any other Reward from
+                any third party. A Reward ticket that has been bought, sold or bartered by or to a
+                Member may be cancelled or confiscated without prior notice in the sole discretion
+                of NOVOAIR.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">A Photo Identify Card (Any ID Card) is required for travel.</div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                NOVOAIR may at any time without notice alter the number of SMILES Miles required to
+                obtain a particular Reward, withdraw a Reward supplied or impose additional
+                restrictions on a Reward or conditions of obtaining it.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                All Rewards are subject to availability. NOVOAIR or Partners may withdraw, replace
+                or substitute Rewards at any time without any prior notice.
+            </div>
+        </li>
+    </ul>
+</div>

@@ -6,4 +6,8 @@ import { Component } from '@angular/core'
     templateUrl: './saidpur-content.component.html',
     styleUrl: './saidpur-content.component.scss',
 })
-export class SaidpurContentComponent {}
+export class SaidpurContentComponent {
+    bookNow() {
+        window.open('https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx', '_blank')
+    }
+}

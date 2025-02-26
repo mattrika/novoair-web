@@ -1,0 +1,121 @@
+<div class="card mt-5">
+    <p-table [value]="tireStatus" stripedRows [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th class="text-blue-600">MEMBERSHIP TIERS</th>
+                <th class="text-blue-600">BASIC</th>
+                <th class="text-blue-600">SAPPHIRE</th>
+                <th class="text-blue-600">PLATINUM</th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-rowData>
+            <tr>
+                <td>{{ rowData.memberShip }}</td>
+                <td>{{ rowData.basic }}</td>
+                <td>{{ rowData.sapphire }}</td>
+                <td>{{ rowData.platinum }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+
+<div class="mb-4 mt-7">
+    <ul class="space-y-3 pl-5">
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">SMILES Membership Tier-based Policies are :</div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                <div>
+                    SMILES Member Tiers are defined as Basic, Sapphire and Platinum based on accrued
+                    SMILES Miles (‘SMILES’) in Member Account. Tier Qualifications are Program
+                    enrolment for Basic, 600 SMILES for Sapphire, and 5,000 SMILES for Platinum
+                    Membership Tiers.
+                </div>
+                <div class="mb-3 mt-5">
+                    <img src="../assets/images/services1.jpg" alt="" class="mx-auto" />
+                </div>
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                SMILES Members may apply for Members Status Upgrades based on Tier-based SMILES
+                eligibility periods. Account SMILES earned within this period may be applied towards
+                a Status Upgrade requests: 1 year for Sapphire Membership Tier, and 2 years for
+                Platinum Membership Tier.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                <div>
+                    Membership status reviewed after every month end and update on 1st day of next
+                    month.
+                </div>
+                <div class="mb-3 mt-5">
+                    <img src="../assets/images/services2.jpg" alt="" class="mx-auto" />
+                </div>
+                <div>
+                    When any member reaches SMILES Sapphire Status, an auto generated email has been
+                    send with address verification notification to his/her personal email address.
+                    Members need to verify his/her account information and confirm the mailing
+                    address. Incompletion may result; unsent SMILES Card and unable to enjoy the
+                    full benefits of SMILES program.
+                </div>
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                SMILES Members may apply for SMILES Rewards based on accrued SMILES Miles. SMILES
+                are valid for a period of 2 years from the date on which a Member undertakes the
+                relevant Flight, and will expire (and be deducted from the Member's Account) at the
+                end of its validity period.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                SMILES Membership Tier Status is valid for 2 years for Sapphire Membership Status,
+                and 2 years for Platinum Membership Status.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                Unused, expired SMILES Miles, once deducted from the Member's Account, cannot be
+                re-credited back to the Member’s SMILES Account. It is the Member's responsibility
+                to be aware of both the SMILES Miles in his or her Account and when the SMILES Miles
+                will expire, using their on-line account.
+            </div>
+        </li>
+        <li class="-ml-2 flex">
+            <div class="-mt-1 flex-shrink-0">
+                <i class="pi pi-circle-fill text-[7px] text-blue-700"></i>
+            </div>
+            <div class="ml-3">
+                NOVOAIR SMILES FFP reserves the right to reverse or cancel any SMILES Miles credited
+                to a Member incorrectly, or not in accordance with, or in breach of the Program
+                Rules at any time.
+            </div>
+        </li>
+    </ul>
+</div>

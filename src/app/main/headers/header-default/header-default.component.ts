@@ -96,7 +96,7 @@ export class HeaderDefaultComponent {
                 { name: 'Chattogram', link: '/domestic/chattogram' },
                 { name: "Cox's Bazar", link: '/domestic/coxs-bazar' },
                 { name: 'Sylhet', link: '/domestic/sylhet' },
-                { name: 'Jeshore', link: '/domestic/jeshore' },
+                { name: 'Jessore', link: '/domestic/jessore' },
                 { name: 'Rajsshahi', link: '/domestic/rajsshahi' },
                 { name: 'Barishal', link: '/domestic/barishal' },
                 { name: 'Saidpur', link: '/domestic/saidpur' },
