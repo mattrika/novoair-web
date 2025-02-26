@@ -22,6 +22,15 @@ export class BookCardComponent {
     }
 
     redirectToMultiCity() {
-        window.location.href = 'https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx'
-    }
+    const baseUrl = 'https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx';
+    const params = new URLSearchParams({
+        TT: 'MC',   // Multi-City
+        FL: 'on',
+        PA: '1',    // Example: 1 Passenger
+        DC: 'DAC',  // Example: Departure City Code
+        // Add other required parameters here
+    }).toString();
+
+    window.location.href = `${baseUrl}?${params}`;
+}
 }
