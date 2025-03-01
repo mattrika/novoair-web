@@ -4,58 +4,107 @@
         Get flights, hotels, holidays and visa assistance in just a few taps. Enjoy real-time flight
         updates, schedules, travel info, play games, win trip coins and much more.
     </p>
-    <div class="mt-12 justify-items-center">
-        <img class="h-52 w-52 md:h-96 md:w-96" src="assets/images/app.png" alt="App Image" />
-    </div>
-    <div class="absolute">
-        <div class="relative bottom-20 left-[650px] flex gap-2">
-            <!-- From Uiverse.io by Yaya12085 -->
-            <a
-                class="playstore-button"
-                href="https://play.google.com/store/apps/details?id=com.novoair.novoair"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    class="icon"
-                    viewBox="0 0 512 512"
-                >
+    <div class="my-6 justify-items-center md:hidden">
+        <button
+            onclick="window.location.href='https://play.google.com/store/apps/details?id=com.novoair.novoair'"
+            type="button"
+            class="flex h-12 w-40 items-center justify-center rounded-xl bg-black text-white"
+        >
+            <div class="mr-2">
+                <svg viewBox="30 336.7 120.9 129.2" width="30">
                     <path
-                        d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"
+                        fill="#FFD400"
+                        d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7  c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z"
+                    ></path>
+                    <path
+                        fill="#FF3333"
+                        d="M99.1,401.1l-64.2,64.7c1.5,0.2,3.2-0.2,5.2-1.3  c4.2-2.3,48.8-26.7,79.1-43.3L99.1,401.1L99.1,401.1z"
+                    ></path>
+                    <path
+                        fill="#48FF48"
+                        d="M99.1,401.1l20.1-20.2c0,0-74.6-40.7-79.1-43.1  c-1.7-1-3.6-1.3-5.3-1L99.1,401.1z"
+                    ></path>
+                    <path
+                        fill="#3BCCFF"
+                        d="M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6  c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z"
                     ></path>
                 </svg>
-                <span class="texts">
-                    <span class="text-1">GET IT ON</span>
-                    <span class="text-2">Google Play</span>
-                </span>
-            </a>
-            <!-- From Uiverse.io by Yaya12085 -->
-            <a href="https://apps.apple.com/us/app/novoair/id1364137694" class="playstore-button">
-                <span class="icon">
-                    <svg
-                        fill="currentcolor"
-                        viewBox="-52.01 0 560.035 560.035"
-                        xmlns="http://www.w3.org/2000/svg"
-                        stroke="#ffffff"
-                    >
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g
-                            id="SVGRepo_tracerCarrier"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        ></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path
-                                d="M380.844 297.529c.787 84.752 74.349 112.955 75.164 113.314-.622 1.988-11.754 40.191-38.756 79.652-23.343 34.117-47.568 68.107-85.731 68.811-37.499.691-49.557-22.236-92.429-22.236-42.859 0-56.256 21.533-91.753 22.928-36.837 1.395-64.889-36.891-88.424-70.883-48.093-69.53-84.846-196.475-35.496-282.165 24.516-42.554 68.328-69.501 115.882-70.192 36.173-.69 70.315 24.336 92.429 24.336 22.1 0 63.59-30.096 107.208-25.676 18.26.76 69.517 7.376 102.429 55.552-2.652 1.644-61.159 35.704-60.523 106.559M310.369 89.418C329.926 65.745 343.089 32.79 339.498 0 311.308 1.133 277.22 18.785 257 42.445c-18.121 20.952-33.991 54.487-29.709 86.628 31.421 2.431 63.52-15.967 83.078-39.655"
-                            ></path>
-                        </g>
+            </div>
+            <div>
+                <div class="text-xs">GET IT ON</div>
+                <div class="-mt-1 font-sans text-xl font-semibold">Google Play</div>
+            </div>
+        </button>
+        <button
+            onclick="window.location.href='https://apps.apple.com/us/app/novoair/id1364137694'"
+            type="button"
+            class="mt-2 flex h-12 w-40 items-center justify-start rounded-xl bg-black p-2 text-white md:mt-0"
+        >
+            <div class="mr-2">
+                <svg viewBox="0 0 384 512" width="30">
+                    <path
+                        fill="currentColor"
+                        d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
+                    ></path>
+                </svg>
+            </div>
+            <div>
+                <div class="text-xs">Download on the</div>
+                <div class="-mt-1 font-sans text-lg font-semibold">App Store</div>
+            </div>
+        </button>
+    </div>
+    <div class="relative mt-12 hidden justify-items-center md:grid">
+        <img class="h-52 w-52 md:h-96 md:w-96" src="assets/images/app.png" alt="App Image" />
+        <div class="absolute bottom-8 right-40 md:flex md:gap-2 2xl:right-48">
+            <button
+                type="button"
+                onclick="window.location.href='https://play.google.com/store/apps/details?id=com.novoair.novoair'"
+                class="flex h-12 w-40 items-center justify-center rounded-xl bg-black text-white"
+            >
+                <div class="mr-2">
+                    <svg viewBox="30 336.7 120.9 129.2" width="30">
+                        <path
+                            fill="#FFD400"
+                            d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7  c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z"
+                        ></path>
+                        <path
+                            fill="#FF3333"
+                            d="M99.1,401.1l-64.2,64.7c1.5,0.2,3.2-0.2,5.2-1.3  c4.2-2.3,48.8-26.7,79.1-43.3L99.1,401.1L99.1,401.1z"
+                        ></path>
+                        <path
+                            fill="#48FF48"
+                            d="M99.1,401.1l20.1-20.2c0,0-74.6-40.7-79.1-43.1  c-1.7-1-3.6-1.3-5.3-1L99.1,401.1z"
+                        ></path>
+                        <path
+                            fill="#3BCCFF"
+                            d="M99.1,401.1l-64.3-64.3c-2.6,0.6-4.8,2.9-4.8,7.6  c0,7.5,0,107.5,0,113.8c0,4.3,1.7,7.4,4.9,7.7L99.1,401.1z"
+                        ></path>
                     </svg>
-                </span>
-                <span class="texts">
-                    <span class="text-1">Download form</span>
-                    <span class="text-2">App store</span>
-                </span>
-            </a>
+                </div>
+                <div>
+                    <div class="text-xs">GET IT ON</div>
+                    <div class="-mt-1 font-sans text-xl font-semibold">Google Play</div>
+                </div>
+            </button>
+            <button
+                type="button"
+                onclick="window.location.href='https://apps.apple.com/us/app/novoair/id1364137694'"
+                class="mt-2 flex h-12 w-40 items-center justify-start rounded-xl bg-black p-2 text-white md:mt-0"
+            >
+                <div class="mr-2">
+                    <svg viewBox="0 0 384 512" width="30">
+                        <path
+                            fill="currentColor"
+                            d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"
+                        ></path>
+                    </svg>
+                </div>
+                <div>
+                    <div class="text-xs">Download on the</div>
+                    <div class="-mt-1 font-sans text-lg font-semibold">App Store</div>
+                </div>
+            </button>
         </div>
     </div>
 </div>

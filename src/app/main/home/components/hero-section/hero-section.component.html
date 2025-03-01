@@ -6,7 +6,17 @@
                 (click)="selectTab('Book a Flight')"
                 [ngClass]="activeTab === 'Book a Flight' ? 'bg-white' : ''"
             >
-                <span class="pi pi-send mr-1 text-[15px]"></span> Book a Flight
+                <div>
+                    <div class="flex items-center justify-center">
+                        <div class="mr-1">
+                            <ng-icon
+                                style="font-size: 18px"
+                                name="matAirplanemodeActiveOutline"
+                            ></ng-icon>
+                        </div>
+                        <h1>Flights</h1>
+                    </div>
+                </div>
             </div>
 
             <div
@@ -14,14 +24,20 @@
                 (click)="selectTab('Manage Booking')"
                 [ngClass]="activeTab === 'Manage Booking' ? 'bg-white' : ''"
             >
-                <span class="pi pi-calendar mr-1 text-[15px]"></span> Manage Booking
+                <span class="pi pi-calendar mr-1 text-[15px]"></span> Manage
             </div>
 
             <div
-                class="flex-1 cursor-pointer items-center gap-4 py-1 text-center text-xs md:mt-0 md:text-sm"
+                class="hidden cursor-pointer items-center justify-center py-1 text-center text-xs md:mt-0 md:flex md:flex-1 md:text-sm"
                 (click)="navigateToMobileCheckIn()"
             >
                 <span class="pi pi-mobile mr-1 text-[15px]"></span> Mobile Check-In
+            </div>
+            <div
+                class="flex-1 cursor-pointer items-center gap-4 py-1 text-center text-xs md:mt-0 md:hidden md:text-sm"
+                (click)="navigateToMobileCheckIn()"
+            >
+                <span class="pi pi-mobile mr-1 text-[15px]"></span>Check-In
             </div>
         </div>
     </div>
