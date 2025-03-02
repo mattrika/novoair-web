@@ -73,6 +73,18 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
+        path: 'mobile-checkin',
+        loadComponent: () =>
+            import('@pages/mobile-checkin/mobile-checkin.component').then((m) => m.MobileCheckinComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'flight-schedules',
+        loadComponent: () =>
+            import('@pages/flight-schedules/flight-schedules.component').then((m) => m.FlightSchedulesComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
         path: 'shuttle',
         loadComponent: () =>
             import('@pages/shuttle/shuttle.component').then((m) => m.ShuttleComponent),

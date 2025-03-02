@@ -417,6 +417,7 @@
                             <h1 class="mb-4 px-4 font-semibold">Plan a Trip</h1>
                             <li>
                                 <a
+                                    (click)="toggleMobileMenu()"
                                     href="https://secure.flynovoair.com/bookings/Vues/flight_selection.aspx"
                                     target="_blank"
                                     class="flex items-center gap-2 rounded px-4 py-2 text-sm text-stone-700 hover:bg-amber-100"
@@ -430,6 +431,7 @@
                             </li>
                             <li>
                                 <a
+                                    (click)="toggleMobileMenu()"
                                     routerLink="/holiday-packages"
                                     class="flex items-center gap-2 rounded px-4 py-2 text-sm text-stone-700 hover:bg-amber-100"
                                 >
@@ -442,6 +444,7 @@
                             </li>
                             <li>
                                 <a
+                                    (click)="toggleMobileMenu()"
                                     routerLink="/our-destination"
                                     class="flex items-center gap-2 rounded px-4 py-2 text-sm text-stone-700 hover:bg-amber-100"
                                 >
@@ -454,6 +457,7 @@
                             </li>
                             <li>
                                 <a
+                                    (click)="toggleMobileMenu()"
                                     href="/shuttle"
                                     class="flex items-center gap-2 rounded px-4 py-2 text-sm text-stone-700 hover:bg-amber-100"
                                 >
@@ -466,6 +470,7 @@
                             </li>
                             <li>
                                 <a
+                                    (click)="toggleMobileMenu()"
                                     routerLink="/offers"
                                     class="flex items-center gap-2 rounded px-4 py-2 text-sm text-stone-700 hover:bg-amber-100"
                                 >
@@ -482,28 +487,42 @@
                             <h1 class="mb-4 px-4 font-semibold">Travel Information</h1>
 
                             <li>
-                                <a href="/baggage/baggage-size-weight" class="sub-menu">
+                                <a
+                                    (click)="toggleMobileMenu()"
+                                    href="/baggage/baggage-size-weight"
+                                    class="sub-menu"
+                                >
                                     Travel Requirements
                                 </a>
                             </li>
                             <li>
-                                <a href="/fleet" class="sub-menu"> Our Fleet </a>
+                                <a (click)="toggleMobileMenu()" href="/fleet" class="sub-menu">
+                                    Our Fleet
+                                </a>
                             </li>
                             <li>
-                                <a href="#" class="sub-menu"> Our Partners </a>
+                                <a (click)="toggleMobileMenu()" href="#" class="sub-menu">
+                                    Our Partners
+                                </a>
                             </li>
                         </div>
                         <div class="mt-6">
                             <h1 class="mb-4 px-4 font-semibold">Group and Business Travel</h1>
 
                             <li>
-                                <a href="#" class="sub-menu"> Beyond Business </a>
+                                <a (click)="toggleMobileMenu()" href="#" class="sub-menu">
+                                    Beyond Business
+                                </a>
                             </li>
                             <li>
-                                <a href="#" class="sub-menu"> Group Travel </a>
+                                <a (click)="toggleMobileMenu()" href="#" class="sub-menu">
+                                    Group Travel
+                                </a>
                             </li>
                             <li>
-                                <a href="#" class="sub-menu"> Sports Travel </a>
+                                <a (click)="toggleMobileMenu()" href="#" class="sub-menu">
+                                    Sports Travel
+                                </a>
                             </li>
                         </div>
                         <!-- src/app/dynamic-list/dynamic-list.component.html -->
@@ -514,6 +533,7 @@
                                 <li class="rounded-lg text-stone-700">
                                     @if (item.link.startsWith('http')) {
                                         <a
+                                            (click)="toggleMobileMenu()"
                                             class="flex items-center gap-2"
                                             [attr.href]="item.link"
                                             target="_blank"
@@ -522,7 +542,11 @@
                                             <span>{{ item.text }}</span>
                                         </a>
                                     } @else {
-                                        <a class="flex items-center gap-2" [routerLink]="item.link">
+                                        <a
+                                            (click)="toggleMobileMenu()"
+                                            class="flex items-center gap-2"
+                                            [routerLink]="item.link"
+                                        >
                                             <i [class]="item.icon" style="font-size: 1rem"></i>
                                             <span>{{ item.text }}</span>
                                         </a>
@@ -558,11 +582,18 @@
                                         @for (item of destination.items; track item) {
                                             <li class="sub-item text-sm">
                                                 @if (item.link.startsWith('http')) {
-                                                    <a [attr.href]="item.link" target="_blank">{{
-                                                        item.name
-                                                    }}</a>
+                                                    <a
+                                                        (click)="toggleMobileMenu()"
+                                                        [attr.href]="item.link"
+                                                        target="_blank"
+                                                        >{{ item.name }}</a
+                                                    >
                                                 } @else {
-                                                    <a [routerLink]="item.link">{{ item.name }}</a>
+                                                    <a
+                                                        (click)="toggleMobileMenu()"
+                                                        [routerLink]="item.link"
+                                                        >{{ item.name }}</a
+                                                    >
                                                 }
                                             </li>
                                         }
@@ -580,11 +611,18 @@
                                         @for (item of info.items; track item) {
                                             <li class="sub-item text-sm">
                                                 @if (item.link.startsWith('http')) {
-                                                    <a [attr.href]="item.link" target="_blank">{{
-                                                        item.name
-                                                    }}</a>
+                                                    <a
+                                                        (click)="toggleMobileMenu()"
+                                                        [attr.href]="item.link"
+                                                        target="_blank"
+                                                        >{{ item.name }}</a
+                                                    >
                                                 } @else {
-                                                    <a [routerLink]="item.link">{{ item.name }}</a>
+                                                    <a
+                                                        (click)="toggleMobileMenu()"
+                                                        [routerLink]="item.link"
+                                                        >{{ item.name }}</a
+                                                    >
                                                 }
                                             </li>
                                         }
@@ -602,11 +640,18 @@
                                         @for (item of info.items; track item) {
                                             <li class="sub-item text-sm">
                                                 @if (item.link.startsWith('http')) {
-                                                    <a [attr.href]="item.link" target="_blank">{{
-                                                        item.name
-                                                    }}</a>
+                                                    <a
+                                                        (click)="toggleMobileMenu()"
+                                                        [attr.href]="item.link"
+                                                        target="_blank"
+                                                        >{{ item.name }}</a
+                                                    >
                                                 } @else {
-                                                    <a [routerLink]="item.link">{{ item.name }}</a>
+                                                    <a
+                                                        (click)="toggleMobileMenu()"
+                                                        [routerLink]="item.link"
+                                                        >{{ item.name }}</a
+                                                    >
                                                 }
                                             </li>
                                         }
@@ -621,6 +666,7 @@
                                 <li class="sub-item rounded-lg">
                                     @if (item.link.startsWith('http')) {
                                         <a
+                                            (click)="toggleMobileMenu()"
                                             class="flex items-center gap-2"
                                             [attr.href]="item.link"
                                             target="_blank"
@@ -629,7 +675,11 @@
                                             <span>{{ item.text }}</span>
                                         </a>
                                     } @else {
-                                        <a class="flex items-center gap-2" [routerLink]="item.link">
+                                        <a
+                                            (click)="toggleMobileMenu()"
+                                            class="flex items-center gap-2"
+                                            [routerLink]="item.link"
+                                        >
                                             <i [class]="item.icon" style="font-size: 1rem"></i>
                                             <span>{{ item.text }}</span>
                                         </a>
@@ -658,6 +708,7 @@
                             @for (item of gridItems; track item.title) {
                                 @if (item.link.startsWith('http')) {
                                     <a
+                                        (click)="toggleMobileMenu()"
                                         [attr.href]="item.link"
                                         target="_blank"
                                         class="sub-item justify-items-center p-4"
@@ -667,6 +718,7 @@
                                     </a>
                                 } @else {
                                     <a
+                                        (click)="toggleMobileMenu()"
                                         [routerLink]="item.link"
                                         class="sub-item justify-items-center p-4"
                                     >
@@ -683,6 +735,7 @@
                                 <li class="sub-item rounded-lg">
                                     @if (item.link.startsWith('http')) {
                                         <a
+                                            (click)="toggleMobileMenu()"
                                             class="flex items-center gap-2"
                                             [attr.href]="item.link"
                                             target="_blank"
@@ -691,7 +744,11 @@
                                             <span>{{ item.text }}</span>
                                         </a>
                                     } @else {
-                                        <a class="flex items-center gap-2" [routerLink]="item.link">
+                                        <a
+                                            (click)="toggleMobileMenu()"
+                                            class="flex items-center gap-2"
+                                            [routerLink]="item.link"
+                                        >
                                             <i [class]="item.icon" style="font-size: 1rem"></i>
                                             <span>{{ item.text }}</span>
                                         </a>
@@ -715,6 +772,7 @@
                 >
                     <li class="gap-1 space-y-2 p-1">
                         <p-button
+                            (click)="toggleMobileMenu()"
                             (click)="navigateToSmilesLogin()"
                             severity="info"
                             size="large"
@@ -722,11 +780,13 @@
                             icon="pi pi-user"
                         />
                         <a
+                            (click)="toggleMobileMenu()"
                             routerLink="/co-branded-prepaid-card"
                             class="block px-4 py-2 hover:bg-gray-100"
                             ><img class="h-8 w-32" src="assets/logo/smc.png" alt="MyBrand Logo"
                         /></a>
                         <a
+                            (click)="toggleMobileMenu()"
                             routerLink="/smiles-frequent-flyer"
                             class="block px-4 py-2 hover:bg-gray-100"
                             ><img class="h-8 w-32" src="assets/logo/smc1.png" alt="MyBrand Logo"
@@ -736,6 +796,7 @@
                 <p-button
                     severity="info"
                     class="mt-4"
+                    (click)="toggleMobileMenu()"
                     (click)="navigateToAgentLogin()"
                     [outlined]="true"
                     label="Agent Login"
