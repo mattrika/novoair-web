@@ -65,7 +65,7 @@ export class HeaderDefaultComponent {
         { icon: 'pi pi-box', text: 'Associate Business', link: '' },
     ]
     listItemsManage: ListItem[] = [
-        { icon: 'pi pi-calendar', text: 'Flight Schedule', link: '' },
+        { icon: 'pi pi-calendar', text: 'Flight Schedule', link: '/flight-schedules' },
         { icon: 'pi pi-clock', text: 'Live Flight Status', link: '/flight-status' },
         { icon: 'pi pi-map', text: 'Route Map', link: '' },
         { icon: 'pi pi-twitch', text: 'Travel Advisory', link: '' },
