@@ -184,13 +184,12 @@ export class HeaderDefaultComponent {
         },
     ]
 
-navigateToSmilesLogin() {
-  window.location.href = 'https://secure.flynovoair.com/rewards/dashboard#/login';
-}
-navigateToAgentLogin() {
-  window.location.href = 'https://secure.flynovoair.com/agents/';
-}
-
+    navigateToSmilesLogin() {
+        window.location.href = 'https://secure.flynovoair.com/rewards/dashboard#/login'
+    }
+    navigateToAgentLogin() {
+        window.location.href = 'https://secure.flynovoair.com/agents/'
+    }
 
     toggleMobileMenu() {
         this.isMobileMenuOpen = !this.isMobileMenuOpen

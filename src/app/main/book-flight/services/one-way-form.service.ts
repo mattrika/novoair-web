@@ -1,16 +1,16 @@
-import { Injectable } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import { SelectItemGroup } from 'primeng/api';
+import { Injectable } from '@angular/core'
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { SelectItemGroup } from 'primeng/api'
 
 interface SearchType {
-    searchTypeName: string;
+    searchTypeName: string
 }
 
 @Injectable({
     providedIn: 'root',
 })
 export class OneWayFormService {
-    searchType: SearchType[] = [{ searchTypeName: 'Flexible' }, { searchTypeName: 'Fixed' }];
+    searchType: SearchType[] = [{ searchTypeName: 'Flexible' }, { searchTypeName: 'Fixed' }]
     groupedCities: SelectItemGroup[] = [
         {
             label: 'Domestic',
@@ -27,7 +27,7 @@ export class OneWayFormService {
             value: 'inter',
             items: [{ label: 'Kolkata', value: 'CCU' }],
         },
-    ];
+    ]
 
     constructor(private fb: FormBuilder) {}
 
@@ -44,21 +44,21 @@ export class OneWayFormService {
                 selectedSearch: [this.searchType[0]], // Set "Flexible" as default
             },
             { validators: [this.sameCityValidator] },
-        );
+        )
     }
 
     sameCityValidator(form: FormGroup) {
-        const fromValue = form.get('from')?.value;
-        const toValue = form.get('to')?.value;
-        return fromValue && toValue && fromValue === toValue ? { sameCity: true } : null;
+        const fromValue = form.get('from')?.value
+        const toValue = form.get('to')?.value
+        return fromValue && toValue && fromValue === toValue ? { sameCity: true } : null
     }
 
     formatDate(dateString: string, format: 'YYYY-MM' | 'DD'): string {
-        if (!dateString) return '';
-        const date = new Date(dateString);
+        if (!dateString) return ''
+        const date = new Date(dateString)
         return format === 'YYYY-MM'
             ? `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`
-            : String(date.getDate()).padStart(2, '0');
+            : String(date.getDate()).padStart(2, '0')
     }
 
     getBookingData(form: FormGroup) {
@@ -73,6 +73,6 @@ export class OneWayFormService {
             PC: form.get('children')?.value,
             PI: form.get('infants')?.value,
             CD: form.get('promocode')?.value || '',
-        };
+        }
     }
 }
