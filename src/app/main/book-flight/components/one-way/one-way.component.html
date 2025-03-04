@@ -3,30 +3,30 @@
         [formGroup]="flightForm"
         class="h-full w-full items-center gap-5 rounded-xl border-2 border-gray-200 p-2 md:mt-0 md:flex md:h-16"
     >
-        <div class="flex w-full items-center rounded-md border-2 px-4 md:border-none md:px-0">
-            <div class="card ml-0 flex justify-center md:ml-[10px]">
+        <div class="flex w-full items-center rounded-md border-2 px-2 md:border-none md:px-0">
+            <div class="card ml-0 flex w-32 justify-center md:ml-[16px] md:w-36">
                 <p-select
                     [options]="groupedCities"
                     formControlName="from"
                     placeholder="Form"
                     [group]="true"
                     [dropdownIcon]="'none'"
-                    class="border-none sm:max-w-36"
+                    class="border-none"
                     styleClass=""
                 >
                 </p-select>
             </div>
-            <div class="flex justify-center py-3 sm:py-0">
-                <i class="pi pi-arrow-up-right hide z-10 mx-3 ml-6 md:ml-5 md:mr-14"></i>
+            <div class="flex justify-center py-1">
+                <i class="pi pi-arrow-up-right hide z-10 md:ml-5 md:mr-8"></i>
             </div>
-            <div class="card mx-12 mr-6 flex justify-end md:mr-0">
+            <div class="card ml-2 flex w-32 justify-end md:mr-0 md:w-36">
                 <p-select
                     [options]="groupedCities"
                     formControlName="to"
                     placeholder="To"
                     [group]="true"
                     [dropdownIcon]="'none'"
-                    class="w-36 border-none"
+                    class="border-none"
                 >
                 </p-select>
             </div>
@@ -34,7 +34,9 @@
 
         <div class="z-10 -ml-7 mr-6 hidden h-8 border border-gray-300 md:flex"></div>
 
-        <div class="w-ful mt-0 rounded-md border-2 md:mt-0 md:border-none">
+        <div
+            class="w-ful mt-0 flex justify-center rounded-md border-2 md:mx-8 md:mt-0 md:border-none"
+        >
             <p-datepicker
                 formControlName="departure"
                 placeholder="Departure"
@@ -184,6 +186,6 @@
 
 <div class="mb-2 ml-5 text-sm text-red-500">
     @if (flightForm.hasError('sameCity')) {
-        <p>Can't be select same destination</p>
+        <p>The destination cannot be the same as departure</p>
     }
 </div>
