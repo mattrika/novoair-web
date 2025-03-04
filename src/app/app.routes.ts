@@ -152,12 +152,7 @@ const flattenedRoutes: Route[] = [
             ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
-    {
-        path: 'book-flight',
-        loadComponent: () =>
-            import('@pages/book-flight/book-flight.component').then((m) => m.BookFlightComponent),
-        resolve: { layout: setLayout(PageLayout.Default) },
-    },
+
     {
         path: 'current-offers',
         loadComponent: () =>

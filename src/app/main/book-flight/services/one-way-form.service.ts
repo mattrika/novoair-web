@@ -20,6 +20,10 @@ export class OneWayFormService {
                 { label: 'Chattogram', value: 'CGP' },
                 { label: 'Sylhet', value: 'ZYL' },
                 { label: 'Barishal', value: 'BZL' },
+                { label: "Cox's Bazar", value: 'CXB' },
+                { label: 'Jashore', value: 'JSR' },
+                { label: 'Rajshahi', value: 'RJH' },
+                { label: 'Saidpur', value: 'SPD' },
             ],
         },
         {

@@ -3,36 +3,36 @@
         [formGroup]="flightForm"
         class="h-full w-full items-center justify-around rounded-xl border-2 border-gray-200 p-2 md:flex md:h-16 md:p-6"
     >
-        <div class="flex w-full items-center rounded-md border-2 px-4 md:border-none md:px-0">
-            <div class="card ml-0 flex justify-center md:ml-[10px]">
+        <div class="flex w-full items-center rounded-md border-2 px-1 md:border-none md:px-0">
+            <div class="card ml-2 flex w-32 justify-center md:ml-[8px] md:w-36">
                 <p-select
                     [options]="groupedCities"
                     formControlName="from"
                     placeholder="From"
                     [group]="true"
                     [dropdownIcon]="'none'"
-                    class="w-full border-none shadow-none"
+                    class="border-none shadow-none"
                     styleClass=""
                 >
                 </p-select>
             </div>
-            <div>
+            <div class="flex justify-center">
                 <i class="pi pi-arrow-up-right z-10"></i>
             </div>
-            <div class="card mx-12 mr-6 flex justify-end md:mr-0">
+            <div class="card mx-4 mr-2 flex w-32 justify-center md:w-36">
                 <p-select
                     [options]="groupedCities"
                     formControlName="to"
                     placeholder="To"
                     [group]="true"
                     [dropdownIcon]="'none'"
-                    class="w-full border-none shadow-none"
+                    class="border-none shadow-none"
                 >
                 </p-select>
             </div>
         </div>
 
-        <div class="z-20 -ml-10 mr-6 hidden border border-gray-300 md:flex md:h-8"></div>
+        <div class="z-20 -ml-10 mr-4 hidden border border-gray-300 md:flex md:h-8"></div>
 
         <div
             class="justify mt-0 flex w-full items-center justify-between rounded-md border-2 md:mt-0 md:border-none"
@@ -197,7 +197,7 @@
 
 <div class="mb-2 ml-5 flex gap-10 text-sm text-red-500">
     @if (flightForm.hasError('sameCity')) {
-        <p>Can't be select same destination</p>
+        <p>The destination cannot be the same as departure</p>
     }
     @if (flightForm.errors?.['invalidReturnDate']) {
         <p>Return date can't be before the departure date</p>
