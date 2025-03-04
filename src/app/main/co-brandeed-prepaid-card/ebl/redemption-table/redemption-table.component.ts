@@ -13,13 +13,13 @@ interface International {
 }
 
 @Component({
-  selector: 'app-redemption-table',
-  imports: [TableModule, CommonModule],
-  templateUrl: './redemption-table.component.html',
-  styleUrl: './redemption-table.component.scss'
+    selector: 'app-redemption-table',
+    imports: [TableModule, CommonModule],
+    templateUrl: './redemption-table.component.html',
+    styleUrl: './redemption-table.component.scss',
 })
 export class RedemptionTableComponent {
- domestic: Domestic[] = [
+    domestic: Domestic[] = [
         { domestic: 'Dhaka to Barishal&nbsp;&nbsp;&nbsp;&nbsp;Barishal to Dhaka', oneWay: '600' },
         {
             domestic: 'Dhaka to Chattogram&nbsp;&nbsp;&nbsp;&nbsp;Chattogram to Dhaka',

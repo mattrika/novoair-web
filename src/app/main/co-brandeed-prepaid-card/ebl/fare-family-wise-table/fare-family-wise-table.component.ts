@@ -22,13 +22,13 @@ interface FlightDataInternational {
 }
 
 @Component({
-  selector: 'app-fare-family-wise-table',
-  imports: [TableModule, CommonModule],
-  templateUrl: './fare-family-wise-table.component.html',
-  styleUrl: './fare-family-wise-table.component.scss'
+    selector: 'app-fare-family-wise-table',
+    imports: [TableModule, CommonModule],
+    templateUrl: './fare-family-wise-table.component.html',
+    styleUrl: './fare-family-wise-table.component.scss',
 })
 export class FareFamilyWiseTableComponent {
-FlightDataDomestic: FlightDataDomestic[] = [
+    FlightDataDomestic: FlightDataDomestic[] = [
         {
             destination: 'Jashore (JSR)',
             specialPromo: 23,
