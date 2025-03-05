@@ -3,30 +3,29 @@
         [formGroup]="flightForm"
         class="h-full w-full items-center gap-5 rounded-xl border-2 border-gray-200 p-2 md:mt-0 md:flex md:h-16"
     >
-        <div class="flex w-full items-center rounded-md border-2 px-2 md:border-none md:px-0">
-            <div class="card ml-0 flex w-32 justify-center md:ml-[16px] md:w-36">
+        <div class="flex w-full items-center rounded-md border-2 md:border-none md:px-0">
+            <div class="card ml-0 flex w-full justify-center md:ml-[16px] md:w-36">
                 <p-select
                     [options]="groupedCities"
                     formControlName="from"
                     placeholder="Form"
                     [group]="true"
                     [dropdownIcon]="'none'"
-                    class="border-none"
-                    styleClass=""
+                    class="w-32 border-none"
                 >
                 </p-select>
             </div>
-            <div class="flex justify-center py-1">
-                <i class="pi pi-arrow-up-right hide z-10 md:ml-5 md:mr-8"></i>
+            <div class="flex justify-start py-1">
+                <i class="pi pi-arrow-up-right hide z-10 md:ml-6 md:mr-8"></i>
             </div>
-            <div class="card ml-2 flex w-32 justify-end md:mr-0 md:w-36">
+            <div class="card ml-2 flex w-full justify-center md:mr-0 md:w-36">
                 <p-select
                     [options]="groupedCities"
                     formControlName="to"
                     placeholder="To"
                     [group]="true"
                     [dropdownIcon]="'none'"
-                    class="border-none"
+                    class="w-32 border-none"
                 >
                 </p-select>
             </div>
