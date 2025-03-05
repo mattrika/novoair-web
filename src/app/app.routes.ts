@@ -73,6 +73,24 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
+        path: 'route-map',
+        loadComponent: () =>
+            import('@pages/route-map/route-map.component').then((m) => m.RouteMapComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'travel-advisory',
+        loadComponent: () =>
+            import('@pages/travel-advisory/travel-advisory.component').then((m) => m.TravelAdvisoryComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'notam',
+        loadComponent: () =>
+            import('@pages/notam/notam.component').then((m) => m.NotamComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
         path: 'mobile-checkin',
         loadComponent: () =>
             import('@pages/mobile-checkin/mobile-checkin.component').then((m) => m.MobileCheckinComponent),
@@ -101,6 +119,14 @@ const flattenedRoutes: Route[] = [
         loadComponent: () =>
             import('@main/offers/components/offer-web/offer-web.component').then(
                 (m) => m.OfferWebComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'offers/nagad',
+        loadComponent: () =>
+            import('@main/offers/components/offer-nagad/offer-nagad.component').then(
+                (m) => m.OfferNagadComponent,
             ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },

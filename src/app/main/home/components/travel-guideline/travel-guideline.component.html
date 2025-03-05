@@ -1,17 +1,19 @@
 <div class="container mt-24">
     <h1 class="sub-title">Travel <span class="sub-title2">Guideline</span></h1>
 
-    <div class="mt-24 grid gap-6 md:grid-cols-3">
+    <div class="mt-24 grid gap-6 lg:grid-cols-3">
         @for (guideline of guidelines; track guideline.title) {
-            <div
-                class="flex cursor-pointer items-center justify-between gap-6 rounded-3xl p-4 shadow-[0_0_20px_rgba(0,0,0,0.1)] hover:shadow-2xl"
-            >
-                <img [src]="guideline.image" alt="Background Image" />
-                <div>
-                    <h1 class="text-xl font-bold text-blue-900">{{ guideline.title }}</h1>
-                    <p class="mt-4 text-sm text-gray-500">{{ guideline.description }}</p>
+            <a [href]="guideline.url">
+                <div
+                    class="flex h-36 cursor-pointer items-center gap-6 rounded-3xl p-4 shadow-[0_0_20px_rgba(0,0,0,0.1)] hover:shadow-2xl"
+                >
+                    <img [src]="guideline.image" alt="Background Image" />
+                    <div>
+                        <h1 class="text-xl font-bold text-blue-900">{{ guideline.title }}</h1>
+                        <p class="mt-4 text-sm text-gray-500">{{ guideline.description }}</p>
+                    </div>
                 </div>
-            </div>
+            </a>
         }
     </div>
 </div>

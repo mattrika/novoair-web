@@ -59,24 +59,31 @@ body {
         padding-right: 1rem;
     }
 
-    @media (min-width: 768px) {
-        /* md:mx-auto */
+    @media (min-width: 768px) and (max-width: 1024px) {
+        /* Tablet screens */
+        padding-left: 1.5rem; /* Add padding for better spacing */
+        padding-right: 1.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 900px; /* Set a reasonable max-width */
+    }
+
+    @media (min-width: 1025px) {
+        /* Desktop and larger */
         padding-left: 0px;
         padding-right: 0px;
         margin-left: auto;
         margin-right: auto;
-        max-width: 1200px; /* md:max-w-[1200px] */
+        max-width: 1200px;
     }
 
     @media (min-width: 1800px) {
-        /* 2xl:max-w-[1300px] */
         padding-left: 0px;
         padding-right: 0px;
         max-width: 1300px;
     }
 
     @media (min-width: 2020px) {
-        /* 3xl:max-w-[1500px] */
         padding-left: 0px;
         padding-right: 0px;
         max-width: 1500px;
