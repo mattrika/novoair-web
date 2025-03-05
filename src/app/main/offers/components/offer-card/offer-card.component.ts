@@ -51,5 +51,10 @@ export class OfferCardComponent {
             title: '10% Discount on base fare for GP STAR Members',
             route: '/offers/gp-star',
         },
+        {
+            imageUrl: 'assets/images/offers/9.jpg',
+            title: '10% Discount on base fare for NAGAD members',
+            route: '/offers/nagad',
+        },
     ]
 }

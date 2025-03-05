@@ -67,9 +67,9 @@ export class HeaderDefaultComponent {
     listItemsManage: ListItem[] = [
         { icon: 'pi pi-calendar', text: 'Flight Schedule', link: '/flight-schedules' },
         { icon: 'pi pi-clock', text: 'Live Flight Status', link: '/flight-status' },
-        { icon: 'pi pi-map', text: 'Route Map', link: '' },
-        { icon: 'pi pi-twitch', text: 'Travel Advisory', link: '' },
-        { icon: 'pi pi-exclamation-triangle', text: 'NOTAM!', link: '' },
+        { icon: 'pi pi-map', text: 'Route Map', link: '/route-map' },
+        { icon: 'pi pi-twitch', text: 'Travel Advisory', link: '/travel-advisory' },
+        { icon: 'pi pi-exclamation-triangle', text: 'NOTAM!', link: '/notam' },
     ]
     listItemsExplore: ListItem[] = [
         { icon: 'pi pi-building', text: 'Company Information', link: '/about-us' },

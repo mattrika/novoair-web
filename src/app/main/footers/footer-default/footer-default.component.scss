@@ -51,3 +51,9 @@ footer {
 .instagram {
     background-color: #e4405f;
 }
+
+img {
+    pointer-events: none;
+    user-drag: none;
+    -webkit-user-drag: none;
+}
