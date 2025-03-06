@@ -1,0 +1,51 @@
+@for (country of offices; track country) {
+    <h1 class="text-center text-2xl font-bold text-blue-800">
+        {{ country.country }}
+    </h1>
+    <div class="mt-10">
+        @for (city of country.cities; track city) {
+            <h1 class="font text-center text-xl font-bold text-blue-700">
+                {{ city.city }}
+            </h1>
+            <div
+                [ngClass]="[
+                    city.offices.length >= 3 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : '',
+                    city.offices.length === 2 ? 'grid-cols-1 md:grid-cols-2' : '',
+                    city.offices.length === 1 ? 'grid-cols-1' : '',
+                ]"
+                class="my-10 grid gap-4"
+            >
+                @for (office of city.offices; track office) {
+                    <div class="rounded-xl border border-blue-300 shadow-md">
+                        <div class="p-4">
+                            <h3
+                                class="border-b border-b-blue-200 pb-2 text-center font-medium text-blue-700"
+                            >
+                                {{ office.name }}
+                            </h3>
+                            <div class="mb-2 mt-3 flex gap-3">
+                                <i class="pi pi-building mt-3.5"></i>
+                                <p class="pt-2">{{ office.address }}</p>
+                            </div>
+                            <div class="mb-2 flex gap-3">
+                                <i class="pi pi-phone mt-1.5"></i>
+                                <p>{{ office.phone }}</p>
+                            </div>
+                            @if (office.email) {
+                                <div class="flex gap-3">
+                                    <i class="pi pi-envelope mt-1.5"></i>
+                                    <p>
+                                        Email:
+                                        <a href="mailto:{{ office.email }}" class="text-blue-600">{{
+                                            office.email
+                                        }}</a>
+                                    </p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+}
