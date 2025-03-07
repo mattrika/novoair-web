@@ -74,7 +74,7 @@ export class HeaderDefaultComponent {
     listItemsExplore: ListItem[] = [
         { icon: 'pi pi-building', text: 'Company Information', link: '/about-us' },
         { icon: 'pi pi-compass', text: 'Fleet Information', link: '/fleet' },
-        { icon: 'pi pi-envelope', text: 'Feedback', link: '' },
+        { icon: 'pi pi-envelope', text: 'Feedback', link: '/feedback' },
         { icon: 'pi pi-id-card', text: 'Career', link: 'https://career.flynovoair.com/' },
         { icon: 'pi pi-check-square', text: 'Terms & Conditions', link: '/terms-and-conditions' },
     ]
@@ -114,7 +114,7 @@ export class HeaderDefaultComponent {
                 { name: 'St Martin Island', link: '/top-place/st-martin-island' },
                 { name: 'Nilgiri', link: '/top-place/nilgiri' },
                 { name: 'Kuakata', link: '/top-place/kuakata' },
-                { name: 'View More', link: 'https://example.com/view-more' },
+                { name: 'View More', link: '/view-more' },
             ],
         },
         {
@@ -184,13 +184,12 @@ export class HeaderDefaultComponent {
         },
     ]
 
-navigateToSmilesLogin() {
-  window.location.href = 'https://secure.flynovoair.com/rewards/dashboard#/login';
-}
-navigateToAgentLogin() {
-  window.location.href = 'https://secure.flynovoair.com/agents/';
-}
-
+    navigateToSmilesLogin() {
+        window.location.href = 'https://secure.flynovoair.com/rewards/dashboard#/login'
+    }
+    navigateToAgentLogin() {
+        window.location.href = 'https://secure.flynovoair.com/agents/'
+    }
 
     toggleMobileMenu() {
         this.isMobileMenuOpen = !this.isMobileMenuOpen

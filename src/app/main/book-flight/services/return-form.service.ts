@@ -1,16 +1,16 @@
-import { Injectable } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import { SelectItemGroup } from 'primeng/api';
+import { Injectable } from '@angular/core'
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { SelectItemGroup } from 'primeng/api'
 
 interface SearchType {
-    searchTypeName: string;
+    searchTypeName: string
 }
 
 @Injectable({
     providedIn: 'root',
 })
 export class ReturnFormService {
-    searchType: SearchType[] = [{ searchTypeName: 'Flexible' }, { searchTypeName: 'Fixed' }];
+    searchType: SearchType[] = [{ searchTypeName: 'Flexible' }, { searchTypeName: 'Fixed' }]
     groupedCities: SelectItemGroup[] = [
         {
             label: 'Domestic',
@@ -31,7 +31,7 @@ export class ReturnFormService {
             value: 'inter',
             items: [{ label: 'Kalkata', value: 'CCU' }],
         },
-    ];
+    ]
 
     constructor(private fb: FormBuilder) {}
 
@@ -49,32 +49,32 @@ export class ReturnFormService {
                 selectedSearch: [this.searchType[0]], // Set default to "Flexible"
             },
             { validators: [this.sameCityValidator, this.dateValidator] },
-        );
+        )
     }
 
     sameCityValidator(form: FormGroup) {
-        const fromValue = form.get('from')?.value;
-        const toValue = form.get('to')?.value;
-        return fromValue && toValue && fromValue === toValue ? { sameCity: true } : null;
+        const fromValue = form.get('from')?.value
+        const toValue = form.get('to')?.value
+        return fromValue && toValue && fromValue === toValue ? { sameCity: true } : null
     }
 
     dateValidator(control: AbstractControl) {
-        const departure = control.get('departure')?.value;
-        const returnDate = control.get('return')?.value;
+        const departure = control.get('departure')?.value
+        const returnDate = control.get('return')?.value
 
         if (departure && returnDate && new Date(departure) > new Date(returnDate)) {
-            control.get('return')?.setValue('');
-            return { invalidReturnDate: true };
+            control.get('return')?.setValue('')
+            return { invalidReturnDate: true }
         }
-        return null;
+        return null
     }
 
     formatDate(dateString: string, format: 'YYYY-MM' | 'DD'): string {
-        if (!dateString) return '';
-        const date = new Date(dateString);
+        if (!dateString) return ''
+        const date = new Date(dateString)
         return format === 'YYYY-MM'
             ? `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`
-            : String(date.getDate()).padStart(2, '0');
+            : String(date.getDate()).padStart(2, '0')
     }
 
     getBookingData(form: FormGroup) {
@@ -86,15 +86,13 @@ export class ReturnFormService {
             RM: form.get('return')?.value
                 ? this.formatDate(form.get('return')?.value, 'YYYY-MM')
                 : '', // Return Year-Month
-            RD: form.get('return')?.value
-                ? this.formatDate(form.get('return')?.value, 'DD')
-                : '', // Return Day
+            RD: form.get('return')?.value ? this.formatDate(form.get('return')?.value, 'DD') : '', // Return Day
             TT: form.get('return')?.value ? 'RT' : 'OW', // Trip Type: RT (Round Trip) or OW (One Way)
             FL: 'on', // Fixed Parameter
             PA: form.get('adults')?.value, // Number of Adults
             PC: form.get('children')?.value, // Number of Children
             PI: form.get('infants')?.value, // Number of Infants
             CD: form.get('promocode')?.value || '', // Promo Code
-        };
+        }
     }
 }

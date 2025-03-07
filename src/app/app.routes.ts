@@ -61,6 +61,22 @@ const flattenedRoutes: Route[] = [
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
+        path: 'services/smiles_cobrand_ebl',
+        loadComponent: () =>
+            import('./pages/ebl-co-branded/ebl-co-branded.component').then(
+                (m) => m.EblCoBrandedComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'services/smiles_cobrand_upay',
+        loadComponent: () =>
+            import('./pages/union-co-branded/union-co-branded.component').then(
+                (m) => m.UnionCoBrandedComponent,
+            ),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
         path: 'baggage/baggage-size-weight',
         loadComponent: () =>
             import('@pages/baggage/baggage.component').then((m) => m.BaggageComponent),
@@ -69,7 +85,9 @@ const flattenedRoutes: Route[] = [
     {
         path: 'flight-status',
         loadComponent: () =>
-            import('@pages/flight-status/flight-status.component').then((m) => m.FlightStatusComponent),
+            import('@pages/flight-status/flight-status.component').then(
+                (m) => m.FlightStatusComponent,
+            ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
@@ -93,13 +111,17 @@ const flattenedRoutes: Route[] = [
     {
         path: 'mobile-checkin',
         loadComponent: () =>
-            import('@pages/mobile-checkin/mobile-checkin.component').then((m) => m.MobileCheckinComponent),
+            import('@pages/mobile-checkin/mobile-checkin.component').then(
+                (m) => m.MobileCheckinComponent,
+            ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
         path: 'flight-schedules',
         loadComponent: () =>
-            import('@pages/flight-schedules/flight-schedules.component').then((m) => m.FlightSchedulesComponent),
+            import('@pages/flight-schedules/flight-schedules.component').then(
+                (m) => m.FlightSchedulesComponent,
+            ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
@@ -254,7 +276,10 @@ const flattenedRoutes: Route[] = [
     },
     {
         path: 'group-booking',
-        loadComponent: () => import('@pages/group-booking/group-booking.component').then((m) => m.GroupBookingComponent),
+        loadComponent: () =>
+            import('@pages/group-booking/group-booking.component').then(
+                (m) => m.GroupBookingComponent,
+            ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
@@ -487,6 +512,18 @@ const flattenedRoutes: Route[] = [
         path: 'domestic/saidpur',
         loadComponent: () =>
             import('@pages/saidpur/saidpur.component').then((m) => m.SaidpurComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'sales-offices',
+        loadComponent: () =>
+            import('@pages/sales-offices/sales-offices.component').then((m) => m.SalesOfficesComponent),
+        resolve: { layout: setLayout(PageLayout.Default) },
+    },
+    {
+        path: 'view-more',
+        loadComponent: () =>
+            import('@pages/view-more/view-more.component').then((m) => m.ViewMoreComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
 ]

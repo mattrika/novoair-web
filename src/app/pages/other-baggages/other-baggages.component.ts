@@ -3,7 +3,7 @@ import { OtherBaggagesContentComponent } from '../../main/other-baggages/other-b
 
 @Component({
     selector: 'app-other-baggages',
-    imports: [ OtherBaggagesContentComponent],
+    imports: [OtherBaggagesContentComponent],
     templateUrl: './other-baggages.component.html',
     styleUrl: './other-baggages.component.scss',
 })

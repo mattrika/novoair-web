@@ -1,0 +1,61 @@
+<div>
+    <h1 class="mt-7 text-center text-2xl">FARE FAMILY WISE FLIGHT MILES ACCRUAL (ONE WAY)</h1>
+    <h4 class="mb-5 mt-3 text-center text-lg text-black">DOMESTIC SECTORS</h4>
+    <div class="card">
+        <p-table [value]="FlightDataDomestic" stripedRows [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th class="text-blue-600">DAC (TO/FROM)</th>
+                    <th class="text-blue-600">SPECIAL PROMO / TOUR (X 0.25)</th>
+                    <th class="text-blue-600">PROMO (X 0.50)</th>
+                    <th class="text-blue-600">SPECIAL (X 0.75)</th>
+                    <th class="text-blue-600">DISCOUNTED (X 1.00)</th>
+                    <th class="text-blue-600">SAVER (X 1.15)</th>
+                    <th class="text-blue-600">FLEXIBLE (X 1.25)</th>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-rowData>
+                <tr>
+                    <td>{{ rowData.destination }}</td>
+                    <td>{{ rowData.specialPromo }}</td>
+                    <td>{{ rowData.promo }}</td>
+                    <td>{{ rowData.special }}</td>
+                    <td>{{ rowData.discounted }}</td>
+                    <td>{{ rowData.saver }}</td>
+                    <td>{{ rowData.flexible }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+    <h4 class="mb-3 mt-8 text-center text-lg text-black">INTERNATIONAL SECTORS</h4>
+    <div class="card">
+        <p-table
+            [value]="FlightDataInternational"
+            stripedRows
+            [tableStyle]="{ 'min-width': '50rem' }"
+        >
+            <ng-template pTemplate="header">
+                <tr>
+                    <th class="text-blue-600">DAC <br />(TO/FROM)</th>
+                    <th class="text-blue-600">PROMO <br />(x 0.50)</th>
+                    <th class="text-blue-600">EXCURSION <br />(x 0.50)</th>
+                    <th class="text-blue-600">DISCOUNTED <br />(x 0.75)</th>
+                    <th class="text-blue-600">SAVER <br />(x 1.00)</th>
+                    <th class="text-blue-600">FLEXIBLE <br />(x 1.25)</th>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-rowData>
+                <tr>
+                    <td>{{ rowData.destination }}</td>
+                    <td>{{ rowData.promo }}</td>
+                    <td>{{ rowData.excursion }}</td>
+                    <td>{{ rowData.discounted }}</td>
+                    <td>{{ rowData.saver }}</td>
+                    <td>{{ rowData.flexible }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

@@ -3,7 +3,7 @@ import { TransportationOfInfantsContentComponent } from '../../main/transportati
 
 @Component({
     selector: 'app-transportation-of-infants',
-    imports: [ TransportationOfInfantsContentComponent],
+    imports: [TransportationOfInfantsContentComponent],
     templateUrl: './transportation-of-infants.component.html',
     styleUrl: './transportation-of-infants.component.scss',
 })
