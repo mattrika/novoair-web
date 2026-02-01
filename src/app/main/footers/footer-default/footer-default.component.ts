@@ -8,7 +8,7 @@ import { RouterLink } from '@angular/router'
     styleUrl: './footer-default.component.scss',
 })
 export class FooterDefaultComponent {
-     bankPartners = [
+    bankPartners = [
         'assets/images/pay/1.png',
         'assets/images/pay/2.png',
         'assets/images/pay/3.png',

@@ -1,40 +1,37 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FeedbackService } from '@main/auth/services/feedback.service'
+import { CommonModule } from '@angular/common'
+import { Component } from '@angular/core'
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
 import { PrimeModules } from '@core/ui/primeng'
+import { FeedbackService } from '@main/auth/services/feedback.service'
 
 interface FeadbackType {
-    type: string;
+    type: string
 }
 
 @Component({
-  selector: 'app-feedback-content',
-  standalone: true,
-  imports: [CommonModule,ReactiveFormsModule,PrimeModules],
-  templateUrl: './feedback-content.component.html',
-  styleUrl: './feedback-content.component.scss'
+    selector: 'app-feedback-content',
+    standalone: true,
+    imports: [CommonModule, ReactiveFormsModule, PrimeModules],
+    templateUrl: './feedback-content.component.html',
+    styleUrl: './feedback-content.component.scss',
 })
 export class FeedbackContentComponent {
-  feedbackForm: FormGroup
-  minDate: Date = new Date()
-// minDate: Date | undefined;
+    feedbackForm: FormGroup
+    minDate: Date = new Date()
+    // minDate: Date | undefined;
 
-  isSubmitting = false
-  showSuccessModal=false
-  showErrorModal=false
+    isSubmitting = false
+    showSuccessModal = false
+    showErrorModal = false
 
-  feadbackType: FeadbackType[] | undefined;
+    feadbackType: FeadbackType[] | undefined
 
-
-
-  constructor(private fb: FormBuilder, private feedbackService: FeedbackService) {
-     this.feadbackType = [
-            { type: 'COMPLEMENT' },
-            { type: 'COMMENT'},
-            { type: 'COMPLAINT' }
-        ];
+    constructor(
+        private fb: FormBuilder,
+        private feedbackService: FeedbackService,
+    ) {
+        this.feadbackType = [{ type: 'COMPLEMENT' }, { type: 'COMMENT' }, { type: 'COMPLAINT' }]
 
         // let today = new Date();
         // let month = today.getMonth();
@@ -47,50 +44,48 @@ export class FeedbackContentComponent {
         // this.minDate.setMonth(prevMonth);
         // this.minDate.setFullYear(prevYear);
 
-    this.feedbackForm = this.fb.group({
-      txtType: ['', Validators.required],
-      txtName: ['', Validators.required],
-      txtEmail: ['', [Validators.required, Validators.email]],
-      txtContactNumber: ['', Validators.required],
-      txtFlightNumber: ['', Validators.required],
-      txtFlightDate: ['', Validators.required],
-      txtFeedback: ['', Validators.required]
-    });
-  }
-
-  onSubmit() {
-    if (this.feedbackForm.invalid) {
-      return;
+        this.feedbackForm = this.fb.group({
+            txtType: ['', Validators.required],
+            txtName: ['', Validators.required],
+            txtEmail: ['', [Validators.required, Validators.email]],
+            txtContactNumber: ['', Validators.required],
+            txtFlightNumber: ['', Validators.required],
+            txtFlightDate: ['', Validators.required],
+            txtFeedback: ['', Validators.required],
+        })
     }
 
-    this.isSubmitting = true;
-    console.log('Submitted Data:', this.feedbackForm.value);
-    const formData = new FormData();
+    onSubmit() {
+        if (this.feedbackForm.invalid) {
+            return
+        }
 
-    Object.keys(this.feedbackForm.controls).forEach(key => {
-      formData.append(key, this.feedbackForm.get(key)?.value);
-    });
+        this.isSubmitting = true
+        console.log('Submitted Data:', this.feedbackForm.value)
+        const formData = new FormData()
 
-    this.feedbackService.sendFeedback(formData).subscribe(
-      response => {
-        this.feedbackForm.reset();
-        this.isSubmitting = false;
-        console.log('okay');
+        Object.keys(this.feedbackForm.controls).forEach((key) => {
+            formData.append(key, this.feedbackForm.get(key)?.value)
+        })
 
-      },
-      error => {
-        this.isSubmitting = false;
-        this.showErrorModal = true;
-      }
-    );
-  }
+        this.feedbackService.sendFeedback(formData).subscribe(
+            (response) => {
+                this.feedbackForm.reset()
+                this.isSubmitting = false
+                console.log('okay')
+            },
+            (error) => {
+                this.isSubmitting = false
+                this.showErrorModal = true
+            },
+        )
+    }
 
-  closeSuccessModal() {
-    this.showSuccessModal = false;
-}
+    closeSuccessModal() {
+        this.showSuccessModal = false
+    }
 
-  closeErrorModal() {
-    this.showErrorModal = false;
-}
-
+    closeErrorModal() {
+        this.showErrorModal = false
+    }
 }

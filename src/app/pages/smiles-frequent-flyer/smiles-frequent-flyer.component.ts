@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
+import { CoBrandeedFaqComponent } from '../../main/co-brandeed-prepaid-card/co-brandeed-faq/co-brandeed-faq.component'
 import { SmilesCardComponent } from '../../main/smiles-frequent-flyer/smiles-card/smiles-card.component'
 import { SmilesFaqComponent } from '../../main/smiles-frequent-flyer/smiles-faq/smiles-faq.component'
-import { CoBrandeedFaqComponent } from "../../main/co-brandeed-prepaid-card/co-brandeed-faq/co-brandeed-faq.component";
 
 @Component({
     selector: 'app-smiles-frequent-flyer',

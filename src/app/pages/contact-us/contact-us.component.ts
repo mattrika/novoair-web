@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { AllSalesOfficesComponent } from "../../main/sales-offices/all-sales-offices/all-sales-offices.component";
+import { AllSalesOfficesComponent } from '../../main/sales-offices/all-sales-offices/all-sales-offices.component'
 
 @Component({
     selector: 'app-contact-us',

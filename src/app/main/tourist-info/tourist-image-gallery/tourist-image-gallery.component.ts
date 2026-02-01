@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-tourist-image-gallery',
-  imports: [],
-  templateUrl: './tourist-image-gallery.component.html',
-  styleUrl: './tourist-image-gallery.component.scss'
+    selector: 'app-tourist-image-gallery',
+    imports: [],
+    templateUrl: './tourist-image-gallery.component.html',
+    styleUrl: './tourist-image-gallery.component.scss',
 })
-export class TouristImageGalleryComponent {
-
-}
+export class TouristImageGalleryComponent {}

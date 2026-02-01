@@ -99,13 +99,14 @@ const flattenedRoutes: Route[] = [
     {
         path: 'travel-advisory',
         loadComponent: () =>
-            import('@pages/travel-advisory/travel-advisory.component').then((m) => m.TravelAdvisoryComponent),
+            import('@pages/travel-advisory/travel-advisory.component').then(
+                (m) => m.TravelAdvisoryComponent,
+            ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
         path: 'notam',
-        loadComponent: () =>
-            import('@pages/notam/notam.component').then((m) => m.NotamComponent),
+        loadComponent: () => import('@pages/notam/notam.component').then((m) => m.NotamComponent),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {
@@ -517,7 +518,9 @@ const flattenedRoutes: Route[] = [
     {
         path: 'sales-offices',
         loadComponent: () =>
-            import('@pages/sales-offices/sales-offices.component').then((m) => m.SalesOfficesComponent),
+            import('@pages/sales-offices/sales-offices.component').then(
+                (m) => m.SalesOfficesComponent,
+            ),
         resolve: { layout: setLayout(PageLayout.Default) },
     },
     {

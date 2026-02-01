@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { FeedbackContentComponent } from "../../main/feedback/feedback-content/feedback-content.component";
+import { FeedbackContentComponent } from '../../main/feedback/feedback-content/feedback-content.component'
 
 @Component({
     selector: 'app-feedback',
